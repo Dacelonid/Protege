@@ -19,13 +19,15 @@ public class CsvParser {
     private final List<String> descriptions = new ArrayList<>();
 
     public void parseCsv(final List<String> inputData) {
-        String[] delimitedString;
         for (final String line : inputData) {
-            delimitedString = line.split(COLUMN_FIELD_REGEX);
-            allLines.add(Arrays.asList(delimitedString));
-            populateAnnotations(delimitedString);
-            populateDescriptions(delimitedString);
+            processLine(line.split(COLUMN_FIELD_REGEX));
         }
+    }
+
+    private void processLine(final String[] delimitedString) {
+        populateAnnotations(delimitedString);
+        populateDescriptions(delimitedString);
+        allLines.add(Arrays.asList(delimitedString));
     }
 
     private void populateAnnotations(final String[] delimitedString) {
