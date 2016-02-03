@@ -19,7 +19,11 @@ public class CsvParser {
     private final List<String> descriptions = new ArrayList<>();
 
     public void parseCsv(final List<String> inputData) {
+        int lineNumber = 1;
         for (final String line : inputData) {
+            if (lineNumber++ == 1) {
+                continue;
+            }
             processLine(line.split(COLUMN_FIELD_REGEX));
         }
     }

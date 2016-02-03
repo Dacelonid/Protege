@@ -72,8 +72,23 @@ public class CsvParserTest {
         assertThat(actualValues, is(expectedValues));
     }
 
+    @Test
+    public void getAllLines_multiLineInput_shouldIgnoreColumnNames() {
+        final String testCSV = "test1\ttest2\ttest3";
+        final List<String> inputs = getInputLines(testCSV);
+
+        final List<List<String>> expectedValues = getExpectedValues(new ListValueConverter(), testCSV);
+
+        objUnderTest.parseCsv(inputs);
+        final List<List<String>> actualValues = objUnderTest.getAllLines();
+
+        assertThat(actualValues, is(expectedValues));
+    }
+
     private List<String> getInputLines(final String testCSV) {
         final List<String> inputs = new ArrayList<>();
+        inputs.add("Column1,Column2,Column3");
+
         for (int x = 0; x < NUMBER_LINES_CSV; x++) {
             inputs.add(testCSV);
         }
