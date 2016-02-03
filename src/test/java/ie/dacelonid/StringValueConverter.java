@@ -1,6 +1,6 @@
 package ie.dacelonid;
 
-public class AnnotationValueConverter extends ExpectedValuesConverter<String> {
+public class StringValueConverter extends ExpectedValuesConverter<String> {
 
     @Override
     public String getExpectedValues(final String value) {

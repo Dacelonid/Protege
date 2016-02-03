@@ -4,6 +4,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Before;
@@ -20,7 +21,7 @@ public class CsvParserTest {
     }
 
     @Test
-    public void getAllLines_multiLine_getCorrectValues() {
+    public void getAllLines_multiLineInput_getCorrectValues() {
         final String testCSV = "test1\ttest2\ttest3";
         final List<String> inputs = getInputLines(testCSV);
 
@@ -33,11 +34,11 @@ public class CsvParserTest {
     }
 
     @Test
-    public void getAnnotations_multiLineOneAnnotation_getExpectedAnnotations() {
+    public void getAnnotations_multiLineInput_getExpectedAnnotations() {
         final String testCSV = "test1\ttest2\ttest3";
         final List<String> inputs = getInputLines(testCSV);
 
-        final List<String> expectedValues = getExpectedValues(new AnnotationValueConverter(), "test3");
+        final List<String> expectedValues = Arrays.asList("test3");
 
         objUnderTest.parseCsv(inputs);
         final List<String> actualValues = objUnderTest.getAnnotations();
@@ -46,15 +47,27 @@ public class CsvParserTest {
     }
 
     @Test
-    public void getAnnotations_multiLineMultiAnnotations_getExpectedAnnotations() {
+    public void getAnnotations_multiLineInput_getExpectedAnnotationsNoDuplicates() {
         final String testCSV = "test1\ttest2\ttest3a,test3b,test3c";
         final List<String> inputs = getInputLines(testCSV);
 
-        final List<String> expectedValues = getExpectedValues(new AnnotationValueConverter(), "test3a", "test3b",
-                "test3c");
+        final List<String> expectedValues = Arrays.asList("test3a", "test3b", "test3c");
 
         objUnderTest.parseCsv(inputs);
         final List<String> actualValues = objUnderTest.getAnnotations();
+
+        assertThat(actualValues, is(expectedValues));
+    }
+
+    @Test
+    public void getDescription_multiLineInput_getExpectedDescription() {
+        final String testCSV = "test1\ttest2\ttest3";
+        final List<String> inputs = getInputLines(testCSV);
+
+        final List<String> expectedValues = getExpectedValues(new StringValueConverter(), "test2");
+
+        objUnderTest.parseCsv(inputs);
+        final List<String> actualValues = objUnderTest.getDescriptions();
 
         assertThat(actualValues, is(expectedValues));
     }
