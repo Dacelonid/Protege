@@ -45,6 +45,20 @@ public class CsvParserTest {
         assertThat(actualValues, is(expectedValues));
     }
 
+    @Test
+    public void getAnnotations_multiLineMultiAnnotations_getExpectedAnnotations() {
+        final String testCSV = "test1\ttest2\ttest3a,test3b,test3c";
+        final List<String> inputs = getInputLines(testCSV);
+
+        final List<String> expectedValues = getExpectedValues(new AnnotationValueConverter(), "test3a", "test3b",
+                "test3c");
+
+        objUnderTest.parseCsv(inputs);
+        final List<String> actualValues = objUnderTest.getAnnotations();
+
+        assertThat(actualValues, is(expectedValues));
+    }
+
     private List<String> getInputLines(final String testCSV) {
         final List<String> inputs = new ArrayList<>();
         for (int x = 0; x < NUMBER_LINES_CSV; x++) {
@@ -53,10 +67,12 @@ public class CsvParserTest {
         return inputs;
     }
 
-    private <T> List<T> getExpectedValues(final ExpectedValuesConverter<T> converter, final String value) {
+    private <T> List<T> getExpectedValues(final ExpectedValuesConverter<T> converter, final String... values) {
         final List<T> expectedValues = new ArrayList<>();
         for (int x = 0; x < NUMBER_LINES_CSV; x++) {
-            expectedValues.add(converter.getExpectedValues(value));
+            for (final String value : values) {
+                expectedValues.add(converter.getExpectedValues(value));
+            }
         }
         return expectedValues;
     }
