@@ -12,6 +12,8 @@ import org.junit.Test;
 
 public class CsvParserTest {
 
+    private static final String COLUMN_HEADINGS = "Description\tNature\tAnnotations";
+    private static final String JUMBLED_COLUMN_HEADINGS = "Nature\tAnnotations\tDescription";
     private static final int NUMBER_LINES_CSV = 10;
     private CsvParser objUnderTest;
 
@@ -23,7 +25,7 @@ public class CsvParserTest {
     @Test
     public void getAllLines_multiLineInput_getCorrectValues() {
         final String testCSV = "test1\ttest2\ttest3";
-        final List<String> inputs = getInputLines(testCSV);
+        final List<String> inputs = getInputLines(testCSV, COLUMN_HEADINGS);
 
         final List<List<String>> expectedValues = getExpectedValues(new ListValueConverter(), testCSV);
 
@@ -36,7 +38,7 @@ public class CsvParserTest {
     @Test
     public void getAnnotations_multiLineInput_getExpectedAnnotations() {
         final String testCSV = "test1\ttest2\ttest3";
-        final List<String> inputs = getInputLines(testCSV);
+        final List<String> inputs = getInputLines(testCSV, COLUMN_HEADINGS);
 
         final List<String> expectedValues = Arrays.asList("test3");
 
@@ -49,7 +51,7 @@ public class CsvParserTest {
     @Test
     public void getAnnotations_multiLineInput_getExpectedAnnotationsNoDuplicates() {
         final String testCSV = "test1\ttest2\ttest3a,test3b,test3c";
-        final List<String> inputs = getInputLines(testCSV);
+        final List<String> inputs = getInputLines(testCSV, COLUMN_HEADINGS);
 
         final List<String> expectedValues = Arrays.asList("test3a", "test3b", "test3c");
 
@@ -62,9 +64,9 @@ public class CsvParserTest {
     @Test
     public void getDescription_multiLineInput_getExpectedDescription() {
         final String testCSV = "test1\ttest2\ttest3";
-        final List<String> inputs = getInputLines(testCSV);
+        final List<String> inputs = getInputLines(testCSV, COLUMN_HEADINGS);
 
-        final List<String> expectedValues = getExpectedValues(new StringValueConverter(), "test2");
+        final List<String> expectedValues = getExpectedValues(new StringValueConverter(), "test1");
 
         objUnderTest.parseCsv(inputs);
         final List<String> actualValues = objUnderTest.getDescriptions();
@@ -75,7 +77,7 @@ public class CsvParserTest {
     @Test
     public void getAllLines_multiLineInput_shouldIgnoreColumnNames() {
         final String testCSV = "test1\ttest2\ttest3";
-        final List<String> inputs = getInputLines(testCSV);
+        final List<String> inputs = getInputLines(testCSV, COLUMN_HEADINGS);
 
         final List<List<String>> expectedValues = getExpectedValues(new ListValueConverter(), testCSV);
 
@@ -85,9 +87,45 @@ public class CsvParserTest {
         assertThat(actualValues, is(expectedValues));
     }
 
-    private List<String> getInputLines(final String testCSV) {
+    @Test
+    public void getAnnotation_annotationIsNotThirdColumn_shoudlGetAnnotations() {
+        final String testCSV = "test1\ttest3a,test3b,test3c\ttest2";
+        final List<String> inputs = getInputLines(testCSV, JUMBLED_COLUMN_HEADINGS);
+
+        final List<String> expectedValues = Arrays.asList("test3a", "test3b", "test3c");
+
+        objUnderTest.parseCsv(inputs);
+        final List<String> actualValues = objUnderTest.getAnnotations();
+
+        assertThat(actualValues, is(expectedValues));
+    }
+
+    @Test
+    public void getAnnotations_annotationsWithSpaces_expectSpacesToBeIgnored() throws Exception {
+        final String testCSV = "test1\ttest3a,test3b, test3c,   test3d\ttest2";
+        final List<String> inputs = getInputLines(testCSV, JUMBLED_COLUMN_HEADINGS);
+
+        final List<String> expectedValues = Arrays.asList("test3a", "test3b", "test3c", "test3d");
+
+        objUnderTest.parseCsv(inputs);
+        final List<String> actualValues = objUnderTest.getAnnotations();
+
+        assertThat(actualValues, is(expectedValues));
+
+    }
+
+    @Test
+    public void getAnnotations_annot() throws Exception {
+        final String testCSV = "eye, face, grin, person, smile";
+        for (final char character : testCSV.toCharArray()) {
+            System.out.println((int) character);
+        }
+
+    }
+
+    private List<String> getInputLines(final String testCSV, final String columnNames) {
         final List<String> inputs = new ArrayList<>();
-        inputs.add("Column1,Column2,Column3");
+        inputs.add(columnNames);
 
         for (int x = 0; x < NUMBER_LINES_CSV; x++) {
             inputs.add(testCSV);

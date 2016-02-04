@@ -5,8 +5,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CsvParser {
-    private static final int ANNOTATION_COLUMN = 2;
-    private static final int DESCRIPTION_COLUMN = 1;
+    private int annotationColumn;
+    private int descriptionColumn;
+    private int natureColumn;
 
     private static final String COLUMN_DELIMITER = "\t";
     private static final String COLUMN_FIELD_REGEX = "\\s*" + COLUMN_DELIMITER + "\\s*";
@@ -14,24 +15,45 @@ public class CsvParser {
     private static final String ENTRY_DELIMITER = ",";
     private static final String ENTRY_FIELD_REGEX = "\\s*" + ENTRY_DELIMITER + "\\s*";
 
+    private static final String ANNOTATION_HEADING = "Annotations";
+    private static final String NATURE_HEADING = "Nature";
+    private static final String DESCRIPTION_HEADING = "Description";
+
     private final List<List<String>> allLines = new ArrayList<>();
-    private final List<String> annotations = new ArrayList<>(); // @TODO should be a Set but then I need to sort it
+    private final List<String> annotations = new ArrayList<>(); // @TODO should be a Set but then I need to sort it in the tests
     private final List<String> descriptions = new ArrayList<>();
 
     public void parseCsv(final List<String> inputData) {
-        int lineNumber = 1;
+        int lineNumber = 0;
         for (final String line : inputData) {
-            if (lineNumber++ == 1) {
-                continue;
+            if (lineNumber++ == 0) {
+                processColumnNames(line);
+            } else {
+                processLine(line);
             }
-            processLine(line.split(COLUMN_FIELD_REGEX));
         }
     }
 
-    private void processLine(final String[] delimitedString) {
-        populateAnnotations(delimitedString);
-        populateDescriptions(delimitedString);
-        allLines.add(Arrays.asList(delimitedString));
+    private void processColumnNames(final String line) {
+        final String[] headings = line.split(COLUMN_FIELD_REGEX);
+        for (int x = 0; x < headings.length; x++) {
+            if (headings[x].equals(ANNOTATION_HEADING)) {
+                annotationColumn = x;
+            }
+            if (headings[x].equals(DESCRIPTION_HEADING)) {
+                descriptionColumn = x;
+            }
+            if (headings[x].equals(NATURE_HEADING)) {
+                natureColumn = x;
+            }
+        }
+    }
+
+    private void processLine(final String line) {
+        final String[] splitLine = line.split(COLUMN_FIELD_REGEX);
+        populateAnnotations(splitLine);
+        populateDescriptions(splitLine);
+        allLines.add(Arrays.asList(splitLine));
     }
 
     private void populateAnnotations(final String[] delimitedString) {
@@ -43,11 +65,11 @@ public class CsvParser {
     }
 
     private List<String> getAnnotationsFromInputString(final String[] delimitedString) {
-        return Arrays.asList(delimitedString[ANNOTATION_COLUMN].split(ENTRY_FIELD_REGEX));
+        return Arrays.asList(delimitedString[annotationColumn].split(ENTRY_FIELD_REGEX));
     }
 
     private void populateDescriptions(final String[] delimitedString) {
-        descriptions.add(delimitedString[DESCRIPTION_COLUMN]);
+        descriptions.add(delimitedString[descriptionColumn]);
     }
 
     public List<String> getAnnotations() {
@@ -61,5 +83,4 @@ public class CsvParser {
     public List<String> getDescriptions() {
         return descriptions;
     }
-
 }
