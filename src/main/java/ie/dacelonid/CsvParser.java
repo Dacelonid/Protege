@@ -1,27 +1,23 @@
 package ie.dacelonid;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class CsvParser {
-    private int annotationColumn;
-    private int descriptionColumn;
-    private int natureColumn;
-
     private static final String COLUMN_DELIMITER = "\t";
     private static final String COLUMN_FIELD_REGEX = "\\s*" + COLUMN_DELIMITER + "\\s*";
-
     private static final String ENTRY_DELIMITER = ",";
     private static final String ENTRY_FIELD_REGEX = "\\s*" + ENTRY_DELIMITER + "\\s*";
-
     private static final String ANNOTATION_HEADING = "Annotations";
     private static final String NATURE_HEADING = "Nature";
     private static final String DESCRIPTION_HEADING = "Description";
-
     private final List<List<String>> allLines = new ArrayList<>();
     private final List<String> annotations = new ArrayList<>(); // @TODO should be a Set but then I need to sort it in the tests
     private final List<String> descriptions = new ArrayList<>();
+    private int annotationColumn;
+    private int descriptionColumn;
+    private int natureColumn;
+    private Map<String, List<String>> emojiMap = new HashMap<>();
 
     public void parseCsv(final List<String> inputData) {
         int lineNumber = 0;
@@ -51,15 +47,20 @@ public class CsvParser {
 
     private void processLine(final String line) {
         final String[] splitLine = line.split(COLUMN_FIELD_REGEX);
-        populateAnnotations(splitLine);
-        populateDescriptions(splitLine);
+        String description = splitLine[descriptionColumn];
+        List<String> annotations = getAnnotationsFromInputString(splitLine);
+        emojiMap.put(description, annotations);
+
+        populateAnnotations(annotations);
+        populateDescriptions(description);
+
         allLines.add(Arrays.asList(splitLine));
     }
 
-    private void populateAnnotations(final String[] delimitedString) {
-        for (final String annotation : getAnnotationsFromInputString(delimitedString)) {
-            if (!annotations.contains(annotation)) {
-                annotations.add(annotation);
+    private void populateAnnotations(List<String> annotations) {
+        for (final String annotation : annotations) {
+            if (!this.annotations.contains(annotation)) {
+                this.annotations.add(annotation);
             }
         }
     }
@@ -68,8 +69,8 @@ public class CsvParser {
         return Arrays.asList(delimitedString[annotationColumn].split(ENTRY_FIELD_REGEX));
     }
 
-    private void populateDescriptions(final String[] delimitedString) {
-        descriptions.add(delimitedString[descriptionColumn]);
+    private void populateDescriptions(final String description) {
+        descriptions.add(description);
     }
 
     public List<String> getAnnotations() {
@@ -82,5 +83,10 @@ public class CsvParser {
 
     public List<String> getDescriptions() {
         return descriptions;
+    }
+
+    public List<String> getEmojiContainingAnnotation(final String annotation) {
+        return emojiMap.entrySet().stream().filter(p -> p.getValue().contains((annotation))).map(Map.Entry::getKey)
+                .collect(Collectors.toList());
     }
 }
