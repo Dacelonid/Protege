@@ -18,6 +18,7 @@ public class CsvParser {
     private int descriptionColumn;
     private int natureColumn;
     private Map<String, List<String>> emojiMap = new HashMap<>();
+    private Map<TopLevelClass, List<String>> classMap = new HashMap<>();
 
     public void parseCsv(final List<String> inputData) {
         int lineNumber = 0;
@@ -49,7 +50,17 @@ public class CsvParser {
         final String[] splitLine = line.split(COLUMN_FIELD_REGEX);
         String description = splitLine[descriptionColumn];
         List<String> annotations = getAnnotationsFromInputString(splitLine);
+        TopLevelClass topLevelClass = TopLevelClass.get(annotations);
         emojiMap.put(description, annotations);
+        List<String> descriptions;
+        if (classMap.containsKey(topLevelClass)) {
+            descriptions = classMap.get(topLevelClass);
+            descriptions.add(description);
+        } else {
+            descriptions = new ArrayList<>();
+            descriptions.add(description);
+        }
+        classMap.put(topLevelClass, descriptions);
 
         populateAnnotations(annotations);
         populateDescriptions(description);
@@ -88,5 +99,14 @@ public class CsvParser {
     public List<String> getEmojiContainingAnnotation(final String annotation) {
         return emojiMap.entrySet().stream().filter(p -> p.getValue().contains((annotation))).map(Map.Entry::getKey)
                 .collect(Collectors.toList());
+    }
+
+    public List<String> getSubClass(TopLevelClass name) {
+        return emojiMap.entrySet().stream().filter(p -> p.getKey().contains((name.getFilter()))).map(Map.Entry::getKey)
+                .collect(Collectors.toList());
+    }
+
+    public Map<TopLevelClass, List<String>> getTopLevelClasses() {
+        return classMap;
     }
 }
