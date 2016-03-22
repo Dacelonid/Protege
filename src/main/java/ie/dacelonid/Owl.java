@@ -1,7 +1,9 @@
 package ie.dacelonid;
 
-public class Owl {
+import java.util.ArrayList;
+import java.util.List;
 
+class Owl {
     private static final String XML_VERSION_1_0 = "<?xml version=\"1.0\"?>";
     private static final String ONTOLOGY_NAMESPACE = "<Ontology xmlns=\"http://www.w3.org/2002/07/owl#\"";
     private static final String SEMANTIC_WEB = "xml:base=\"http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-6\"";
@@ -16,8 +18,9 @@ public class Owl {
     private static final String XML_PREFIX = "<Prefix name=\"xml\" IRI=\"http://www.w3.org/XML/1998/namespace\"/>";
     private static final String SCHEMA_PREFIX = "<Prefix name=\"xsd\" IRI=\"http://www.w3.org/2001/XMLSchema#\"/>";
     private static final String RDFS_PREFIX = "<Prefix name=\"rdfs\" IRI=\"http://www.w3.org/2000/01/rdf-schema#\"/>";
+    private List<Entity> entities = new ArrayList<>();
 
-    public String toString(){
+    public String toString() {
         StringBuilder output = new StringBuilder();
         output.append(XML_VERSION_1_0).append(System.lineSeparator());
         output.append(ONTOLOGY_NAMESPACE).append(System.lineSeparator());
@@ -33,7 +36,14 @@ public class Owl {
         output.append(XML_PREFIX).append(System.lineSeparator());
         output.append(SCHEMA_PREFIX).append(System.lineSeparator());
         output.append(RDFS_PREFIX).append(System.lineSeparator());
+        for (Entity entity : entities) {
+            output.append(entity.toString());
+        }
         output.append("</Ontology>");
         return output.toString();
+    }
+
+    void addEntity(Entity entity) {
+        entities.add(entity);
     }
 }

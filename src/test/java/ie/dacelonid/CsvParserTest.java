@@ -11,6 +11,7 @@ import java.util.List;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
+
 public class CsvParserTest {
 
     private static final String COLUMN_HEADINGS = "Description\tNature\tAnnotations";
