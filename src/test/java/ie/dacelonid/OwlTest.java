@@ -50,6 +50,31 @@ public class OwlTest {
         XMLAssert.assertXMLEqual(resultOwl, expectedOwl);
     }
 
+    @Test
+    public void toString_ontologyWithSubclasses_shouldBeValidOwlFile() throws Exception {
+        Entity parent = new Entity("Emoji");
+        Entity child = new Entity(parent, "AnimalEmoji");
+        objUnderTest.addEntity(parent);
+        objUnderTest.addEntity(child);
+        String expectedOwl = readFile("ontologyWithSubclasses.owl");
+        String resultOwl = objUnderTest.toString();
+
+        XMLAssert.assertXMLEqual(resultOwl, expectedOwl);
+    }
+    @Test
+    public void toString_ontologyWithSubclassesOfSubclasses_shouldBeValidOwlFile() throws Exception {
+        Entity parent = new Entity("Emoji");
+        Entity child = new Entity(parent, "AnimalEmoji");
+        Entity subChild = new Entity(child, "DogEmoji");
+        objUnderTest.addEntity(parent);
+        objUnderTest.addEntity(child);
+        objUnderTest.addEntity(subChild);
+        String expectedOwl = readFile("ontologyWithSubclassesOfSubclasses.owl");
+        String resultOwl = objUnderTest.toString();
+
+        XMLAssert.assertXMLEqual(resultOwl, expectedOwl);
+    }
+
     private String readFile(String fileName) throws Exception {
         Path pathToFile = Paths.get(this.getClass().getClassLoader().getResource(fileName).toURI());
         final String fileContentsAsString = new String(Files.readAllBytes(pathToFile));

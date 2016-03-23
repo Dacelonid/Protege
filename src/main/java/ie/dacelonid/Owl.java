@@ -40,6 +40,7 @@ class Owl {
             output.append(entity.toString());
         }
         output.append("</Ontology>");
+//        System.out.println(output);
         return output.toString();
     }
 
