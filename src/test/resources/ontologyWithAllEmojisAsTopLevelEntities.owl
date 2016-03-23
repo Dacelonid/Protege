@@ -1,0 +1,2550 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+xml:base="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-6"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:xml="http://www.w3.org/XML/1998/namespace"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-6">
+<Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+<Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+<Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+<Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+<Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+<Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+<Declaration>
+<Class IRI="#grinning_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#grinning_face_with_smiling_eyes"/>
+</Declaration>
+<Declaration>
+<Class IRI="#face_with_tears_of_joy"/>
+</Declaration>
+<Declaration>
+<Class IRI="#smiling_face_with_open_mouth"/>
+</Declaration>
+<Declaration>
+<Class IRI="#smiling_face_with_open_mouth_and_smiling_eyes"/>
+</Declaration>
+<Declaration>
+<Class IRI="#smiling_face_with_open_mouth_and_cold_sweat"/>
+</Declaration>
+<Declaration>
+<Class IRI="#smiling_face_with_open_mouth_and_tightly-closed_eyes"/>
+</Declaration>
+<Declaration>
+<Class IRI="#winking_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#smiling_face_with_smiling_eyes"/>
+</Declaration>
+<Declaration>
+<Class IRI="#face_savouring_delicious_food"/>
+</Declaration>
+<Declaration>
+<Class IRI="#smiling_face_with_sunglasses"/>
+</Declaration>
+<Declaration>
+<Class IRI="#smiling_face_with_heart-shaped_eyes"/>
+</Declaration>
+<Declaration>
+<Class IRI="#face_throwing_a_kiss"/>
+</Declaration>
+<Declaration>
+<Class IRI="#kissing_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#kissing_face_with_smiling_eyes"/>
+</Declaration>
+<Declaration>
+<Class IRI="#kissing_face_with_closed_eyes"/>
+</Declaration>
+<Declaration>
+<Class IRI="#white_smiling_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#smiling_face_with_halo"/>
+</Declaration>
+<Declaration>
+<Class IRI="#neutral_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#expressionless_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#face_without_mouth"/>
+</Declaration>
+<Declaration>
+<Class IRI="#smirking_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#persevering_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#disappointed_but_relieved_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#face_with_open_mouth"/>
+</Declaration>
+<Declaration>
+<Class IRI="#hushed_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#sleepy_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#tired_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#sleeping_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#relieved_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#face_with_stuck-out_tongue"/>
+</Declaration>
+<Declaration>
+<Class IRI="#face_with_stuck-out_tongue_and_winking_eye"/>
+</Declaration>
+<Declaration>
+<Class IRI="#face_with_stuck-out_tongue_and_tightly-closed_eyes"/>
+</Declaration>
+<Declaration>
+<Class IRI="#unamused_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#face_with_cold_sweat"/>
+</Declaration>
+<Declaration>
+<Class IRI="#pensive_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#confused_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#confounded_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#face_with_medical_mask"/>
+</Declaration>
+<Declaration>
+<Class IRI="#astonished_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#disappointed_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#worried_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#face_with_look_of_triumph"/>
+</Declaration>
+<Declaration>
+<Class IRI="#crying_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#loudly_crying_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#frowning_face_with_open_mouth"/>
+</Declaration>
+<Declaration>
+<Class IRI="#anguished_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#fearful_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#weary_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#grimacing_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#face_with_open_mouth_and_cold_sweat"/>
+</Declaration>
+<Declaration>
+<Class IRI="#face_screaming_in_fear"/>
+</Declaration>
+<Declaration>
+<Class IRI="#flushed_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#dizzy_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#pouting_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#angry_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#smiling_face_with_horns"/>
+</Declaration>
+<Declaration>
+<Class IRI="#imp"/>
+</Declaration>
+<Declaration>
+<Class IRI="#japanese_ogre"/>
+</Declaration>
+<Declaration>
+<Class IRI="#japanese_goblin"/>
+</Declaration>
+<Declaration>
+<Class IRI="#skull"/>
+</Declaration>
+<Declaration>
+<Class IRI="#ghost"/>
+</Declaration>
+<Declaration>
+<Class IRI="#extraterrestrial_alien"/>
+</Declaration>
+<Declaration>
+<Class IRI="#alien_monster"/>
+</Declaration>
+<Declaration>
+<Class IRI="#pile_of_poo"/>
+</Declaration>
+<Declaration>
+<Class IRI="#smiling_cat_face_with_open_mouth"/>
+</Declaration>
+<Declaration>
+<Class IRI="#grinning_cat_face_with_smiling_eyes"/>
+</Declaration>
+<Declaration>
+<Class IRI="#cat_face_with_tears_of_joy"/>
+</Declaration>
+<Declaration>
+<Class IRI="#smiling_cat_face_with_heart-shaped_eyes"/>
+</Declaration>
+<Declaration>
+<Class IRI="#cat_face_with_wry_smile"/>
+</Declaration>
+<Declaration>
+<Class IRI="#kissing_cat_face_with_closed_eyes"/>
+</Declaration>
+<Declaration>
+<Class IRI="#weary_cat_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#crying_cat_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#pouting_cat_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#see-no-evil_monkey"/>
+</Declaration>
+<Declaration>
+<Class IRI="#hear-no-evil_monkey"/>
+</Declaration>
+<Declaration>
+<Class IRI="#speak-no-evil_monkey"/>
+</Declaration>
+<Declaration>
+<Class IRI="#boy"/>
+</Declaration>
+<Declaration>
+<Class IRI="#girl"/>
+</Declaration>
+<Declaration>
+<Class IRI="#man"/>
+</Declaration>
+<Declaration>
+<Class IRI="#woman"/>
+</Declaration>
+<Declaration>
+<Class IRI="#older_man"/>
+</Declaration>
+<Declaration>
+<Class IRI="#older_woman"/>
+</Declaration>
+<Declaration>
+<Class IRI="#baby"/>
+</Declaration>
+<Declaration>
+<Class IRI="#person_with_blond_hair"/>
+</Declaration>
+<Declaration>
+<Class IRI="#police_officer"/>
+</Declaration>
+<Declaration>
+<Class IRI="#man_with_gua_pi_mao"/>
+</Declaration>
+<Declaration>
+<Class IRI="#man_with_turban"/>
+</Declaration>
+<Declaration>
+<Class IRI="#construction_worker"/>
+</Declaration>
+<Declaration>
+<Class IRI="#princess"/>
+</Declaration>
+<Declaration>
+<Class IRI="#guardsman"/>
+</Declaration>
+<Declaration>
+<Class IRI="#father_christmas"/>
+</Declaration>
+<Declaration>
+<Class IRI="#baby_angel"/>
+</Declaration>
+<Declaration>
+<Class IRI="#woman_with_bunny_ears"/>
+</Declaration>
+<Declaration>
+<Class IRI="#face_massage"/>
+</Declaration>
+<Declaration>
+<Class IRI="#haircut"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bride_with_veil"/>
+</Declaration>
+<Declaration>
+<Class IRI="#person_frowning"/>
+</Declaration>
+<Declaration>
+<Class IRI="#person_with_pouting_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#face_with_no_good_gesture"/>
+</Declaration>
+<Declaration>
+<Class IRI="#face_with_ok_gesture"/>
+</Declaration>
+<Declaration>
+<Class IRI="#information_desk_person"/>
+</Declaration>
+<Declaration>
+<Class IRI="#happy_person_raising_one_hand"/>
+</Declaration>
+<Declaration>
+<Class IRI="#person_bowing_deeply"/>
+</Declaration>
+<Declaration>
+<Class IRI="#person_raising_both_hands_in_celebration"/>
+</Declaration>
+<Declaration>
+<Class IRI="#person_with_folded_hands"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bust_in_silhouette"/>
+</Declaration>
+<Declaration>
+<Class IRI="#busts_in_silhouette"/>
+</Declaration>
+<Declaration>
+<Class IRI="#pedestrian"/>
+</Declaration>
+<Declaration>
+<Class IRI="#runner"/>
+</Declaration>
+<Declaration>
+<Class IRI="#dancer"/>
+</Declaration>
+<Declaration>
+<Class IRI="#kiss"/>
+</Declaration>
+<Declaration>
+<Class IRI="#couple_with_heart"/>
+</Declaration>
+<Declaration>
+<Class IRI="#family"/>
+</Declaration>
+<Declaration>
+<Class IRI="#man_and_woman_holding_hands"/>
+</Declaration>
+<Declaration>
+<Class IRI="#two_men_holding_hands"/>
+</Declaration>
+<Declaration>
+<Class IRI="#two_women_holding_hands"/>
+</Declaration>
+<Declaration>
+<Class IRI="#flexed_biceps"/>
+</Declaration>
+<Declaration>
+<Class IRI="#white_left_pointing_backhand_index"/>
+</Declaration>
+<Declaration>
+<Class IRI="#white_right_pointing_backhand_index"/>
+</Declaration>
+<Declaration>
+<Class IRI="#white_up_pointing_index"/>
+</Declaration>
+<Declaration>
+<Class IRI="#white_up_pointing_backhand_index"/>
+</Declaration>
+<Declaration>
+<Class IRI="#white_down_pointing_backhand_index"/>
+</Declaration>
+<Declaration>
+<Class IRI="#victory_hand"/>
+</Declaration>
+<Declaration>
+<Class IRI="#raised_fist"/>
+</Declaration>
+<Declaration>
+<Class IRI="#raised_hand"/>
+</Declaration>
+<Declaration>
+<Class IRI="#fisted_hand_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#ok_hand_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#thumbs_up_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#thumbs_down_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#waving_hand_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clapping_hands_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#open_hands_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#nail_polish"/>
+</Declaration>
+<Declaration>
+<Class IRI="#ear"/>
+</Declaration>
+<Declaration>
+<Class IRI="#nose"/>
+</Declaration>
+<Declaration>
+<Class IRI="#footprints"/>
+</Declaration>
+<Declaration>
+<Class IRI="#eyes"/>
+</Declaration>
+<Declaration>
+<Class IRI="#tongue"/>
+</Declaration>
+<Declaration>
+<Class IRI="#mouth"/>
+</Declaration>
+<Declaration>
+<Class IRI="#kiss_mark"/>
+</Declaration>
+<Declaration>
+<Class IRI="#heart_with_arrow"/>
+</Declaration>
+<Declaration>
+<Class IRI="#heavy_black_heart"/>
+</Declaration>
+<Declaration>
+<Class IRI="#beating_heart"/>
+</Declaration>
+<Declaration>
+<Class IRI="#broken_heart"/>
+</Declaration>
+<Declaration>
+<Class IRI="#two_hearts"/>
+</Declaration>
+<Declaration>
+<Class IRI="#sparkling_heart"/>
+</Declaration>
+<Declaration>
+<Class IRI="#growing_heart"/>
+</Declaration>
+<Declaration>
+<Class IRI="#blue_heart"/>
+</Declaration>
+<Declaration>
+<Class IRI="#green_heart"/>
+</Declaration>
+<Declaration>
+<Class IRI="#yellow_heart"/>
+</Declaration>
+<Declaration>
+<Class IRI="#purple_heart"/>
+</Declaration>
+<Declaration>
+<Class IRI="#heart_with_ribbon"/>
+</Declaration>
+<Declaration>
+<Class IRI="#revolving_hearts"/>
+</Declaration>
+<Declaration>
+<Class IRI="#heart_decoration"/>
+</Declaration>
+<Declaration>
+<Class IRI="#love_letter"/>
+</Declaration>
+<Declaration>
+<Class IRI="#sleeping_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#anger_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bomb"/>
+</Declaration>
+<Declaration>
+<Class IRI="#collision_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#splashing_sweat_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#dash_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#dizzy_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#speech_balloon"/>
+</Declaration>
+<Declaration>
+<Class IRI="#thought_balloon"/>
+</Declaration>
+<Declaration>
+<Class IRI="#eyeglasses"/>
+</Declaration>
+<Declaration>
+<Class IRI="#necktie"/>
+</Declaration>
+<Declaration>
+<Class IRI="#t-shirt"/>
+</Declaration>
+<Declaration>
+<Class IRI="#jeans"/>
+</Declaration>
+<Declaration>
+<Class IRI="#dress"/>
+</Declaration>
+<Declaration>
+<Class IRI="#kimono"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bikini"/>
+</Declaration>
+<Declaration>
+<Class IRI="#womans_clothes"/>
+</Declaration>
+<Declaration>
+<Class IRI="#purse"/>
+</Declaration>
+<Declaration>
+<Class IRI="#handbag"/>
+</Declaration>
+<Declaration>
+<Class IRI="#pouch"/>
+</Declaration>
+<Declaration>
+<Class IRI="#school_satchel"/>
+</Declaration>
+<Declaration>
+<Class IRI="#mans_shoe"/>
+</Declaration>
+<Declaration>
+<Class IRI="#athletic_shoe"/>
+</Declaration>
+<Declaration>
+<Class IRI="#high-heeled_shoe"/>
+</Declaration>
+<Declaration>
+<Class IRI="#womans_sandal"/>
+</Declaration>
+<Declaration>
+<Class IRI="#womans_boots"/>
+</Declaration>
+<Declaration>
+<Class IRI="#crown"/>
+</Declaration>
+<Declaration>
+<Class IRI="#womans_hat"/>
+</Declaration>
+<Declaration>
+<Class IRI="#top_hat"/>
+</Declaration>
+<Declaration>
+<Class IRI="#graduation_cap"/>
+</Declaration>
+<Declaration>
+<Class IRI="#lipstick"/>
+</Declaration>
+<Declaration>
+<Class IRI="#ring"/>
+</Declaration>
+<Declaration>
+<Class IRI="#gem_stone"/>
+</Declaration>
+<Declaration>
+<Class IRI="#monkey_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#monkey"/>
+</Declaration>
+<Declaration>
+<Class IRI="#dog_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#dog"/>
+</Declaration>
+<Declaration>
+<Class IRI="#poodle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#wolf_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#cat_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#cat"/>
+</Declaration>
+<Declaration>
+<Class IRI="#tiger_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#tiger"/>
+</Declaration>
+<Declaration>
+<Class IRI="#leopard"/>
+</Declaration>
+<Declaration>
+<Class IRI="#horse_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#horse"/>
+</Declaration>
+<Declaration>
+<Class IRI="#cow_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#ox"/>
+</Declaration>
+<Declaration>
+<Class IRI="#water_buffalo"/>
+</Declaration>
+<Declaration>
+<Class IRI="#cow"/>
+</Declaration>
+<Declaration>
+<Class IRI="#pig_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#pig"/>
+</Declaration>
+<Declaration>
+<Class IRI="#boar"/>
+</Declaration>
+<Declaration>
+<Class IRI="#pig_nose"/>
+</Declaration>
+<Declaration>
+<Class IRI="#ram"/>
+</Declaration>
+<Declaration>
+<Class IRI="#sheep"/>
+</Declaration>
+<Declaration>
+<Class IRI="#goat"/>
+</Declaration>
+<Declaration>
+<Class IRI="#dromedary_camel"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bactrian_camel"/>
+</Declaration>
+<Declaration>
+<Class IRI="#elephant"/>
+</Declaration>
+<Declaration>
+<Class IRI="#mouse_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#mouse"/>
+</Declaration>
+<Declaration>
+<Class IRI="#rat"/>
+</Declaration>
+<Declaration>
+<Class IRI="#hamster_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#rabbit_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#rabbit"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bear_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#koala"/>
+</Declaration>
+<Declaration>
+<Class IRI="#panda_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#paw_prints"/>
+</Declaration>
+<Declaration>
+<Class IRI="#chicken"/>
+</Declaration>
+<Declaration>
+<Class IRI="#rooster"/>
+</Declaration>
+<Declaration>
+<Class IRI="#hatching_chick"/>
+</Declaration>
+<Declaration>
+<Class IRI="#baby_chick"/>
+</Declaration>
+<Declaration>
+<Class IRI="#front-facing_baby_chick"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bird"/>
+</Declaration>
+<Declaration>
+<Class IRI="#penguin"/>
+</Declaration>
+<Declaration>
+<Class IRI="#frog_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#crocodile"/>
+</Declaration>
+<Declaration>
+<Class IRI="#turtle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#snake"/>
+</Declaration>
+<Declaration>
+<Class IRI="#dragon_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#dragon"/>
+</Declaration>
+<Declaration>
+<Class IRI="#spouting_whale"/>
+</Declaration>
+<Declaration>
+<Class IRI="#whale"/>
+</Declaration>
+<Declaration>
+<Class IRI="#dolphin"/>
+</Declaration>
+<Declaration>
+<Class IRI="#fish"/>
+</Declaration>
+<Declaration>
+<Class IRI="#tropical_fish"/>
+</Declaration>
+<Declaration>
+<Class IRI="#blowfish"/>
+</Declaration>
+<Declaration>
+<Class IRI="#octopus"/>
+</Declaration>
+<Declaration>
+<Class IRI="#spiral_shell"/>
+</Declaration>
+<Declaration>
+<Class IRI="#snail"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bug"/>
+</Declaration>
+<Declaration>
+<Class IRI="#ant"/>
+</Declaration>
+<Declaration>
+<Class IRI="#honeybee"/>
+</Declaration>
+<Declaration>
+<Class IRI="#lady_beetle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bouquet"/>
+</Declaration>
+<Declaration>
+<Class IRI="#cherry_blossom"/>
+</Declaration>
+<Declaration>
+<Class IRI="#white_flower"/>
+</Declaration>
+<Declaration>
+<Class IRI="#rose"/>
+</Declaration>
+<Declaration>
+<Class IRI="#hibiscus"/>
+</Declaration>
+<Declaration>
+<Class IRI="#sunflower"/>
+</Declaration>
+<Declaration>
+<Class IRI="#blossom"/>
+</Declaration>
+<Declaration>
+<Class IRI="#tulip"/>
+</Declaration>
+<Declaration>
+<Class IRI="#seedling"/>
+</Declaration>
+<Declaration>
+<Class IRI="#evergreen_tree"/>
+</Declaration>
+<Declaration>
+<Class IRI="#deciduous_tree"/>
+</Declaration>
+<Declaration>
+<Class IRI="#palm_tree"/>
+</Declaration>
+<Declaration>
+<Class IRI="#cactus"/>
+</Declaration>
+<Declaration>
+<Class IRI="#ear_of_rice"/>
+</Declaration>
+<Declaration>
+<Class IRI="#herb"/>
+</Declaration>
+<Declaration>
+<Class IRI="#four_leaf_clover"/>
+</Declaration>
+<Declaration>
+<Class IRI="#maple_leaf"/>
+</Declaration>
+<Declaration>
+<Class IRI="#fallen_leaf"/>
+</Declaration>
+<Declaration>
+<Class IRI="#leaf_fluttering_in_wind"/>
+</Declaration>
+<Declaration>
+<Class IRI="#grapes"/>
+</Declaration>
+<Declaration>
+<Class IRI="#melon"/>
+</Declaration>
+<Declaration>
+<Class IRI="#watermelon"/>
+</Declaration>
+<Declaration>
+<Class IRI="#tangerine"/>
+</Declaration>
+<Declaration>
+<Class IRI="#lemon"/>
+</Declaration>
+<Declaration>
+<Class IRI="#banana"/>
+</Declaration>
+<Declaration>
+<Class IRI="#pineapple"/>
+</Declaration>
+<Declaration>
+<Class IRI="#red_apple"/>
+</Declaration>
+<Declaration>
+<Class IRI="#green_apple"/>
+</Declaration>
+<Declaration>
+<Class IRI="#pear"/>
+</Declaration>
+<Declaration>
+<Class IRI="#peach"/>
+</Declaration>
+<Declaration>
+<Class IRI="#cherries"/>
+</Declaration>
+<Declaration>
+<Class IRI="#strawberry"/>
+</Declaration>
+<Declaration>
+<Class IRI="#tomato"/>
+</Declaration>
+<Declaration>
+<Class IRI="#aubergine"/>
+</Declaration>
+<Declaration>
+<Class IRI="#ear_of_maize"/>
+</Declaration>
+<Declaration>
+<Class IRI="#mushroom"/>
+</Declaration>
+<Declaration>
+<Class IRI="#chestnut"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bread"/>
+</Declaration>
+<Declaration>
+<Class IRI="#meat_on_bone"/>
+</Declaration>
+<Declaration>
+<Class IRI="#poultry_leg"/>
+</Declaration>
+<Declaration>
+<Class IRI="#hamburger"/>
+</Declaration>
+<Declaration>
+<Class IRI="#french_fries"/>
+</Declaration>
+<Declaration>
+<Class IRI="#slice_of_pizza"/>
+</Declaration>
+<Declaration>
+<Class IRI="#pot_of_food"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bento_box"/>
+</Declaration>
+<Declaration>
+<Class IRI="#rice_cracker"/>
+</Declaration>
+<Declaration>
+<Class IRI="#rice_ball"/>
+</Declaration>
+<Declaration>
+<Class IRI="#cooked_rice"/>
+</Declaration>
+<Declaration>
+<Class IRI="#curry_and_rice"/>
+</Declaration>
+<Declaration>
+<Class IRI="#steaming_bowl"/>
+</Declaration>
+<Declaration>
+<Class IRI="#spaghetti"/>
+</Declaration>
+<Declaration>
+<Class IRI="#roasted_sweet_potato"/>
+</Declaration>
+<Declaration>
+<Class IRI="#oden"/>
+</Declaration>
+<Declaration>
+<Class IRI="#sushi"/>
+</Declaration>
+<Declaration>
+<Class IRI="#fried_shrimp"/>
+</Declaration>
+<Declaration>
+<Class IRI="#fish_cake_with_swirl_design"/>
+</Declaration>
+<Declaration>
+<Class IRI="#dango"/>
+</Declaration>
+<Declaration>
+<Class IRI="#soft_ice_cream"/>
+</Declaration>
+<Declaration>
+<Class IRI="#shaved_ice"/>
+</Declaration>
+<Declaration>
+<Class IRI="#ice_cream"/>
+</Declaration>
+<Declaration>
+<Class IRI="#doughnut"/>
+</Declaration>
+<Declaration>
+<Class IRI="#cookie"/>
+</Declaration>
+<Declaration>
+<Class IRI="#birthday_cake"/>
+</Declaration>
+<Declaration>
+<Class IRI="#shortcake"/>
+</Declaration>
+<Declaration>
+<Class IRI="#chocolate_bar"/>
+</Declaration>
+<Declaration>
+<Class IRI="#candy"/>
+</Declaration>
+<Declaration>
+<Class IRI="#lollipop"/>
+</Declaration>
+<Declaration>
+<Class IRI="#custard"/>
+</Declaration>
+<Declaration>
+<Class IRI="#honey_pot"/>
+</Declaration>
+<Declaration>
+<Class IRI="#baby_bottle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#hot_beverage"/>
+</Declaration>
+<Declaration>
+<Class IRI="#teacup_without_handle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#sake_bottle_and_cup"/>
+</Declaration>
+<Declaration>
+<Class IRI="#wine_glass"/>
+</Declaration>
+<Declaration>
+<Class IRI="#cocktail_glass"/>
+</Declaration>
+<Declaration>
+<Class IRI="#tropical_drink"/>
+</Declaration>
+<Declaration>
+<Class IRI="#beer_mug"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clinking_beer_mugs"/>
+</Declaration>
+<Declaration>
+<Class IRI="#fork_and_knife"/>
+</Declaration>
+<Declaration>
+<Class IRI="#cooking"/>
+</Declaration>
+<Declaration>
+<Class IRI="#earth_globe_europe-africa"/>
+</Declaration>
+<Declaration>
+<Class IRI="#earth_globe_americas"/>
+</Declaration>
+<Declaration>
+<Class IRI="#earth_globe_asia-australia"/>
+</Declaration>
+<Declaration>
+<Class IRI="#globe_with_meridians"/>
+</Declaration>
+<Declaration>
+<Class IRI="#volcano"/>
+</Declaration>
+<Declaration>
+<Class IRI="#mount_fuji"/>
+</Declaration>
+<Declaration>
+<Class IRI="#house_building"/>
+</Declaration>
+<Declaration>
+<Class IRI="#house_with_garden"/>
+</Declaration>
+<Declaration>
+<Class IRI="#church"/>
+</Declaration>
+<Declaration>
+<Class IRI="#office_building"/>
+</Declaration>
+<Declaration>
+<Class IRI="#japanese_post_office"/>
+</Declaration>
+<Declaration>
+<Class IRI="#european_post_office"/>
+</Declaration>
+<Declaration>
+<Class IRI="#hospital"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bank"/>
+</Declaration>
+<Declaration>
+<Class IRI="#hotel"/>
+</Declaration>
+<Declaration>
+<Class IRI="#love_hotel"/>
+</Declaration>
+<Declaration>
+<Class IRI="#convenience_store"/>
+</Declaration>
+<Declaration>
+<Class IRI="#school"/>
+</Declaration>
+<Declaration>
+<Class IRI="#department_store"/>
+</Declaration>
+<Declaration>
+<Class IRI="#factory"/>
+</Declaration>
+<Declaration>
+<Class IRI="#japanese_castle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#european_castle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#wedding"/>
+</Declaration>
+<Declaration>
+<Class IRI="#tokyo_tower"/>
+</Declaration>
+<Declaration>
+<Class IRI="#statue_of_liberty"/>
+</Declaration>
+<Declaration>
+<Class IRI="#silhouette_of_japan"/>
+</Declaration>
+<Declaration>
+<Class IRI="#fountain"/>
+</Declaration>
+<Declaration>
+<Class IRI="#tent"/>
+</Declaration>
+<Declaration>
+<Class IRI="#foggy"/>
+</Declaration>
+<Declaration>
+<Class IRI="#night_with_stars"/>
+</Declaration>
+<Declaration>
+<Class IRI="#sunrise_over_mountains"/>
+</Declaration>
+<Declaration>
+<Class IRI="#sunrise"/>
+</Declaration>
+<Declaration>
+<Class IRI="#cityscape_at_dusk"/>
+</Declaration>
+<Declaration>
+<Class IRI="#sunset_over_buildings"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bridge_at_night"/>
+</Declaration>
+<Declaration>
+<Class IRI="#hot_springs"/>
+</Declaration>
+<Declaration>
+<Class IRI="#milky_way"/>
+</Declaration>
+<Declaration>
+<Class IRI="#carousel_horse"/>
+</Declaration>
+<Declaration>
+<Class IRI="#ferris_wheel"/>
+</Declaration>
+<Declaration>
+<Class IRI="#roller_coaster"/>
+</Declaration>
+<Declaration>
+<Class IRI="#barber_pole"/>
+</Declaration>
+<Declaration>
+<Class IRI="#circus_tent"/>
+</Declaration>
+<Declaration>
+<Class IRI="#performing_arts"/>
+</Declaration>
+<Declaration>
+<Class IRI="#artist_palette"/>
+</Declaration>
+<Declaration>
+<Class IRI="#slot_machine"/>
+</Declaration>
+<Declaration>
+<Class IRI="#steam_locomotive"/>
+</Declaration>
+<Declaration>
+<Class IRI="#railway_car"/>
+</Declaration>
+<Declaration>
+<Class IRI="#high-speed_train"/>
+</Declaration>
+<Declaration>
+<Class IRI="#high-speed_train_with_bullet_nose"/>
+</Declaration>
+<Declaration>
+<Class IRI="#train"/>
+</Declaration>
+<Declaration>
+<Class IRI="#metro"/>
+</Declaration>
+<Declaration>
+<Class IRI="#light_rail"/>
+</Declaration>
+<Declaration>
+<Class IRI="#station"/>
+</Declaration>
+<Declaration>
+<Class IRI="#tram"/>
+</Declaration>
+<Declaration>
+<Class IRI="#monorail"/>
+</Declaration>
+<Declaration>
+<Class IRI="#mountain_railway"/>
+</Declaration>
+<Declaration>
+<Class IRI="#tram_car"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bus"/>
+</Declaration>
+<Declaration>
+<Class IRI="#oncoming_bus"/>
+</Declaration>
+<Declaration>
+<Class IRI="#trolleybus"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bus_stop"/>
+</Declaration>
+<Declaration>
+<Class IRI="#minibus"/>
+</Declaration>
+<Declaration>
+<Class IRI="#ambulance"/>
+</Declaration>
+<Declaration>
+<Class IRI="#fire_engine"/>
+</Declaration>
+<Declaration>
+<Class IRI="#police_car"/>
+</Declaration>
+<Declaration>
+<Class IRI="#oncoming_police_car"/>
+</Declaration>
+<Declaration>
+<Class IRI="#taxi"/>
+</Declaration>
+<Declaration>
+<Class IRI="#oncoming_taxi"/>
+</Declaration>
+<Declaration>
+<Class IRI="#automobile"/>
+</Declaration>
+<Declaration>
+<Class IRI="#oncoming_automobile"/>
+</Declaration>
+<Declaration>
+<Class IRI="#recreational_vehicle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#delivery_truck"/>
+</Declaration>
+<Declaration>
+<Class IRI="#articulated_lorry"/>
+</Declaration>
+<Declaration>
+<Class IRI="#tractor"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bicycle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#fuel_pump"/>
+</Declaration>
+<Declaration>
+<Class IRI="#police_cars_revolving_light"/>
+</Declaration>
+<Declaration>
+<Class IRI="#horizontal_traffic_light"/>
+</Declaration>
+<Declaration>
+<Class IRI="#vertical_traffic_light"/>
+</Declaration>
+<Declaration>
+<Class IRI="#construction_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#anchor"/>
+</Declaration>
+<Declaration>
+<Class IRI="#sailboat"/>
+</Declaration>
+<Declaration>
+<Class IRI="#rowboat"/>
+</Declaration>
+<Declaration>
+<Class IRI="#speedboat"/>
+</Declaration>
+<Declaration>
+<Class IRI="#ship"/>
+</Declaration>
+<Declaration>
+<Class IRI="#airplane"/>
+</Declaration>
+<Declaration>
+<Class IRI="#seat"/>
+</Declaration>
+<Declaration>
+<Class IRI="#helicopter"/>
+</Declaration>
+<Declaration>
+<Class IRI="#suspension_railway"/>
+</Declaration>
+<Declaration>
+<Class IRI="#mountain_cableway"/>
+</Declaration>
+<Declaration>
+<Class IRI="#aerial_tramway"/>
+</Declaration>
+<Declaration>
+<Class IRI="#rocket"/>
+</Declaration>
+<Declaration>
+<Class IRI="#door"/>
+</Declaration>
+<Declaration>
+<Class IRI="#toilet"/>
+</Declaration>
+<Declaration>
+<Class IRI="#shower"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bath"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bathtub"/>
+</Declaration>
+<Declaration>
+<Class IRI="#hourglass"/>
+</Declaration>
+<Declaration>
+<Class IRI="#hourglass_with_flowing_sand"/>
+</Declaration>
+<Declaration>
+<Class IRI="#watch"/>
+</Declaration>
+<Declaration>
+<Class IRI="#alarm_clock"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_twelve_oclock"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_twelve-thirty"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_one_oclock"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_one-thirty"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_two_oclock"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_two-thirty"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_three_oclock"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_three-thirty"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_four_oclock"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_four-thirty"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_five_oclock"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_five-thirty"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_six_oclock"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_six-thirty"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_seven_oclock"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_seven-thirty"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_eight_oclock"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_eight-thirty"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_nine_oclock"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_nine-thirty"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_ten_oclock"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_ten-thirty"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_eleven_oclock"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clock_face_eleven-thirty"/>
+</Declaration>
+<Declaration>
+<Class IRI="#new_moon_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#waxing_crescent_moon_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#first_quarter_moon_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#waxing_gibbous_moon_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#full_moon_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#waning_gibbous_moon_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#last_quarter_moon_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#waning_crescent_moon_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#crescent_moon"/>
+</Declaration>
+<Declaration>
+<Class IRI="#new_moon_with_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#first_quarter_moon_with_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#last_quarter_moon_with_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#black_sun_with_rays"/>
+</Declaration>
+<Declaration>
+<Class IRI="#full_moon_with_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#sun_with_face"/>
+</Declaration>
+<Declaration>
+<Class IRI="#white_medium_star"/>
+</Declaration>
+<Declaration>
+<Class IRI="#glowing_star"/>
+</Declaration>
+<Declaration>
+<Class IRI="#shooting_star"/>
+</Declaration>
+<Declaration>
+<Class IRI="#cloud"/>
+</Declaration>
+<Declaration>
+<Class IRI="#sun_behind_cloud"/>
+</Declaration>
+<Declaration>
+<Class IRI="#cyclone"/>
+</Declaration>
+<Declaration>
+<Class IRI="#rainbow"/>
+</Declaration>
+<Declaration>
+<Class IRI="#closed_umbrella"/>
+</Declaration>
+<Declaration>
+<Class IRI="#umbrella_with_rain_drops"/>
+</Declaration>
+<Declaration>
+<Class IRI="#high_voltage_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#snowflake"/>
+</Declaration>
+<Declaration>
+<Class IRI="#snowman_without_snow"/>
+</Declaration>
+<Declaration>
+<Class IRI="#fire"/>
+</Declaration>
+<Declaration>
+<Class IRI="#droplet"/>
+</Declaration>
+<Declaration>
+<Class IRI="#water_wave"/>
+</Declaration>
+<Declaration>
+<Class IRI="#jack-o-lantern"/>
+</Declaration>
+<Declaration>
+<Class IRI="#christmas_tree"/>
+</Declaration>
+<Declaration>
+<Class IRI="#fireworks"/>
+</Declaration>
+<Declaration>
+<Class IRI="#firework_sparkler"/>
+</Declaration>
+<Declaration>
+<Class IRI="#sparkles"/>
+</Declaration>
+<Declaration>
+<Class IRI="#balloon"/>
+</Declaration>
+<Declaration>
+<Class IRI="#party_popper"/>
+</Declaration>
+<Declaration>
+<Class IRI="#confetti_ball"/>
+</Declaration>
+<Declaration>
+<Class IRI="#tanabata_tree"/>
+</Declaration>
+<Declaration>
+<Class IRI="#crossed_flags"/>
+</Declaration>
+<Declaration>
+<Class IRI="#pine_decoration"/>
+</Declaration>
+<Declaration>
+<Class IRI="#japanese_dolls"/>
+</Declaration>
+<Declaration>
+<Class IRI="#carp_streamer"/>
+</Declaration>
+<Declaration>
+<Class IRI="#wind_chime"/>
+</Declaration>
+<Declaration>
+<Class IRI="#moon_viewing_ceremony"/>
+</Declaration>
+<Declaration>
+<Class IRI="#ribbon"/>
+</Declaration>
+<Declaration>
+<Class IRI="#wrapped_present"/>
+</Declaration>
+<Declaration>
+<Class IRI="#ticket"/>
+</Declaration>
+<Declaration>
+<Class IRI="#soccer_ball"/>
+</Declaration>
+<Declaration>
+<Class IRI="#baseball"/>
+</Declaration>
+<Declaration>
+<Class IRI="#basketball_and_hoop"/>
+</Declaration>
+<Declaration>
+<Class IRI="#american_football"/>
+</Declaration>
+<Declaration>
+<Class IRI="#rugby_football"/>
+</Declaration>
+<Declaration>
+<Class IRI="#tennis_racquet_and_ball"/>
+</Declaration>
+<Declaration>
+<Class IRI="#billiards"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bowling"/>
+</Declaration>
+<Declaration>
+<Class IRI="#flag_in_hole"/>
+</Declaration>
+<Declaration>
+<Class IRI="#fishing_pole_and_fish"/>
+</Declaration>
+<Declaration>
+<Class IRI="#running_shirt_with_sash"/>
+</Declaration>
+<Declaration>
+<Class IRI="#ski_and_ski_boot"/>
+</Declaration>
+<Declaration>
+<Class IRI="#snowboarder"/>
+</Declaration>
+<Declaration>
+<Class IRI="#surfer"/>
+</Declaration>
+<Declaration>
+<Class IRI="#horse_racing"/>
+</Declaration>
+<Declaration>
+<Class IRI="#swimmer"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bicyclist"/>
+</Declaration>
+<Declaration>
+<Class IRI="#mountain_bicyclist"/>
+</Declaration>
+<Declaration>
+<Class IRI="#trophy"/>
+</Declaration>
+<Declaration>
+<Class IRI="#direct_hit"/>
+</Declaration>
+<Declaration>
+<Class IRI="#video_game"/>
+</Declaration>
+<Declaration>
+<Class IRI="#game_die"/>
+</Declaration>
+<Declaration>
+<Class IRI="#black_spade_suit"/>
+</Declaration>
+<Declaration>
+<Class IRI="#black_heart_suit"/>
+</Declaration>
+<Declaration>
+<Class IRI="#black_diamond_suit"/>
+</Declaration>
+<Declaration>
+<Class IRI="#black_club_suit"/>
+</Declaration>
+<Declaration>
+<Class IRI="#playing_card_black_joker"/>
+</Declaration>
+<Declaration>
+<Class IRI="#mahjong_tile_red_dragon"/>
+</Declaration>
+<Declaration>
+<Class IRI="#flower_playing_cards"/>
+</Declaration>
+<Declaration>
+<Class IRI="#speaker_with_cancellation_stroke"/>
+</Declaration>
+<Declaration>
+<Class IRI="#speaker"/>
+</Declaration>
+<Declaration>
+<Class IRI="#speaker_with_one_sound_wave"/>
+</Declaration>
+<Declaration>
+<Class IRI="#speaker_with_three_sound_waves"/>
+</Declaration>
+<Declaration>
+<Class IRI="#public_address_loudspeaker"/>
+</Declaration>
+<Declaration>
+<Class IRI="#cheering_megaphone"/>
+</Declaration>
+<Declaration>
+<Class IRI="#postal_horn"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bell"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bell_with_cancellation_stroke"/>
+</Declaration>
+<Declaration>
+<Class IRI="#musical_score"/>
+</Declaration>
+<Declaration>
+<Class IRI="#musical_note"/>
+</Declaration>
+<Declaration>
+<Class IRI="#multiple_musical_notes"/>
+</Declaration>
+<Declaration>
+<Class IRI="#microphone"/>
+</Declaration>
+<Declaration>
+<Class IRI="#headphone"/>
+</Declaration>
+<Declaration>
+<Class IRI="#saxophone"/>
+</Declaration>
+<Declaration>
+<Class IRI="#guitar"/>
+</Declaration>
+<Declaration>
+<Class IRI="#musical_keyboard"/>
+</Declaration>
+<Declaration>
+<Class IRI="#trumpet"/>
+</Declaration>
+<Declaration>
+<Class IRI="#violin"/>
+</Declaration>
+<Declaration>
+<Class IRI="#radio"/>
+</Declaration>
+<Declaration>
+<Class IRI="#mobile_phone"/>
+</Declaration>
+<Declaration>
+<Class IRI="#mobile_phone_with_rightwards_arrow_at_left"/>
+</Declaration>
+<Declaration>
+<Class IRI="#black_telephone"/>
+</Declaration>
+<Declaration>
+<Class IRI="#telephone_receiver"/>
+</Declaration>
+<Declaration>
+<Class IRI="#pager"/>
+</Declaration>
+<Declaration>
+<Class IRI="#fax_machine"/>
+</Declaration>
+<Declaration>
+<Class IRI="#battery"/>
+</Declaration>
+<Declaration>
+<Class IRI="#electric_plug"/>
+</Declaration>
+<Declaration>
+<Class IRI="#personal_computer"/>
+</Declaration>
+<Declaration>
+<Class IRI="#minidisc"/>
+</Declaration>
+<Declaration>
+<Class IRI="#floppy_disk"/>
+</Declaration>
+<Declaration>
+<Class IRI="#optical_disc"/>
+</Declaration>
+<Declaration>
+<Class IRI="#dvd"/>
+</Declaration>
+<Declaration>
+<Class IRI="#movie_camera"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clapper_board"/>
+</Declaration>
+<Declaration>
+<Class IRI="#television"/>
+</Declaration>
+<Declaration>
+<Class IRI="#camera"/>
+</Declaration>
+<Declaration>
+<Class IRI="#video_camera"/>
+</Declaration>
+<Declaration>
+<Class IRI="#videocassette"/>
+</Declaration>
+<Declaration>
+<Class IRI="#left-pointing_magnifying_glass"/>
+</Declaration>
+<Declaration>
+<Class IRI="#right-pointing_magnifying_glass"/>
+</Declaration>
+<Declaration>
+<Class IRI="#microscope"/>
+</Declaration>
+<Declaration>
+<Class IRI="#telescope"/>
+</Declaration>
+<Declaration>
+<Class IRI="#satellite_antenna"/>
+</Declaration>
+<Declaration>
+<Class IRI="#electric_light_bulb"/>
+</Declaration>
+<Declaration>
+<Class IRI="#electric_torch"/>
+</Declaration>
+<Declaration>
+<Class IRI="#izakaya_lantern"/>
+</Declaration>
+<Declaration>
+<Class IRI="#notebook_with_decorative_cover"/>
+</Declaration>
+<Declaration>
+<Class IRI="#closed_book"/>
+</Declaration>
+<Declaration>
+<Class IRI="#open_book"/>
+</Declaration>
+<Declaration>
+<Class IRI="#green_book"/>
+</Declaration>
+<Declaration>
+<Class IRI="#blue_book"/>
+</Declaration>
+<Declaration>
+<Class IRI="#orange_book"/>
+</Declaration>
+<Declaration>
+<Class IRI="#books"/>
+</Declaration>
+<Declaration>
+<Class IRI="#notebook"/>
+</Declaration>
+<Declaration>
+<Class IRI="#ledger"/>
+</Declaration>
+<Declaration>
+<Class IRI="#page_with_curl"/>
+</Declaration>
+<Declaration>
+<Class IRI="#scroll"/>
+</Declaration>
+<Declaration>
+<Class IRI="#page_facing_up"/>
+</Declaration>
+<Declaration>
+<Class IRI="#newspaper"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bookmark_tabs"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bookmark"/>
+</Declaration>
+<Declaration>
+<Class IRI="#money_bag"/>
+</Declaration>
+<Declaration>
+<Class IRI="#banknote_with_yen_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#banknote_with_dollar_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#banknote_with_euro_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#banknote_with_pound_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#money_with_wings"/>
+</Declaration>
+<Declaration>
+<Class IRI="#credit_card"/>
+</Declaration>
+<Declaration>
+<Class IRI="#chart_with_upwards_trend_and_yen_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#envelope"/>
+</Declaration>
+<Declaration>
+<Class IRI="#e-mail_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#incoming_envelope"/>
+</Declaration>
+<Declaration>
+<Class IRI="#envelope_with_downwards_arrow_above"/>
+</Declaration>
+<Declaration>
+<Class IRI="#outbox_tray"/>
+</Declaration>
+<Declaration>
+<Class IRI="#inbox_tray"/>
+</Declaration>
+<Declaration>
+<Class IRI="#package"/>
+</Declaration>
+<Declaration>
+<Class IRI="#closed_mailbox_with_raised_flag"/>
+</Declaration>
+<Declaration>
+<Class IRI="#closed_mailbox_with_lowered_flag"/>
+</Declaration>
+<Declaration>
+<Class IRI="#open_mailbox_with_raised_flag"/>
+</Declaration>
+<Declaration>
+<Class IRI="#open_mailbox_with_lowered_flag"/>
+</Declaration>
+<Declaration>
+<Class IRI="#postbox"/>
+</Declaration>
+<Declaration>
+<Class IRI="#pencil"/>
+</Declaration>
+<Declaration>
+<Class IRI="#black_nib"/>
+</Declaration>
+<Declaration>
+<Class IRI="#memo"/>
+</Declaration>
+<Declaration>
+<Class IRI="#briefcase"/>
+</Declaration>
+<Declaration>
+<Class IRI="#file_folder"/>
+</Declaration>
+<Declaration>
+<Class IRI="#open_file_folder"/>
+</Declaration>
+<Declaration>
+<Class IRI="#calendar"/>
+</Declaration>
+<Declaration>
+<Class IRI="#tear-off_calendar"/>
+</Declaration>
+<Declaration>
+<Class IRI="#card_index"/>
+</Declaration>
+<Declaration>
+<Class IRI="#chart_with_upwards_trend"/>
+</Declaration>
+<Declaration>
+<Class IRI="#chart_with_downwards_trend"/>
+</Declaration>
+<Declaration>
+<Class IRI="#bar_chart"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clipboard"/>
+</Declaration>
+<Declaration>
+<Class IRI="#pushpin"/>
+</Declaration>
+<Declaration>
+<Class IRI="#round_pushpin"/>
+</Declaration>
+<Declaration>
+<Class IRI="#paperclip"/>
+</Declaration>
+<Declaration>
+<Class IRI="#straight_ruler"/>
+</Declaration>
+<Declaration>
+<Class IRI="#triangular_ruler"/>
+</Declaration>
+<Declaration>
+<Class IRI="#black_scissors"/>
+</Declaration>
+<Declaration>
+<Class IRI="#lock"/>
+</Declaration>
+<Declaration>
+<Class IRI="#open_lock"/>
+</Declaration>
+<Declaration>
+<Class IRI="#lock_with_ink_pen"/>
+</Declaration>
+<Declaration>
+<Class IRI="#closed_lock_with_key"/>
+</Declaration>
+<Declaration>
+<Class IRI="#key"/>
+</Declaration>
+<Declaration>
+<Class IRI="#hammer"/>
+</Declaration>
+<Declaration>
+<Class IRI="#wrench"/>
+</Declaration>
+<Declaration>
+<Class IRI="#nut_and_bolt"/>
+</Declaration>
+<Declaration>
+<Class IRI="#link_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#syringe"/>
+</Declaration>
+<Declaration>
+<Class IRI="#pill"/>
+</Declaration>
+<Declaration>
+<Class IRI="#hocho"/>
+</Declaration>
+<Declaration>
+<Class IRI="#pistol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#chequered_flag"/>
+</Declaration>
+<Declaration>
+<Class IRI="#triangular_flag_on_post"/>
+</Declaration>
+<Declaration>
+<Class IRI="#smoking_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#moyai"/>
+</Declaration>
+<Declaration>
+<Class IRI="#crystal_ball"/>
+</Declaration>
+<Declaration>
+<Class IRI="#automated_teller_machine"/>
+</Declaration>
+<Declaration>
+<Class IRI="#put_litter_in_its_place_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#potable_water_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#wheelchair_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#mens_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#womens_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#restroom"/>
+</Declaration>
+<Declaration>
+<Class IRI="#baby_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#water_closet"/>
+</Declaration>
+<Declaration>
+<Class IRI="#passport_control"/>
+</Declaration>
+<Declaration>
+<Class IRI="#customs"/>
+</Declaration>
+<Declaration>
+<Class IRI="#baggage_claim"/>
+</Declaration>
+<Declaration>
+<Class IRI="#left_luggage"/>
+</Declaration>
+<Declaration>
+<Class IRI="#warning_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#children_crossing"/>
+</Declaration>
+<Declaration>
+<Class IRI="#no_entry"/>
+</Declaration>
+<Declaration>
+<Class IRI="#no_entry_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#no_bicycles"/>
+</Declaration>
+<Declaration>
+<Class IRI="#no_smoking_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#do_not_litter_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#non-potable_water_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#no_pedestrians"/>
+</Declaration>
+<Declaration>
+<Class IRI="#upwards_black_arrow"/>
+</Declaration>
+<Declaration>
+<Class IRI="#north_east_arrow"/>
+</Declaration>
+<Declaration>
+<Class IRI="#black_rightwards_arrow"/>
+</Declaration>
+<Declaration>
+<Class IRI="#south_east_arrow"/>
+</Declaration>
+<Declaration>
+<Class IRI="#downwards_black_arrow"/>
+</Declaration>
+<Declaration>
+<Class IRI="#south_west_arrow"/>
+</Declaration>
+<Declaration>
+<Class IRI="#leftwards_black_arrow"/>
+</Declaration>
+<Declaration>
+<Class IRI="#north_west_arrow"/>
+</Declaration>
+<Declaration>
+<Class IRI="#up_down_arrow"/>
+</Declaration>
+<Declaration>
+<Class IRI="#left_right_arrow"/>
+</Declaration>
+<Declaration>
+<Class IRI="#leftwards_arrow_with_hook"/>
+</Declaration>
+<Declaration>
+<Class IRI="#rightwards_arrow_with_hook"/>
+</Declaration>
+<Declaration>
+<Class IRI="#arrow_pointing_rightwards_then_curving_upwards"/>
+</Declaration>
+<Declaration>
+<Class IRI="#arrow_pointing_rightwards_then_curving_downwards"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clockwise_downwards_and_upwards_open_circle_arrows"/>
+</Declaration>
+<Declaration>
+<Class IRI="#anticlockwise_downwards_and_upwards_open_circle_arrows"/>
+</Declaration>
+<Declaration>
+<Class IRI="#back_with_leftwards_arrow_above"/>
+</Declaration>
+<Declaration>
+<Class IRI="#end_with_leftwards_arrow_above"/>
+</Declaration>
+<Declaration>
+<Class IRI="#on_with_exclamation_mark_with_left_right_arrow_above"/>
+</Declaration>
+<Declaration>
+<Class IRI="#soon_with_rightwards_arrow_above"/>
+</Declaration>
+<Declaration>
+<Class IRI="#top_with_upwards_arrow_above"/>
+</Declaration>
+<Declaration>
+<Class IRI="#six_pointed_star_with_middle_dot"/>
+</Declaration>
+<Declaration>
+<Class IRI="#black_universal_recycling_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#name_badge"/>
+</Declaration>
+<Declaration>
+<Class IRI="#japanese_symbol_for_beginner"/>
+</Declaration>
+<Declaration>
+<Class IRI="#trident_emblem"/>
+</Declaration>
+<Declaration>
+<Class IRI="#heavy_large_circle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#white_heavy_check_mark"/>
+</Declaration>
+<Declaration>
+<Class IRI="#ballot_box_with_check"/>
+</Declaration>
+<Declaration>
+<Class IRI="#heavy_check_mark"/>
+</Declaration>
+<Declaration>
+<Class IRI="#heavy_multiplication_x"/>
+</Declaration>
+<Declaration>
+<Class IRI="#cross_mark"/>
+</Declaration>
+<Declaration>
+<Class IRI="#negative_squared_cross_mark"/>
+</Declaration>
+<Declaration>
+<Class IRI="#heavy_plus_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#heavy_minus_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#heavy_division_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#curly_loop"/>
+</Declaration>
+<Declaration>
+<Class IRI="#double_curly_loop"/>
+</Declaration>
+<Declaration>
+<Class IRI="#part_alternation_mark"/>
+</Declaration>
+<Declaration>
+<Class IRI="#eight_spoked_asterisk"/>
+</Declaration>
+<Declaration>
+<Class IRI="#eight_pointed_black_star"/>
+</Declaration>
+<Declaration>
+<Class IRI="#sparkle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#currency_exchange"/>
+</Declaration>
+<Declaration>
+<Class IRI="#heavy_dollar_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#double_exclamation_mark"/>
+</Declaration>
+<Declaration>
+<Class IRI="#exclamation_question_mark"/>
+</Declaration>
+<Declaration>
+<Class IRI="#black_question_mark_ornament"/>
+</Declaration>
+<Declaration>
+<Class IRI="#white_question_mark_ornament"/>
+</Declaration>
+<Declaration>
+<Class IRI="#white_exclamation_mark_ornament"/>
+</Declaration>
+<Declaration>
+<Class IRI="#heavy_exclamation_mark_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#wavy_dash"/>
+</Declaration>
+<Declaration>
+<Class IRI="#copyright_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#registered_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#trade_mark_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#aries"/>
+</Declaration>
+<Declaration>
+<Class IRI="#taurus"/>
+</Declaration>
+<Declaration>
+<Class IRI="#gemini"/>
+</Declaration>
+<Declaration>
+<Class IRI="#cancer"/>
+</Declaration>
+<Declaration>
+<Class IRI="#leo"/>
+</Declaration>
+<Declaration>
+<Class IRI="#virgo"/>
+</Declaration>
+<Declaration>
+<Class IRI="#libra"/>
+</Declaration>
+<Declaration>
+<Class IRI="#scorpius"/>
+</Declaration>
+<Declaration>
+<Class IRI="#sagittarius"/>
+</Declaration>
+<Declaration>
+<Class IRI="#capricorn"/>
+</Declaration>
+<Declaration>
+<Class IRI="#aquarius"/>
+</Declaration>
+<Declaration>
+<Class IRI="#pisces"/>
+</Declaration>
+<Declaration>
+<Class IRI="#ophiuchus"/>
+</Declaration>
+<Declaration>
+<Class IRI="#twisted_rightwards_arrows"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clockwise_rightwards_and_leftwards_open_circle_arrows"/>
+</Declaration>
+<Declaration>
+<Class IRI="#clockwise_rightwards_and_leftwards_open_circle_arrows_with_circled_one_overlay"/>
+</Declaration>
+<Declaration>
+<Class IRI="#black_right-pointing_triangle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#black_right-pointing_double_triangle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#black_left-pointing_triangle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#black_left-pointing_double_triangle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#up-pointing_small_red_triangle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#black_up-pointing_double_triangle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#down-pointing_small_red_triangle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#black_down-pointing_double_triangle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#cinema"/>
+</Declaration>
+<Declaration>
+<Class IRI="#low_brightness_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#high_brightness_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#antenna_with_bars"/>
+</Declaration>
+<Declaration>
+<Class IRI="#no_mobile_phones"/>
+</Declaration>
+<Declaration>
+<Class IRI="#vibration_mode"/>
+</Declaration>
+<Declaration>
+<Class IRI="#mobile_phone_off"/>
+</Declaration>
+<Declaration>
+<Class IRI="#keycap_number_sign"/>
+</Declaration>
+<Declaration>
+<Class IRI="#keycap_digit_zero"/>
+</Declaration>
+<Declaration>
+<Class IRI="#keycap_digit_one"/>
+</Declaration>
+<Declaration>
+<Class IRI="#keycap_digit_two"/>
+</Declaration>
+<Declaration>
+<Class IRI="#keycap_digit_three"/>
+</Declaration>
+<Declaration>
+<Class IRI="#keycap_digit_four"/>
+</Declaration>
+<Declaration>
+<Class IRI="#keycap_digit_five"/>
+</Declaration>
+<Declaration>
+<Class IRI="#keycap_digit_six"/>
+</Declaration>
+<Declaration>
+<Class IRI="#keycap_digit_seven"/>
+</Declaration>
+<Declaration>
+<Class IRI="#keycap_digit_eight"/>
+</Declaration>
+<Declaration>
+<Class IRI="#keycap_digit_nine"/>
+</Declaration>
+<Declaration>
+<Class IRI="#keycap_ten"/>
+</Declaration>
+<Declaration>
+<Class IRI="#hundred_points_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#no_one_under_eighteen_symbol"/>
+</Declaration>
+<Declaration>
+<Class IRI="#input_symbol_for_latin_capital_letters"/>
+</Declaration>
+<Declaration>
+<Class IRI="#input_symbol_for_latin_small_letters"/>
+</Declaration>
+<Declaration>
+<Class IRI="#input_symbol_for_numbers"/>
+</Declaration>
+<Declaration>
+<Class IRI="#input_symbol_for_symbols"/>
+</Declaration>
+<Declaration>
+<Class IRI="#input_symbol_for_latin_letters"/>
+</Declaration>
+<Declaration>
+<Class IRI="#negative_squared_latin_capital_letter_a"/>
+</Declaration>
+<Declaration>
+<Class IRI="#negative_squared_ab"/>
+</Declaration>
+<Declaration>
+<Class IRI="#negative_squared_latin_capital_letter_b"/>
+</Declaration>
+<Declaration>
+<Class IRI="#squared_cl"/>
+</Declaration>
+<Declaration>
+<Class IRI="#squared_cool"/>
+</Declaration>
+<Declaration>
+<Class IRI="#squared_free"/>
+</Declaration>
+<Declaration>
+<Class IRI="#information_source"/>
+</Declaration>
+<Declaration>
+<Class IRI="#squared_id"/>
+</Declaration>
+<Declaration>
+<Class IRI="#circled_latin_capital_letter_m"/>
+</Declaration>
+<Declaration>
+<Class IRI="#squared_new"/>
+</Declaration>
+<Declaration>
+<Class IRI="#squared_ng"/>
+</Declaration>
+<Declaration>
+<Class IRI="#negative_squared_latin_capital_letter_o"/>
+</Declaration>
+<Declaration>
+<Class IRI="#squared_ok"/>
+</Declaration>
+<Declaration>
+<Class IRI="#negative_squared_latin_capital_letter_p"/>
+</Declaration>
+<Declaration>
+<Class IRI="#squared_sos"/>
+</Declaration>
+<Declaration>
+<Class IRI="#squared_up_with_exclamation_mark"/>
+</Declaration>
+<Declaration>
+<Class IRI="#squared_vs"/>
+</Declaration>
+<Declaration>
+<Class IRI="#squared_katakana_koko"/>
+</Declaration>
+<Declaration>
+<Class IRI="#squared_katakana_sa"/>
+</Declaration>
+<Declaration>
+<Class IRI="#squared_cjk_unified_ideograph-6708"/>
+</Declaration>
+<Declaration>
+<Class IRI="#squared_cjk_unified_ideograph-6709"/>
+</Declaration>
+<Declaration>
+<Class IRI="#squared_cjk_unified_ideograph-6307"/>
+</Declaration>
+<Declaration>
+<Class IRI="#circled_ideograph_advantage"/>
+</Declaration>
+<Declaration>
+<Class IRI="#squared_cjk_unified_ideograph-5272"/>
+</Declaration>
+<Declaration>
+<Class IRI="#squared_cjk_unified_ideograph-7121"/>
+</Declaration>
+<Declaration>
+<Class IRI="#squared_cjk_unified_ideograph-7981"/>
+</Declaration>
+<Declaration>
+<Class IRI="#circled_ideograph_accept"/>
+</Declaration>
+<Declaration>
+<Class IRI="#squared_cjk_unified_ideograph-7533"/>
+</Declaration>
+<Declaration>
+<Class IRI="#squared_cjk_unified_ideograph-5408"/>
+</Declaration>
+<Declaration>
+<Class IRI="#squared_cjk_unified_ideograph-7a7a"/>
+</Declaration>
+<Declaration>
+<Class IRI="#circled_ideograph_congratulation"/>
+</Declaration>
+<Declaration>
+<Class IRI="#circled_ideograph_secret"/>
+</Declaration>
+<Declaration>
+<Class IRI="#squared_cjk_unified_ideograph-55b6"/>
+</Declaration>
+<Declaration>
+<Class IRI="#squared_cjk_unified_ideograph-6e80"/>
+</Declaration>
+<Declaration>
+<Class IRI="#black_small_square"/>
+</Declaration>
+<Declaration>
+<Class IRI="#white_small_square"/>
+</Declaration>
+<Declaration>
+<Class IRI="#white_medium_square"/>
+</Declaration>
+<Declaration>
+<Class IRI="#black_medium_square"/>
+</Declaration>
+<Declaration>
+<Class IRI="#white_medium_small_square"/>
+</Declaration>
+<Declaration>
+<Class IRI="#black_medium_small_square"/>
+</Declaration>
+<Declaration>
+<Class IRI="#black_large_square"/>
+</Declaration>
+<Declaration>
+<Class IRI="#white_large_square"/>
+</Declaration>
+<Declaration>
+<Class IRI="#large_orange_diamond"/>
+</Declaration>
+<Declaration>
+<Class IRI="#large_blue_diamond"/>
+</Declaration>
+<Declaration>
+<Class IRI="#small_orange_diamond"/>
+</Declaration>
+<Declaration>
+<Class IRI="#small_blue_diamond"/>
+</Declaration>
+<Declaration>
+<Class IRI="#up-pointing_red_triangle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#down-pointing_red_triangle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#diamond_shape_with_a_dot_inside"/>
+</Declaration>
+<Declaration>
+<Class IRI="#radio_button"/>
+</Declaration>
+<Declaration>
+<Class IRI="#black_square_button"/>
+</Declaration>
+<Declaration>
+<Class IRI="#white_square_button"/>
+</Declaration>
+<Declaration>
+<Class IRI="#medium_white_circle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#medium_black_circle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#large_red_circle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#large_blue_circle"/>
+</Declaration>
+<Declaration>
+<Class IRI="#flag_for_China"/>
+</Declaration>
+<Declaration>
+<Class IRI="#flag_for_Germany"/>
+</Declaration>
+<Declaration>
+<Class IRI="#flag_for_Spain"/>
+</Declaration>
+<Declaration>
+<Class IRI="#flag_for_France"/>
+</Declaration>
+<Declaration>
+<Class IRI="#flag_for_United_Kingdom"/>
+</Declaration>
+<Declaration>
+<Class IRI="#flag_for_Italy"/>
+</Declaration>
+<Declaration>
+<Class IRI="#flag_for_Japan"/>
+</Declaration>
+<Declaration>
+<Class IRI="#flag_for_South_Korea"/>
+</Declaration>
+<Declaration>
+<Class IRI="#flag_for_Russia"/>
+</Declaration>
+<Declaration>
+<Class IRI="#flag_for_United_States"/>
+</Declaration>
+</Ontology>

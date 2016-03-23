@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1458739726013" name="duplicate:http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-6" uri="ontologyWithOneEntity.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1458739726013" name="duplicate:http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-6" uri="ontologyWithSubclassesOfSubclasses.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1458739726013" name="duplicate:http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-6" uri="ontologyWithSubclasses.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1458739726013" name="duplicate:http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-6" uri="ontologyWithMultipleTopLevelEntities.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1458739726013" name="duplicate:http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-6" uri="blankOntology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1458751733739" name="duplicate:http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-6" uri="ontologyWithOneEntity.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1458751733739" name="duplicate:http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-6" uri="ontologyWithSubclassesOfSubclasses.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1458751733739" name="duplicate:http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-6" uri="ontologyWithSubclasses.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1458751733739" name="duplicate:http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-6" uri="ontologyWithMultipleTopLevelEntities.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1458751733739" name="duplicate:http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-6" uri="ontologyWithAllEmojisAsTopLevelEntities.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1458751733739" name="duplicate:http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-6" uri="blankOntology.owl"/>
     </group>
 </catalog>

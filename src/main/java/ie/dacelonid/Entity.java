@@ -6,12 +6,12 @@ class Entity {
 
     Entity(final String name) {
         this.parent = null;
-        this.name = name;
+        this.name = name.replace(' ', '_');
     }
 
     Entity(final Entity parent, final String name) {
         this.parent = parent;
-        this.name = name;
+        this.name = name.replace(' ', '_');
     }
 
     @Override

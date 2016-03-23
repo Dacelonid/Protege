@@ -5,6 +5,7 @@ import org.custommonkey.xmlunit.XMLUnit;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -75,9 +76,22 @@ public class OwlTest {
         XMLAssert.assertXMLEqual(resultOwl, expectedOwl);
     }
 
+    @Test
+    public void toString_ontologyWithAllEmojisAsTopLevelEntities_shouldBeValidOwlFile() throws Exception{
+        CsvParser parser = CsvParserFactory.createCsvParser();
+        for(String description : parser.getDescriptions()){
+            objUnderTest.addEntity(new Entity(description));
+        }
+        String expectedOwl = readFile("ontologyWithAllEmojisAsTopLevelEntities.owl");
+        String resultOwl = objUnderTest.toString();
+        XMLAssert.assertXMLEqual(resultOwl, expectedOwl);
+    }
+
     private String readFile(String fileName) throws Exception {
         Path pathToFile = Paths.get(this.getClass().getClassLoader().getResource(fileName).toURI());
         final String fileContentsAsString = new String(Files.readAllBytes(pathToFile));
         return fileContentsAsString;
     }
+
+
 }
