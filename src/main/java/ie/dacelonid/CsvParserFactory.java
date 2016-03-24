@@ -8,11 +8,11 @@ import java.nio.file.Files;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * Created by ken on 23/03/16.
- */
 class CsvParserFactory {
-    public static CsvParser createCsvParser() throws IOException {
+    private CsvParserFactory() {
+    }
+
+    static CsvParser createCsvParser() throws IOException {
         Optional<URL> url = Optional.ofNullable(Thread.currentThread().getContextClassLoader().getResource("Emoji_Unicodes.csv"));
         final File file = new File(url.get().getPath());
 

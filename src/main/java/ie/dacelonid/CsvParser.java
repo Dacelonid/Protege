@@ -3,7 +3,7 @@ package ie.dacelonid;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class CsvParser {
+class CsvParser {
     private static final String COLUMN_DELIMITER = "\t";
     private static final String COLUMN_FIELD_REGEX = "\\s*" + COLUMN_DELIMITER + "\\s*";
     private static final String ENTRY_DELIMITER = ",";
@@ -11,7 +11,7 @@ public class CsvParser {
     private static final String ANNOTATION_HEADING = "Annotations";
     private static final String NATURE_HEADING = "Nature";
     private static final String DESCRIPTION_HEADING = "Description";
-    private final List<List<String>> allLines = new ArrayList<>();
+    private final List<CSVEntries> allLines = new ArrayList<>();
     private final List<String> annotations = new ArrayList<>(); // @TODO should be a Set but then I need to sort it in the tests
     private final List<String> descriptions = new ArrayList<>();
     private int annotationColumn;
@@ -20,7 +20,7 @@ public class CsvParser {
     private Map<String, List<String>> emojiMap = new HashMap<>();
     private Map<TopLevelClass, List<String>> classMap = new HashMap<>();
 
-    public void parseCsv(final List<String> inputData) {
+    void parseCsv(final List<String> inputData) {
         int lineNumber = 0;
         for (final String line : inputData) {
             if (lineNumber++ == 0) {
@@ -65,7 +65,7 @@ public class CsvParser {
         populateAnnotations(annotations);
         populateDescriptions(description);
 
-        allLines.add(Arrays.asList(splitLine));
+        allLines.add(new CSVEntries(description, annotations));
     }
 
     private void populateAnnotations(List<String> annotations) {
@@ -84,29 +84,29 @@ public class CsvParser {
         descriptions.add(description);
     }
 
-    public List<String> getAnnotations() {
+    List<String> getAnnotations() {
         return annotations;
     }
 
-    public List<List<String>> getAllLines() {
+    List<CSVEntries> getAllLines() {
         return allLines;
     }
 
-    public List<String> getDescriptions() {
+    List<String> getDescriptions() {
         return descriptions;
     }
 
-    public List<String> getEmojiContainingAnnotation(final String annotation) {
+    List<String> getEmojiContainingAnnotation(final String annotation) {
         return emojiMap.entrySet().stream().filter(p -> p.getValue().contains((annotation))).map(Map.Entry::getKey)
                 .collect(Collectors.toList());
     }
 
-    public List<String> getSubClass(TopLevelClass name) {
+    List<String> getSubClass(TopLevelClass name) {
         return emojiMap.entrySet().stream().filter(p -> p.getKey().contains((name.getFilter()))).map(Map.Entry::getKey)
                 .collect(Collectors.toList());
     }
 
-    public Map<TopLevelClass, List<String>> getTopLevelClasses() {
+    Map<TopLevelClass, List<String>> getTopLevelClasses() {
         return classMap;
     }
 }
