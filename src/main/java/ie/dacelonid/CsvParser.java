@@ -14,11 +14,11 @@ class CsvParser {
     private final List<CSVEntries> allLines = new ArrayList<>();
     private final List<String> annotations = new ArrayList<>(); // @TODO should be a Set but then I need to sort it in the tests
     private final List<String> descriptions = new ArrayList<>();
+    private final Map<String, List<String>> emojiMap = new HashMap<>();
+    private final Map<TopLevelClass, List<String>> classMap = new HashMap<>();
     private int annotationColumn;
     private int descriptionColumn;
     private int natureColumn;
-    private Map<String, List<String>> emojiMap = new HashMap<>();
-    private Map<TopLevelClass, List<String>> classMap = new HashMap<>();
 
     void parseCsv(final List<String> inputData) {
         int lineNumber = 0;
@@ -69,11 +69,7 @@ class CsvParser {
     }
 
     private void populateAnnotations(List<String> annotations) {
-        for (final String annotation : annotations) {
-            if (!this.annotations.contains(annotation)) {
-                this.annotations.add(annotation);
-            }
-        }
+        annotations.stream().filter(annotation -> !this.annotations.contains(annotation)).forEach(this.annotations::add);
     }
 
     private List<String> getAnnotationsFromInputString(final String[] delimitedString) {

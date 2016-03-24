@@ -5,7 +5,7 @@ import org.custommonkey.xmlunit.XMLUnit;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.IOException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -88,9 +88,12 @@ public class OwlTest {
     }
 
     private String readFile(String fileName) throws Exception {
-        Path pathToFile = Paths.get(this.getClass().getClassLoader().getResource(fileName).toURI());
-        final String fileContentsAsString = new String(Files.readAllBytes(pathToFile));
-        return fileContentsAsString;
+        URL resource = this.getClass().getClassLoader().getResource(fileName);
+        if (resource == null) {
+            throw new IllegalArgumentException("Could not find file " + fileName);
+        }
+        Path pathToFile = Paths.get(resource.toURI());
+        return new String(Files.readAllBytes(pathToFile));
     }
 
 

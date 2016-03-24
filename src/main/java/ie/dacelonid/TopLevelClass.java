@@ -2,10 +2,10 @@ package ie.dacelonid;
 
 import java.util.List;
 
-public enum TopLevelClass {
+enum TopLevelClass {
     FLAG("flag for "), OTHER("Unknown");
 
-    private String filterCondition;
+    private final String filterCondition;
 
     TopLevelClass(String filterCondition) {
 

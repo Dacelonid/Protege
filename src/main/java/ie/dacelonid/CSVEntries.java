@@ -31,4 +31,12 @@ class CSVEntries {
         }
         return field1.equals(field2);
     }
+
+    String getDescription() {
+        return description;
+    }
+
+    List<String> getAnnotations() {
+        return annotations;
+    }
 }

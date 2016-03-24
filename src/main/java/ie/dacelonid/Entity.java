@@ -16,15 +16,8 @@ class Entity {
 
     @Override
     public String toString() {
-        StringBuilder entity = new StringBuilder();
-        entity.append("<Declaration>\n<Class IRI=\"#");
-        entity.append(name);
-        entity.append("\"/>");
-        entity.append(System.lineSeparator());
-        entity.append("</Declaration>");
-        entity.append(System.lineSeparator());
-        entity.append(getParent());
-        return entity.toString();
+        return "<Declaration>\n<Class IRI=\"#" + name + "\"/>" + System.lineSeparator() + "</Declaration>" +
+                System.lineSeparator() + getParent();
     }
 
     private String getParent() {
@@ -32,5 +25,26 @@ class Entity {
             return "";
         }
         return " <SubClassOf>\n <Class IRI=\"#" + name + "\"/>\n <Class IRI=\"#" + parent.name + "\"/>\n  </SubClassOf>";
+    }
+
+    @Override
+    public final boolean equals(Object obj) {
+        if (obj instanceof Entity) {
+            Entity other = (Entity) obj;
+            return fieldEquals(this.name, other.name) && fieldEquals(this.parent, other.parent);
+        }
+        return false;
+    }
+
+    @Override
+    public final int hashCode() {
+        return 13 + (name == null ? 0 : name.hashCode()) + (parent == null ? 0 : parent.hashCode());
+    }
+
+    private boolean fieldEquals(Object field1, Object field2) {
+        if (field1 == null) {
+            return field2 == null;
+        }
+        return field1.equals(field2);
     }
 }

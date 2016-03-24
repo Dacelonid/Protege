@@ -14,6 +14,9 @@ class CsvParserFactory {
 
     static CsvParser createCsvParser() throws IOException {
         Optional<URL> url = Optional.ofNullable(Thread.currentThread().getContextClassLoader().getResource("Emoji_Unicodes.csv"));
+        if (!url.isPresent()) {
+            throw new IllegalArgumentException("Could not find Emoji File");
+        }
         final File file = new File(url.get().getPath());
 
         final List<String> list = Files.readAllLines(file.toPath(), Charset.defaultCharset());
