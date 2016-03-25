@@ -7,7 +7,7 @@ import java.util.Map;
 
 class CSVEntryToEntity {
 
-    Entity convert(CSVEntries itemToConvert) {
+    private Entity convert(CSVEntries itemToConvert) {
         return new Entity(itemToConvert.getDescription());
     }
 
