@@ -10,7 +10,6 @@ import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
 
 public class CsvParserTest {
 
@@ -101,23 +100,6 @@ public class CsvParserTest {
 
         assertThat(actualValues, is(expectedValues));
 
-    }
-
-    @Test
-    public void getAnnotationMap_multiLineInput_getCorrectValues() {
-        final List<String> inputs = getInputLines("Description1\tNature1\tAnnotation1a,Annotation1b,Annotation1c,Annotation1d", COLUMN_HEADINGS);
-        inputs.addAll(createInputLines("Description2\tNature2\tAnnotation1a,Annotation2b,Annotation2c,Annotation2d"));
-        inputs.addAll(createInputLines("Description3\tNature3\tAnnotation1a,Annotation2b,Annotation3c"));
-        inputs.addAll(createInputLines("Description4\tNature4\tAnnotation4a,Annotation4b,Annotation4c,Annotation4d"));
-        inputs.addAll(createInputLines("Description5\tNature5\tAnnotation5a,Annotation5b"));
-        inputs.addAll(createInputLines("Description6\tNature6\tAnnotation1a,Annotation2a,Annotation3a,Annotation4a,Annotation5a"));
-
-        objUnderTest.parseCsv(inputs);
-        List<String> expectedValues = Arrays.asList("Description1", "Description2", "Description3", "Description6");
-        List<String> actualValues = objUnderTest.getEmojiContainingAnnotation("Annotation1a");
-
-        assertTrue(expectedValues.containsAll(actualValues));
-        assertTrue(actualValues.containsAll(expectedValues));
     }
 
     private List<String> getInputLines(final String testCSV, final String columnNames) {

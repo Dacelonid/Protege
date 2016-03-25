@@ -1,7 +1,6 @@
 package ie.dacelonid;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 class CsvParser {
     private static final String COLUMN_DELIMITER = "\t";
@@ -90,19 +89,5 @@ class CsvParser {
 
     List<String> getDescriptions() {
         return descriptions;
-    }
-
-    List<String> getEmojiContainingAnnotation(final String annotation) {
-        return emojiMap.entrySet().stream().filter(p -> p.getValue().contains((annotation))).map(Map.Entry::getKey)
-                .collect(Collectors.toList());
-    }
-
-    List<String> getSubClass(TopLevelClass name) {
-        return emojiMap.entrySet().stream().filter(p -> p.getKey().contains((name.getFilter()))).map(Map.Entry::getKey)
-                .collect(Collectors.toList());
-    }
-
-    Map<TopLevelClass, List<String>> getTopLevelClasses() {
-        return classMap;
     }
 }

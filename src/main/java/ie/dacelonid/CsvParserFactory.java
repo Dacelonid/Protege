@@ -14,14 +14,14 @@ class CsvParserFactory {
 
     static CsvParser createCsvParser() throws IOException {
         Optional<URL> url = Optional.ofNullable(Thread.currentThread().getContextClassLoader().getResource("Emoji_Unicodes.csv"));
-        if (!url.isPresent()) {
-            throw new IllegalArgumentException("Could not find Emoji File");
-        }
-        final File file = new File(url.get().getPath());
+        if (url.isPresent()) {
+            final File file = new File(url.get().getPath());
 
-        final List<String> list = Files.readAllLines(file.toPath(), Charset.defaultCharset());
-        final CsvParser objUnderTest = new CsvParser();
-        objUnderTest.parseCsv(list);
-        return objUnderTest;
+            final List<String> list = Files.readAllLines(file.toPath(), Charset.defaultCharset());
+            final CsvParser csvParser = new CsvParser();
+            csvParser.parseCsv(list);
+            return csvParser;
+        }
+        throw new IllegalArgumentException("Could not find Emoji File");
     }
 }

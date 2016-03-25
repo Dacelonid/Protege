@@ -24,14 +24,19 @@ class CSVEntryToEntity {
                 parentClasses.put(csvEntry.getAnnotations().get(0), parent);
                 entities.add(convert(csvEntry));
             } else {
-                for (String annotation : csvEntry.getAnnotations()) {
-                    if (parentClasses.containsKey(annotation)) {
-                        entities.add(convert(csvEntry, parentClasses.get(annotation)));
-                        break;
-                    }
-                }
+                Entity parent = getParentIfExists(parentClasses, csvEntry);
+                entities.add(convert(csvEntry, parent));
             }
         }
         return entities;
+    }
+
+    private Entity getParentIfExists(Map<String, Entity> parentClasses, CSVEntries csvEntry) {
+        for (String annotation : csvEntry.getAnnotations()) {
+            if (parentClasses.containsKey(annotation)) {
+                return parentClasses.get(annotation);
+            }
+        }
+        return null;
     }
 }

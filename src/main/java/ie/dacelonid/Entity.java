@@ -24,7 +24,8 @@ class Entity {
         if (parent == null) {
             return "";
         }
-        return " <SubClassOf>\n <Class IRI=\"#" + name + "\"/>\n <Class IRI=\"#" + parent.name + "\"/>\n  </SubClassOf>";
+        return " <SubClassOf>" + System.lineSeparator() + "<Class IRI=\"#" + name + "\"/>" + System.lineSeparator() +
+                "<Class IRI=\"#" + parent.name + "\"/> " + System.lineSeparator() + " </SubClassOf>";
     }
 
     @Override
