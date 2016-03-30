@@ -30,9 +30,9 @@ public class CSVEntryToEntityTest {
     @Test
     public void convert_CSVEntriesWithSubClasses_getEntities() {
         Entity topLevelEntity = new Entity("Flag");
-        Entity subClassEntity = new Entity(topLevelEntity, "Country_Flag");
+        Entity subClassEntity = new Entity(topLevelEntity, "Flag for Country");
         List<Entity> expectedEntity = Arrays.asList(topLevelEntity, subClassEntity);
-        List<CSVEntries> itemsToConvert = Arrays.asList(new CSVEntries("Flag", Collections.singletonList("flag")), new CSVEntries("Country_Flag", Arrays.asList("flag", "other")));
+        List<CSVEntries> itemsToConvert = Arrays.asList(new CSVEntries("Flag", Collections.singletonList("flag")), new CSVEntries("Flag for Country", Arrays.asList("flag", "other")));
         CSVEntryToEntity objUnderTest = new CSVEntryToEntity();
         assertEquals(expectedEntity, objUnderTest.convert(itemsToConvert));
     }

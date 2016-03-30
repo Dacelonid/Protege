@@ -18,75 +18,120 @@
     <Declaration>
         <Class IRI="#grinning_face_with_smiling_eyes"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#grinning_face_with_smiling_eyes"/>
+        <Class IRI="#grinning_face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#face_with_tears_of_joy"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#face_with_tears_of_joy"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#face_with_tears"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#smiling_face_with_open_mouth"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#smiling_face_with_open_mouth"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#smiling_face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#smiling_face_with_open_mouth_and_smiling_eyes"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#smiling_face_with_open_mouth_and_smiling_eyes"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#smiling_face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#smiling_face_with_open_mouth_and_cold_sweat"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#smiling_face_with_open_mouth_and_cold_sweat"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#smiling_face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#smiling_face_with_open_mouth_and_tightly-closed_eyes"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#smiling_face_with_open_mouth_and_tightly-closed_eyes"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#winking_face"/>
-    </Declaration>
+        <Class IRI="#smiling_face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#winking_face"/>
+</Declaration>
     <Declaration>
         <Class IRI="#smiling_face_with_smiling_eyes"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#face_savouring_delicious_food"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#smiling_face_with_smiling_eyes"/>
+        <Class IRI="#smiling_face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#face_savouring_delicious_food"/>
+</Declaration>
     <Declaration>
         <Class IRI="#smiling_face_with_sunglasses"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#smiling_face_with_sunglasses"/>
+        <Class IRI="#smiling_face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#smiling_face_with_heart-shaped_eyes"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#smiling_face_with_heart-shaped_eyes"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#face_throwing_a_kiss"/>
-    </Declaration>
+        <Class IRI="#smiling_face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#face_throwing_a_kiss"/>
+</Declaration>
     <Declaration>
         <Class IRI="#kissing_face"/>
     </Declaration>
     <Declaration>
         <Class IRI="#kissing_face_with_smiling_eyes"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#kissing_face_with_smiling_eyes"/>
+        <Class IRI="#kissing_face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#kissing_face_with_closed_eyes"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#kissing_face_with_closed_eyes"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#kissing_face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#smiling_face_with_halo"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#smiling_face_with_halo"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#neutral_face"/>
-    </Declaration>
+        <Class IRI="#smiling_face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#neutral_face"/>
+</Declaration>
     <Declaration>
         <Class IRI="#expressionless_face"/>
     </Declaration>
     <Declaration>
         <Class IRI="#face_without_mouth"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#smirking_face"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#face_without_mouth"/>
+        <Class IRI="#face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#smirking_face"/>
+</Declaration>
     <Declaration>
         <Class IRI="#persevering_face"/>
     </Declaration>
     <Declaration>
         <Class IRI="#disappointed_but_relieved_face"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#disappointed_but_relieved_face"/>
+        <Class IRI="#disappointed"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#face_with_open_mouth"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#face_with_open_mouth"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#hushed_face"/>
-    </Declaration>
+        <Class IRI="#face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#hushed_face"/>
+</Declaration>
     <Declaration>
         <Class IRI="#sleepy_face"/>
     </Declaration>
@@ -102,21 +147,33 @@
     <Declaration>
         <Class IRI="#face_with_stuck-out_tongue"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#face_with_stuck-out_tongue"/>
+        <Class IRI="#face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#face_with_stuck-out_tongue_and_winking_eye"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#face_with_stuck-out_tongue_and_winking_eye"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#face_with_stuck-out_tongue_and_tightly-closed_eyes"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#face_with_stuck-out_tongue_and_tightly-closed_eyes"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#unamused_face"/>
-    </Declaration>
+        <Class IRI="#face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#unamused_face"/>
+</Declaration>
     <Declaration>
         <Class IRI="#face_with_cold_sweat"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#pensive_face"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#face_with_cold_sweat"/>
+        <Class IRI="#face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#pensive_face"/>
+</Declaration>
     <Declaration>
         <Class IRI="#confused_face"/>
     </Declaration>
@@ -126,9 +183,12 @@
     <Declaration>
         <Class IRI="#face_with_medical_mask"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#astonished_face"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#face_with_medical_mask"/>
+        <Class IRI="#face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#astonished_face"/>
+</Declaration>
     <Declaration>
         <Class IRI="#disappointed_face"/>
     </Declaration>
@@ -138,18 +198,24 @@
     <Declaration>
         <Class IRI="#face_with_look_of_triumph"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#crying_face"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#face_with_look_of_triumph"/>
+        <Class IRI="#face_with_look"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#crying_face"/>
+</Declaration>
     <Declaration>
         <Class IRI="#loudly_crying_face"/>
     </Declaration>
     <Declaration>
         <Class IRI="#frowning_face_with_open_mouth"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#anguished_face"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#frowning_face_with_open_mouth"/>
+        <Class IRI="#frowning_face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#anguished_face"/>
+</Declaration>
     <Declaration>
         <Class IRI="#fearful_face"/>
     </Declaration>
@@ -162,12 +228,18 @@
     <Declaration>
         <Class IRI="#face_with_open_mouth_and_cold_sweat"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#face_with_open_mouth_and_cold_sweat"/>
+        <Class IRI="#face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#face_screaming_in_fear"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#face_screaming_in_fear"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#flushed_face"/>
-    </Declaration>
+        <Class IRI="#face_screaming"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#flushed_face"/>
+</Declaration>
     <Declaration>
         <Class IRI="#dizzy_face"/>
     </Declaration>
@@ -180,9 +252,12 @@
     <Declaration>
         <Class IRI="#smiling_face_with_horns"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#imp"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#smiling_face_with_horns"/>
+        <Class IRI="#smiling_face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#imp"/>
+</Declaration>
     <Declaration>
         <Class IRI="#japanese_ogre"/>
     </Declaration>
@@ -204,27 +279,48 @@
     <Declaration>
         <Class IRI="#pile_of_poo"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#pile_of_poo"/>
+        <Class IRI="#pile"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#smiling_cat_face_with_open_mouth"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#smiling_cat_face_with_open_mouth"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#smiling_cat_face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#grinning_cat_face_with_smiling_eyes"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#grinning_cat_face_with_smiling_eyes"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#grinning_cat_face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#cat_face_with_tears_of_joy"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#cat_face_with_tears_of_joy"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#cat_face_with_tears"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#smiling_cat_face_with_heart-shaped_eyes"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#smiling_cat_face_with_heart-shaped_eyes"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#smiling_cat_face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#cat_face_with_wry_smile"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#cat_face_with_wry_smile"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#cat_face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#kissing_cat_face_with_closed_eyes"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#kissing_cat_face_with_closed_eyes"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#weary_cat_face"/>
-    </Declaration>
+        <Class IRI="#kissing_cat_face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#weary_cat_face"/>
+</Declaration>
     <Declaration>
         <Class IRI="#crying_cat_face"/>
     </Declaration>
@@ -264,18 +360,27 @@
     <Declaration>
         <Class IRI="#person_with_blond_hair"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#police_officer"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#person_with_blond_hair"/>
+        <Class IRI="#person"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#police_officer"/>
+</Declaration>
     <Declaration>
         <Class IRI="#man_with_gua_pi_mao"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#man_with_gua_pi_mao"/>
+        <Class IRI="#man"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#man_with_turban"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#man_with_turban"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#construction_worker"/>
-    </Declaration>
+        <Class IRI="#man"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#construction_worker"/>
+</Declaration>
     <Declaration>
         <Class IRI="#princess"/>
     </Declaration>
@@ -291,30 +396,45 @@
     <Declaration>
         <Class IRI="#woman_with_bunny_ears"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#face_massage"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#woman_with_bunny_ears"/>
+        <Class IRI="#woman"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#face_massage"/>
+</Declaration>
     <Declaration>
         <Class IRI="#haircut"/>
     </Declaration>
     <Declaration>
         <Class IRI="#bride_with_veil"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#person_frowning"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#bride_with_veil"/>
+        <Class IRI="#bride"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#person_frowning"/>
+</Declaration>
     <Declaration>
         <Class IRI="#person_with_pouting_face"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#person_with_pouting_face"/>
+        <Class IRI="#person"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#face_with_no_good_gesture"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#face_with_no_good_gesture"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#face_with_ok_gesture"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#face_with_ok_gesture"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#information_desk_person"/>
-    </Declaration>
+        <Class IRI="#face"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#information_desk_person"/>
+</Declaration>
     <Declaration>
         <Class IRI="#happy_person_raising_one_hand"/>
     </Declaration>
@@ -324,18 +444,30 @@
     <Declaration>
         <Class IRI="#person_raising_both_hands_in_celebration"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#person_raising_both_hands_in_celebration"/>
+        <Class IRI="#person_raising_both_hands"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#person_with_folded_hands"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#person_with_folded_hands"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#person"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#bust_in_silhouette"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#bust_in_silhouette"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#bust"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#busts_in_silhouette"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#busts_in_silhouette"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#pedestrian"/>
-    </Declaration>
+        <Class IRI="#busts"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#pedestrian"/>
+</Declaration>
     <Declaration>
         <Class IRI="#runner"/>
     </Declaration>
@@ -348,9 +480,12 @@
     <Declaration>
         <Class IRI="#couple_with_heart"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#family"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#couple_with_heart"/>
+        <Class IRI="#couple"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#family"/>
+</Declaration>
     <Declaration>
         <Class IRI="#man_and_woman_holding_hands"/>
     </Declaration>
@@ -372,15 +507,24 @@
     <Declaration>
         <Class IRI="#white_up_pointing_index"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#white_up_pointing_index"/>
+        <Class IRI="#white"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#white_up_pointing_backhand_index"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#white_up_pointing_backhand_index"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#white"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#white_down_pointing_backhand_index"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#white_down_pointing_backhand_index"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#victory_hand"/>
-    </Declaration>
+        <Class IRI="#white"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#victory_hand"/>
+</Declaration>
     <Declaration>
         <Class IRI="#raised_fist"/>
     </Declaration>
@@ -396,12 +540,18 @@
     <Declaration>
         <Class IRI="#thumbs_up_sign"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#thumbs_up_sign"/>
+        <Class IRI="#thumbs"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#thumbs_down_sign"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#thumbs_down_sign"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#waving_hand_sign"/>
-    </Declaration>
+        <Class IRI="#thumbs"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#waving_hand_sign"/>
+</Declaration>
     <Declaration>
         <Class IRI="#clapping_hands_sign"/>
     </Declaration>
@@ -435,9 +585,12 @@
     <Declaration>
         <Class IRI="#heart_with_arrow"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#heavy_black_heart"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#heart_with_arrow"/>
+        <Class IRI="#heart"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#heavy_black_heart"/>
+</Declaration>
     <Declaration>
         <Class IRI="#beating_heart"/>
     </Declaration>
@@ -468,9 +621,12 @@
     <Declaration>
         <Class IRI="#heart_with_ribbon"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#revolving_hearts"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#heart_with_ribbon"/>
+        <Class IRI="#heart"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#revolving_hearts"/>
+</Declaration>
     <Declaration>
         <Class IRI="#heart_decoration"/>
     </Declaration>
@@ -807,9 +963,12 @@
     <Declaration>
         <Class IRI="#ear_of_rice"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#herb"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#ear_of_rice"/>
+        <Class IRI="#ear"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#herb"/>
+</Declaration>
     <Declaration>
         <Class IRI="#four_leaf_clover"/>
     </Declaration>
@@ -822,9 +981,12 @@
     <Declaration>
         <Class IRI="#leaf_fluttering_in_wind"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#grapes"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#leaf_fluttering_in_wind"/>
+        <Class IRI="#leaf_fluttering"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#grapes"/>
+</Declaration>
     <Declaration>
         <Class IRI="#melon"/>
     </Declaration>
@@ -870,9 +1032,12 @@
     <Declaration>
         <Class IRI="#ear_of_maize"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#mushroom"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#ear_of_maize"/>
+        <Class IRI="#ear"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#mushroom"/>
+</Declaration>
     <Declaration>
         <Class IRI="#chestnut"/>
     </Declaration>
@@ -882,9 +1047,12 @@
     <Declaration>
         <Class IRI="#meat_on_bone"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#poultry_leg"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#meat_on_bone"/>
+        <Class IRI="#meat"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#poultry_leg"/>
+</Declaration>
     <Declaration>
         <Class IRI="#hamburger"/>
     </Declaration>
@@ -894,12 +1062,18 @@
     <Declaration>
         <Class IRI="#slice_of_pizza"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#slice_of_pizza"/>
+        <Class IRI="#slice"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#pot_of_food"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#pot_of_food"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#bento_box"/>
-    </Declaration>
+        <Class IRI="#pot"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#bento_box"/>
+</Declaration>
     <Declaration>
         <Class IRI="#rice_cracker"/>
     </Declaration>
@@ -933,9 +1107,12 @@
     <Declaration>
         <Class IRI="#fish_cake_with_swirl_design"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#dango"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#fish_cake_with_swirl_design"/>
+        <Class IRI="#fish_cake"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#dango"/>
+</Declaration>
     <Declaration>
         <Class IRI="#soft_ice_cream"/>
     </Declaration>
@@ -981,9 +1158,12 @@
     <Declaration>
         <Class IRI="#teacup_without_handle"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#sake_bottle_and_cup"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#teacup_without_handle"/>
+        <Class IRI="#teacup"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#sake_bottle_and_cup"/>
+</Declaration>
     <Declaration>
         <Class IRI="#wine_glass"/>
     </Declaration>
@@ -1017,9 +1197,12 @@
     <Declaration>
         <Class IRI="#globe_with_meridians"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#volcano"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#globe_with_meridians"/>
+        <Class IRI="#globe"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#volcano"/>
+</Declaration>
     <Declaration>
         <Class IRI="#mount_fuji"/>
     </Declaration>
@@ -1029,9 +1212,12 @@
     <Declaration>
         <Class IRI="#house_with_garden"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#church"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#house_with_garden"/>
+        <Class IRI="#house"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#church"/>
+</Declaration>
     <Declaration>
         <Class IRI="#office_building"/>
     </Declaration>
@@ -1080,12 +1266,18 @@
     <Declaration>
         <Class IRI="#statue_of_liberty"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#statue_of_liberty"/>
+        <Class IRI="#statue"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#silhouette_of_japan"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#silhouette_of_japan"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#fountain"/>
-    </Declaration>
+        <Class IRI="#silhouette"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#fountain"/>
+</Declaration>
     <Declaration>
         <Class IRI="#tent"/>
     </Declaration>
@@ -1095,24 +1287,39 @@
     <Declaration>
         <Class IRI="#night_with_stars"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#night_with_stars"/>
+        <Class IRI="#night"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#sunrise_over_mountains"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#sunrise_over_mountains"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#sunrise"/>
-    </Declaration>
+    </SubClassOf><Declaration>
+    <Class IRI="#sunrise"/>
+</Declaration>
     <Declaration>
         <Class IRI="#cityscape_at_dusk"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#cityscape_at_dusk"/>
+        <Class IRI="#cityscape"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#sunset_over_buildings"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#sunset_over_buildings"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#sunset"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#bridge_at_night"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#bridge_at_night"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#hot_springs"/>
-    </Declaration>
+        <Class IRI="#bridge"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#hot_springs"/>
+</Declaration>
     <Declaration>
         <Class IRI="#milky_way"/>
     </Declaration>
@@ -1152,9 +1359,12 @@
     <Declaration>
         <Class IRI="#high-speed_train_with_bullet_nose"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#train"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#high-speed_train_with_bullet_nose"/>
+        <Class IRI="#high-speed_train"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#train"/>
+</Declaration>
     <Declaration>
         <Class IRI="#metro"/>
     </Declaration>
@@ -1302,9 +1512,12 @@
     <Declaration>
         <Class IRI="#hourglass_with_flowing_sand"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#watch"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#hourglass_with_flowing_sand"/>
+        <Class IRI="#hourglass"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#watch"/>
+</Declaration>
     <Declaration>
         <Class IRI="#alarm_clock"/>
     </Declaration>
@@ -1410,24 +1623,42 @@
     <Declaration>
         <Class IRI="#new_moon_with_face"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#new_moon_with_face"/>
+        <Class IRI="#new_moon"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#first_quarter_moon_with_face"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#first_quarter_moon_with_face"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#first_quarter_moon"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#last_quarter_moon_with_face"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#last_quarter_moon_with_face"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#last_quarter_moon"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#black_sun_with_rays"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#black_sun_with_rays"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#black_sun"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#full_moon_with_face"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#full_moon_with_face"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#full_moon"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#sun_with_face"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#sun_with_face"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#white_medium_star"/>
-    </Declaration>
+        <Class IRI="#sun"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#white_medium_star"/>
+</Declaration>
     <Declaration>
         <Class IRI="#glowing_star"/>
     </Declaration>
@@ -1440,9 +1671,12 @@
     <Declaration>
         <Class IRI="#sun_behind_cloud"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#cyclone"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#sun_behind_cloud"/>
+        <Class IRI="#sun"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#cyclone"/>
+</Declaration>
     <Declaration>
         <Class IRI="#rainbow"/>
     </Declaration>
@@ -1452,18 +1686,24 @@
     <Declaration>
         <Class IRI="#umbrella_with_rain_drops"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#high_voltage_sign"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#umbrella_with_rain_drops"/>
+        <Class IRI="#umbrella"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#high_voltage_sign"/>
+</Declaration>
     <Declaration>
         <Class IRI="#snowflake"/>
     </Declaration>
     <Declaration>
         <Class IRI="#snowman_without_snow"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#fire"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#snowman_without_snow"/>
+        <Class IRI="#snowman"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#fire"/>
+</Declaration>
     <Declaration>
         <Class IRI="#droplet"/>
     </Declaration>
@@ -1551,15 +1791,21 @@
     <Declaration>
         <Class IRI="#flag_in_hole"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#fishing_pole_and_fish"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#flag_in_hole"/>
+        <Class IRI="#flag"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#fishing_pole_and_fish"/>
+</Declaration>
     <Declaration>
         <Class IRI="#running_shirt_with_sash"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#ski_and_ski_boot"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#running_shirt_with_sash"/>
+        <Class IRI="#running_shirt"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#ski_and_ski_boot"/>
+</Declaration>
     <Declaration>
         <Class IRI="#snowboarder"/>
     </Declaration>
@@ -1614,18 +1860,27 @@
     <Declaration>
         <Class IRI="#speaker_with_cancellation_stroke"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#speaker_with_cancellation_stroke"/>
         <Class IRI="#speaker"/>
-    </Declaration>
+    </SubClassOf><Declaration>
+    <Class IRI="#speaker"/>
+</Declaration>
     <Declaration>
         <Class IRI="#speaker_with_one_sound_wave"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#speaker_with_one_sound_wave"/>
+        <Class IRI="#speaker"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#speaker_with_three_sound_waves"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#speaker_with_three_sound_waves"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#public_address_loudspeaker"/>
-    </Declaration>
+        <Class IRI="#speaker"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#public_address_loudspeaker"/>
+</Declaration>
     <Declaration>
         <Class IRI="#cheering_megaphone"/>
     </Declaration>
@@ -1638,9 +1893,12 @@
     <Declaration>
         <Class IRI="#bell_with_cancellation_stroke"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#musical_score"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#bell_with_cancellation_stroke"/>
+        <Class IRI="#bell"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#musical_score"/>
+</Declaration>
     <Declaration>
         <Class IRI="#musical_note"/>
     </Declaration>
@@ -1677,9 +1935,12 @@
     <Declaration>
         <Class IRI="#mobile_phone_with_rightwards_arrow_at_left"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#black_telephone"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#mobile_phone_with_rightwards_arrow_at_left"/>
+        <Class IRI="#mobile_phone_with_rightwards_arrow"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#black_telephone"/>
+</Declaration>
     <Declaration>
         <Class IRI="#telephone_receiver"/>
     </Declaration>
@@ -1755,9 +2016,12 @@
     <Declaration>
         <Class IRI="#notebook_with_decorative_cover"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#closed_book"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#notebook_with_decorative_cover"/>
+        <Class IRI="#notebook"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#closed_book"/>
+</Declaration>
     <Declaration>
         <Class IRI="#open_book"/>
     </Declaration>
@@ -1782,9 +2046,12 @@
     <Declaration>
         <Class IRI="#page_with_curl"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#scroll"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#page_with_curl"/>
+        <Class IRI="#page"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#scroll"/>
+</Declaration>
     <Declaration>
         <Class IRI="#page_facing_up"/>
     </Declaration>
@@ -1803,27 +2070,45 @@
     <Declaration>
         <Class IRI="#banknote_with_yen_sign"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#banknote_with_yen_sign"/>
+        <Class IRI="#banknote"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#banknote_with_dollar_sign"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#banknote_with_dollar_sign"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#banknote"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#banknote_with_euro_sign"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#banknote_with_euro_sign"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#banknote"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#banknote_with_pound_sign"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#banknote_with_pound_sign"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#banknote"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#money_with_wings"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#money_with_wings"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#credit_card"/>
-    </Declaration>
+        <Class IRI="#money"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#credit_card"/>
+</Declaration>
     <Declaration>
         <Class IRI="#chart_with_upwards_trend_and_yen_sign"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#envelope"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#chart_with_upwards_trend_and_yen_sign"/>
+        <Class IRI="#chart"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#envelope"/>
+</Declaration>
     <Declaration>
         <Class IRI="#e-mail_symbol"/>
     </Declaration>
@@ -1833,9 +2118,12 @@
     <Declaration>
         <Class IRI="#envelope_with_downwards_arrow_above"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#outbox_tray"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#envelope_with_downwards_arrow_above"/>
+        <Class IRI="#envelope"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#outbox_tray"/>
+</Declaration>
     <Declaration>
         <Class IRI="#inbox_tray"/>
     </Declaration>
@@ -1845,18 +2133,30 @@
     <Declaration>
         <Class IRI="#closed_mailbox_with_raised_flag"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#closed_mailbox_with_raised_flag"/>
+        <Class IRI="#closed_mailbox"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#closed_mailbox_with_lowered_flag"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#closed_mailbox_with_lowered_flag"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#closed_mailbox"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#open_mailbox_with_raised_flag"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#open_mailbox_with_raised_flag"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#open_mailbox"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#open_mailbox_with_lowered_flag"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#open_mailbox_with_lowered_flag"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#postbox"/>
-    </Declaration>
+        <Class IRI="#open_mailbox"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#postbox"/>
+</Declaration>
     <Declaration>
         <Class IRI="#pencil"/>
     </Declaration>
@@ -1887,12 +2187,18 @@
     <Declaration>
         <Class IRI="#chart_with_upwards_trend"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#chart_with_upwards_trend"/>
+        <Class IRI="#chart"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#chart_with_downwards_trend"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#chart_with_downwards_trend"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#bar_chart"/>
-    </Declaration>
+        <Class IRI="#chart"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#bar_chart"/>
+</Declaration>
     <Declaration>
         <Class IRI="#clipboard"/>
     </Declaration>
@@ -1923,12 +2229,18 @@
     <Declaration>
         <Class IRI="#lock_with_ink_pen"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#lock_with_ink_pen"/>
+        <Class IRI="#lock"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#closed_lock_with_key"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#closed_lock_with_key"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#key"/>
-    </Declaration>
+        <Class IRI="#closed_lock"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#key"/>
+</Declaration>
     <Declaration>
         <Class IRI="#hammer"/>
     </Declaration>
@@ -1959,9 +2271,12 @@
     <Declaration>
         <Class IRI="#triangular_flag_on_post"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#smoking_symbol"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#triangular_flag_on_post"/>
+        <Class IRI="#triangular_flag"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#smoking_symbol"/>
+</Declaration>
     <Declaration>
         <Class IRI="#moyai"/>
     </Declaration>
@@ -1974,9 +2289,12 @@
     <Declaration>
         <Class IRI="#put_litter_in_its_place_symbol"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#potable_water_symbol"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#put_litter_in_its_place_symbol"/>
+        <Class IRI="#put_litter"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#potable_water_symbol"/>
+</Declaration>
     <Declaration>
         <Class IRI="#wheelchair_symbol"/>
     </Declaration>
@@ -2061,18 +2379,27 @@
     <Declaration>
         <Class IRI="#up_down_arrow"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#left_right_arrow"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#up_down_arrow"/>
+        <Class IRI="#up"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#left_right_arrow"/>
+</Declaration>
     <Declaration>
         <Class IRI="#leftwards_arrow_with_hook"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#leftwards_arrow_with_hook"/>
+        <Class IRI="#leftwards_arrow"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#rightwards_arrow_with_hook"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#rightwards_arrow_with_hook"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#arrow_pointing_rightwards_then_curving_upwards"/>
-    </Declaration>
+        <Class IRI="#rightwards_arrow"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#arrow_pointing_rightwards_then_curving_upwards"/>
+</Declaration>
     <Declaration>
         <Class IRI="#arrow_pointing_rightwards_then_curving_downwards"/>
     </Declaration>
@@ -2085,33 +2412,54 @@
     <Declaration>
         <Class IRI="#back_with_leftwards_arrow_above"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#back_with_leftwards_arrow_above"/>
+        <Class IRI="#back"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#end_with_leftwards_arrow_above"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#end_with_leftwards_arrow_above"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#end"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#on_with_exclamation_mark_with_left_right_arrow_above"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#on_with_exclamation_mark_with_left_right_arrow_above"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#on_with_exclamation_mark"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#soon_with_rightwards_arrow_above"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#soon_with_rightwards_arrow_above"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#soon"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#top_with_upwards_arrow_above"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#top_with_upwards_arrow_above"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#top"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#six_pointed_star_with_middle_dot"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#six_pointed_star_with_middle_dot"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#black_universal_recycling_symbol"/>
-    </Declaration>
+        <Class IRI="#six_pointed_star"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#black_universal_recycling_symbol"/>
+</Declaration>
     <Declaration>
         <Class IRI="#name_badge"/>
     </Declaration>
     <Declaration>
         <Class IRI="#japanese_symbol_for_beginner"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#trident_emblem"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#japanese_symbol_for_beginner"/>
+        <Class IRI="#japanese_symbol"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#trident_emblem"/>
+</Declaration>
     <Declaration>
         <Class IRI="#heavy_large_circle"/>
     </Declaration>
@@ -2121,9 +2469,12 @@
     <Declaration>
         <Class IRI="#ballot_box_with_check"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#heavy_check_mark"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#ballot_box_with_check"/>
+        <Class IRI="#ballot_box"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#heavy_check_mark"/>
+</Declaration>
     <Declaration>
         <Class IRI="#heavy_multiplication_x"/>
     </Declaration>
@@ -2136,12 +2487,18 @@
     <Declaration>
         <Class IRI="#heavy_plus_sign"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#heavy_plus_sign"/>
+        <Class IRI="#heavy"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#heavy_minus_sign"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#heavy_minus_sign"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#heavy_division_sign"/>
-    </Declaration>
+        <Class IRI="#heavy"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#heavy_division_sign"/>
+</Declaration>
     <Declaration>
         <Class IRI="#curly_loop"/>
     </Declaration>
@@ -2244,9 +2601,12 @@
     <Declaration>
         <Class IRI="#clockwise_rightwards_and_leftwards_open_circle_arrows_with_circled_one_overlay"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#black_right-pointing_triangle"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#clockwise_rightwards_and_leftwards_open_circle_arrows_with_circled_one_overlay"/>
+        <Class IRI="#clockwise_rightwards_and_leftwards_open_circle_arrows"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#black_right-pointing_triangle"/>
+</Declaration>
     <Declaration>
         <Class IRI="#black_right-pointing_double_triangle"/>
     </Declaration>
@@ -2280,9 +2640,12 @@
     <Declaration>
         <Class IRI="#antenna_with_bars"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#no_mobile_phones"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#antenna_with_bars"/>
+        <Class IRI="#antenna"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#no_mobile_phones"/>
+</Declaration>
     <Declaration>
         <Class IRI="#vibration_mode"/>
     </Declaration>
@@ -2331,24 +2694,42 @@
     <Declaration>
         <Class IRI="#no_one_under_eighteen_symbol"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#no_one_under_eighteen_symbol"/>
+        <Class IRI="#no_one"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#input_symbol_for_latin_capital_letters"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#input_symbol_for_latin_capital_letters"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#input_symbol"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#input_symbol_for_latin_small_letters"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#input_symbol_for_latin_small_letters"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#input_symbol"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#input_symbol_for_numbers"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#input_symbol_for_numbers"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#input_symbol"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#input_symbol_for_symbols"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#input_symbol_for_symbols"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#input_symbol"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#input_symbol_for_latin_letters"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#input_symbol_for_latin_letters"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#negative_squared_latin_capital_letter_a"/>
-    </Declaration>
+        <Class IRI="#input_symbol"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#negative_squared_latin_capital_letter_a"/>
+</Declaration>
     <Declaration>
         <Class IRI="#negative_squared_ab"/>
     </Declaration>
@@ -2394,9 +2775,12 @@
     <Declaration>
         <Class IRI="#squared_up_with_exclamation_mark"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#squared_vs"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#squared_up_with_exclamation_mark"/>
+        <Class IRI="#squared_up"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#squared_vs"/>
+</Declaration>
     <Declaration>
         <Class IRI="#squared_katakana_koko"/>
     </Declaration>
@@ -2493,9 +2877,12 @@
     <Declaration>
         <Class IRI="#diamond_shape_with_a_dot_inside"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#radio_button"/>
-    </Declaration>
+    <SubClassOf>
+        <Class IRI="#diamond_shape_with_a_dot_inside"/>
+        <Class IRI="#diamond_shape"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#radio_button"/>
+</Declaration>
     <Declaration>
         <Class IRI="#black_square_button"/>
     </Declaration>
@@ -2517,31 +2904,61 @@
     <Declaration>
         <Class IRI="#flag_for_China"/>
     </Declaration>
-    <Declaration>
+    <SubClassOf>
+        <Class IRI="#flag_for_China"/>
+        <Class IRI="#flag"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#flag_for_Germany"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#flag_for_Germany"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#flag"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#flag_for_Spain"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#flag_for_Spain"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#flag"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#flag_for_France"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#flag_for_France"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#flag"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#flag_for_United_Kingdom"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#flag_for_United_Kingdom"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#flag"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#flag_for_Italy"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#flag_for_Italy"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#flag"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#flag_for_Japan"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#flag_for_Japan"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#flag"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#flag_for_South_Korea"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#flag_for_South_Korea"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#flag"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#flag_for_Russia"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#flag_for_Russia"/>
-    </Declaration>
-    <Declaration>
+        <Class IRI="#flag"/>
+    </SubClassOf><Declaration>
+    <Class IRI="#flag_for_United_States"/>
+</Declaration>
+    <SubClassOf>
         <Class IRI="#flag_for_United_States"/>
-    </Declaration>
-</Ontology>
+        <Class IRI="#flag"/>
+    </SubClassOf></Ontology>

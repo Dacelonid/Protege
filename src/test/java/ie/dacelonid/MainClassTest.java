@@ -1,5 +1,6 @@
 package ie.dacelonid;
 
+import org.custommonkey.xmlunit.Diff;
 import org.custommonkey.xmlunit.XMLAssert;
 import org.custommonkey.xmlunit.XMLUnit;
 import org.junit.After;
@@ -22,7 +23,6 @@ public class MainClassTest {
         MainClass.main(new String[]{});
         String actualContents = readFile("filename.owl");
         XMLAssert.assertXMLEqual(actualContents, expectedContents);
-
     }
 
 
