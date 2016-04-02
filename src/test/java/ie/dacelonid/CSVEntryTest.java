@@ -3,10 +3,10 @@ package ie.dacelonid;
 import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.Test;
 
-public class CSVEntriesTest {
+public class CSVEntryTest {
 
     @Test
     public void equalsContract() {
-        EqualsVerifier.forClass(CSVEntries.class).verify();
+        EqualsVerifier.forClass(CSVEntry.class).verify();
     }
 }

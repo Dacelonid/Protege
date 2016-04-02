@@ -7,7 +7,7 @@ import java.util.List;
 import static ie.dacelonid.DelimeterConstants.*;
 
 class CsvParser {
-    private final List<CSVEntries> allLines = new ArrayList<>();
+    private final List<CSVEntry> allLines = new ArrayList<>();
     private final List<String> annotations = new ArrayList<>(); // @TODO should be a Set but then I need to sort it in the tests
     private final List<String> descriptions = new ArrayList<>();
     private int annotationColumn;
@@ -48,7 +48,7 @@ class CsvParser {
         populateAnnotations(annotations);
         populateDescriptions(description);
 
-        allLines.add(new CSVEntries(description, annotations));
+        allLines.add(new CSVEntry(description, annotations));
     }
 
     private List<String> getAnnotationsFromInputString(final String[] delimitedString) {
@@ -67,7 +67,7 @@ class CsvParser {
         return annotations;
     }
 
-    List<CSVEntries> getAllLines() {
+    List<CSVEntry> getAllLines() {
         return allLines;
     }
 

@@ -6,15 +6,19 @@ import java.util.List;
 
 public class MainClass {
     public static void main(String[] args) throws IOException {
+        String filename = "filename.owl";
+        if (args.length == 1) {
+            filename = args[0];
+        }
         CsvParser csvParser = CsvParserFactory.createCsvParser();
         Owl owl = new Owl();
 
-        List<CSVEntries> allLines = csvParser.getAllLines();
+        List<CSVEntry> allLines = csvParser.getAllLines();
         CSVEntryToEntity converter = new CSVEntryToEntity();
         List<Entity> convertedEntities = converter.convert(allLines);
         convertedEntities.forEach(owl::addEntity);
 
-        try (PrintWriter out = new PrintWriter("filename.owl")) {
+        try (PrintWriter out = new PrintWriter(filename)) {
             out.println(owl);
         }
     }

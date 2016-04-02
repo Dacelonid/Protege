@@ -16,12 +16,26 @@ import java.nio.file.Paths;
 
 public class MainClassTest {
 
+    private static final String DEFAULT_FILENAME = "filename.owl";
+    private String expectedContents;
+
+    @Before
+    public void setup() throws Exception {
+        XMLUnit.setIgnoreWhitespace(true);
+        expectedContents = readFile("Gold.owl");
+    }
+
     @Test
     public void generateOwlFile_compareWithReference() throws Exception {
-        XMLUnit.setIgnoreWhitespace(true);
-        String expectedContents = readFile("Gold.owl");
         MainClass.main(new String[]{});
-        String actualContents = readFile("filename.owl");
+        String actualContents = readFile(DEFAULT_FILENAME);
+        XMLAssert.assertXMLEqual(actualContents, expectedContents);
+    }
+
+    @Test
+    public void generateOwlFile_supplyingFilename_compareWithReference() throws Exception{
+        MainClass.main(new String[]{"non_default_filename.owl"});
+        String actualContents = readFile("non_default_filename.owl");
         XMLAssert.assertXMLEqual(actualContents, expectedContents);
     }
 
@@ -37,7 +51,7 @@ public class MainClassTest {
     @Before
     @After
     public void deleteFile() throws Exception {
-        Path pathToFile = getPathToFile("filename.owl");
+        Path pathToFile = getPathToFile(DEFAULT_FILENAME);
         if (pathToFile != null)
             pathToFile.toFile().delete();
     }

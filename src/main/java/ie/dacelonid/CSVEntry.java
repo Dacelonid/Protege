@@ -1,12 +1,13 @@
 package ie.dacelonid;
 
 import java.util.List;
+import java.util.Objects;
 
-class CSVEntries {
+class CSVEntry {
     private final String description;
     private final List<String> annotations;
 
-    CSVEntries(String description, List<String> annotations) {
+    CSVEntry(String description, List<String> annotations) {
         this.description = description;
         this.annotations = annotations;
     }
@@ -18,18 +19,11 @@ class CSVEntries {
 
     @Override
     public final boolean equals(Object obj) {
-        if (obj instanceof CSVEntries) {
-            CSVEntries other = (CSVEntries) obj;
-            return fieldEquals(this.annotations, other.annotations) && fieldEquals(this.description, other.description);
+        if (obj instanceof CSVEntry) {
+            CSVEntry other = (CSVEntry) obj;
+            return Objects.equals(this.annotations, other.annotations) && Objects.equals(this.description, other.description);
         }
         return false;
-    }
-
-    private boolean fieldEquals(Object field1, Object field2) {
-        if (field1 == null) {
-            return field2 == null;
-        }
-        return field1.equals(field2);
     }
 
     String getDescription() {
@@ -38,5 +32,15 @@ class CSVEntries {
 
     List<String> getAnnotations() {
         return annotations;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder(description);
+        builder.append("\t");
+        for(String annotation:annotations){
+            builder.append(annotation.trim()).append(" ");
+        }
+        return builder.toString();
     }
 }

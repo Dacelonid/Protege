@@ -28,10 +28,10 @@ public class CsvParserTest {
         final String testCSV = "test1\ttest2\ttest3";
         final List<String> inputs = getInputLines(testCSV, COLUMN_HEADINGS);
 
-        final List<CSVEntries> expectedValues = getExpectedValues(new ListEntriesConverter(), testCSV);
+        final List<CSVEntry> expectedValues = getExpectedValues(new ListEntriesConverter(), testCSV);
 
         objUnderTest.parseCsv(inputs);
-        final List<CSVEntries> actualValues = objUnderTest.getAllLines();
+        final List<CSVEntry> actualValues = objUnderTest.getAllLines();
 
         assertThat(actualValues, is(expectedValues));
     }
