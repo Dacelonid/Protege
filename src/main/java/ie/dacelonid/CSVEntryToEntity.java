@@ -1,16 +1,15 @@
 package ie.dacelonid;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 class CSVEntryToEntity {
 
-    private static final String PREPOSITION_REGEX = "(.*)\\s+(aboard|about|above|across|after|against|along|amid|among|anti|around|as|at|before|behind|below|beneath|beside|besides|between|beyond|but|by|concerning|considering|despite|down|during|except|excepting|excluding|following|for|from|in|inside|into|like|minus|near|of|off|on|onto|opposite|outside|over|past|per|plus|regarding|round|save|since|than|through|to|toward|towards|under|underneath|unlike|until|up|upon|versus|via|with|within|without)\\s+(.*)";
+    private static final String PREPOSITION_REGEX_1 = "(aboard|about|above|across|after|against|along|amid|among|anti|around|as|at|before|behind|below|beneath|beside|besides|between|beyond|but|by|concerning|considering|despite|down|during|except|excepting|excluding|following|for|from|in|inside|into|like|minus|near|of|off|on|onto|opposite|outside|over|past|per|plus|regarding|round|save|since|than|through|to|toward|towards|under|underneath|unlike|until|up|upon|versus|via|with|within|without)";
+    private static final String PREPOSITION_REGEX = "(.*)\\s+" + PREPOSITION_REGEX_1 + "\\s+(.*)";
     private static final Pattern pattern = Pattern.compile(PREPOSITION_REGEX, Pattern.CASE_INSENSITIVE);
+    private static final Pattern pattern1 = Pattern.compile(PREPOSITION_REGEX_1, Pattern.CASE_INSENSITIVE);
     private Matcher matcher;
     private Map<String, Entity> elements = new HashMap<>();
 
@@ -33,14 +32,27 @@ class CSVEntryToEntity {
         return entities;
     }
 
+    private List<Entity> processCompoundWords(CSVEntry csvEntry) {
+        String description = csvEntry.getDescription();
+        if(hasPreposition(description)){
+            List<Entity> entities = new ArrayList<>();
+            entities.add(new Entity(matcher.group(1)));
+            entities.add(new Entity(matcher.group(3)));
+            return entities;
+        }
+        return Collections.emptyList();
+    }
+
     private List<Entity> processIndividualWords(final CSVEntry csvEntry) {
         List<Entity> lineEntities = new ArrayList<>();
         String[] descriptions = csvEntry.toString().split("\\s+");
         for (String description : descriptions) {
-            if (!elements.containsKey(description)){
-                final Entity entity = new Entity(description);
-                lineEntities.add(entity);
-                elements.put(description, entity);
+            if(!isPreposition(description)){
+                if (!elements.containsKey(description)) {
+                    final Entity entity = new Entity(description);
+                    lineEntities.add(entity);
+                    elements.put(description, entity);
+                }
             }
         }
         return lineEntities;
@@ -111,6 +123,10 @@ class CSVEntryToEntity {
     private boolean hasPreposition(String description) {
         matcher = pattern.matcher(description);
         return matcher.find();
+    }
+
+    private boolean isPreposition(String description){
+        return pattern1.matcher(description).matches();
     }
 
 
