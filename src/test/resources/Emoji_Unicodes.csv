@@ -15,10 +15,10 @@ U+1F618	face throwing a kiss	emoji	face, heart, kiss, person
 U+1F617	kissing face	emoji	face, kiss, person
 U+1F619	kissing face with smiling eyes	emoji	eye, face, kiss, person, smile
 U+1F61A	kissing face with closed eyes	emoji	closed, eye, face, kiss, person
-`U+1F607	smiling face with halo	emoji	angel, face, fairy tale, fantasy, halo, innocent, person, smile
+U+1F607	smiling face with halo	emoji	angel, face, fairy tale, fantasy, halo, innocent, person, smile
 U+1F610	neutral face	emoji	deadpan, face, neutral, person
 U+1F611	expressionless face	emoji	expressionless, face, inexpressive, person, unexpressive
-U+1F636	face without mouth  emoji	face, mouth, person, quiet, silent
+U+1F636	face without mouth	emoji	face, mouth, person, quiet, silent
 U+1F60F	smirking face	emoji	face, person, smirk
 U+1F623	persevering face	emoji	face, persevere, person
 U+1F625	disappointed but relieved face	emoji	disappointed, face, person, relieved, whew
@@ -758,17 +758,17 @@ U+1F4F6	antenna with bars	emoji	antenna, bar, cell, communication, mobile, objec
 U+1F4F5	no mobile phones	emoji	cell, communication, forbidden, mobile, no, not, object, phone,prohibited, symbol, telephone
 U+1F4F3	vibration mode	emoji	cell, communication, mobile, mode, object, phone, symbol,telephone, vibration
 U+1F4F4	mobile phone off	emoji	cell, communication, mobile, object, off, phone, symbol,telephone
-U+0023 U+20E3	keycap number sign	text	hash, keycap, pound, symbol, word
-U+0030 U+20E3	keycap digit zero	text	0, keycap, symbol, word, zero
-U+0031 U+20E3	keycap digit one	text	1, keycap, one, symbol, word
-U+0032 U+20E3	keycap digit two	text	2, keycap, symbol, two, word
-U+0033 U+20E3	keycap digit three	text	3, keycap, symbol, three, word
-U+0034 U+20E3	keycap digit four	text	4, four, keycap, symbol, word
-U+0035 U+20E3	keycap digit five	text	5, five, keycap, symbol, word
-U+0036 U+20E3	keycap digit six	text	6, keycap, six, symbol, word
-U+0037 U+20E3	keycap digit seven	text	7, keycap, seven, symbol, word
-U+0038 U+20E3	keycap digit eight	text	8, eight, keycap, symbol, word
-U+0039 U+20E3	keycap digit nine	text	9, keycap, nine, symbol, word
+U+0023+20E3	keycap number sign	text	hash, keycap, pound, symbol, word
+U+0030+20E3	keycap digit zero	text	0, keycap, symbol, word, zero
+U+0031+20E3	keycap digit one	text	1, keycap, one, symbol, word
+U+0032+20E3	keycap digit two	text	2, keycap, symbol, two, word
+U+0033+20E3	keycap digit three	text	3, keycap, symbol, three, word
+U+0034+20E3	keycap digit four	text	4, four, keycap, symbol, word
+U+0035+20E3	keycap digit five	text	5, five, keycap, symbol, word
+U+0036+20E3	keycap digit six	text	6, keycap, six, symbol, word
+U+0037+20E3	keycap digit seven	text	7, keycap, seven, symbol, word
+U+0038+20E3	keycap digit eight	text	8, eight, keycap, symbol, word
+U+0039+20E3	keycap digit nine	text	9, keycap, nine, symbol, word
 U+1F51F	keycap ten	emoji	10, keycap, symbol, ten, word
 U+1F4AF	hundred points symbol	emoji	100, full, hundred, office, score, symbol
 U+1F51E	no one under eighteen symbol	emoji	18, age restriction, eighteen, forbidden, no, not, prohibited,symbol, underage, word

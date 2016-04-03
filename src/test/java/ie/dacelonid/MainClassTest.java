@@ -1,6 +1,5 @@
 package ie.dacelonid;
 
-import org.custommonkey.xmlunit.Diff;
 import org.custommonkey.xmlunit.XMLAssert;
 import org.custommonkey.xmlunit.XMLUnit;
 import org.junit.After;
@@ -52,8 +51,9 @@ public class MainClassTest {
     @After
     public void deleteFile() throws Exception {
         Path pathToFile = getPathToFile(DEFAULT_FILENAME);
-        if (pathToFile != null)
-            pathToFile.toFile().delete();
+        if (pathToFile != null) if (!pathToFile.toFile().delete()) {
+            throw new Exception("Failed to delete " + DEFAULT_FILENAME);
+        }
     }
 
     private Path getPathToFile(String fileName) throws URISyntaxException {

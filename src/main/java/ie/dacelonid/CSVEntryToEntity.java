@@ -6,142 +6,134 @@ import java.util.regex.Pattern;
 
 class CSVEntryToEntity {
 
-    private static final String PREPOSITION_REGEX_1 = "(aboard|about|above|across|after|against|along|amid|among|anti|around|as|at|before|behind|below|beneath|beside|besides|between|beyond|but|by|concerning|considering|despite|down|during|except|excepting|excluding|following|for|from|in|inside|into|like|minus|near|of|off|on|onto|opposite|outside|over|past|per|plus|regarding|round|save|since|than|through|to|toward|towards|under|underneath|unlike|until|up|upon|versus|via|with|within|without)";
+    private static final String PREPOSITION_REGEX_1 = "(aboard|about|above|across|after|against|along|amid|among|anti|around|as|at|before|behind" +
+            "|below|beneath|beside|besides|between|beyond|but|by|concerning|considering|despite|down|during|except|excepting|excluding|following" +
+            "|for|from|in|inside|into|like|minus|near|of|off|on|onto|opposite|outside|over|past|per|plus|regarding|round|save|since|than|through|to" +
+            "|toward|towards|under|underneath|unlike|until|up|upon|versus|via|with|with a|within|without)";
     private static final String PREPOSITION_REGEX = "(.*)\\s+" + PREPOSITION_REGEX_1 + "\\s+(.*)";
     private static final Pattern pattern = Pattern.compile(PREPOSITION_REGEX, Pattern.CASE_INSENSITIVE);
     private static final Pattern pattern1 = Pattern.compile(PREPOSITION_REGEX_1, Pattern.CASE_INSENSITIVE);
+    private final Map<String, Entity> elements = new HashMap<>();
     private Matcher matcher;
-    private Map<String, Entity> elements = new HashMap<>();
-
-    private Entity convert(CSVEntry itemToConvert) {
-        return new Entity(itemToConvert.getDescription());
-    }
-
-    private Entity convert(CSVEntry itemToConvert, Entity parent) {
-        return new Entity(parent, itemToConvert.getDescription());
-    }
 
     List<Entity> convert(List<CSVEntry> itemsToConvert) {
         List<Entity> entities = new ArrayList<>();
 
         for (CSVEntry csvEntry : itemsToConvert) {
-            entities.addAll(processIndividualWords(csvEntry));
-            entities.addAll(processCompoundWords(csvEntry));
+            if (descriptionNeedsSpecialHandling(csvEntry)) {
+                entities.addAll(processSpecialCases(csvEntry));
+            } else {
+                entities.addAll(processCompoundWords(csvEntry));
+                entities.addAll(processDescription(csvEntry));
+            }
         }
 
         return entities;
     }
 
-    private List<Entity> processCompoundWords(CSVEntry csvEntry) {
-        String description = csvEntry.getDescription();
-        if(hasPreposition(description)){
-            List<Entity> entities = new ArrayList<>();
-            entities.add(new Entity(matcher.group(1)));
-            entities.add(new Entity(matcher.group(3)));
-            return entities;
+    private List<Entity> processSpecialCases(CSVEntry csvEntry) {
+        Entity parent;
+        if ("text".equals(csvEntry.getNature())) {
+            parent = new Entity("text");
+            if (!elements.containsKey("text")) elements.put("text", parent);
+        } else {
+            parent = new Entity("ideograph");
+            if (!elements.containsKey("ideograph")) elements.put("ideograph", parent);
         }
-        return Collections.emptyList();
+        Entity subClasses = new Entity(parent, csvEntry.getDescription());
+        elements.put(csvEntry.getDescription(), subClasses);
+        return Arrays.asList(parent, subClasses);
     }
 
-    private List<Entity> processIndividualWords(final CSVEntry csvEntry) {
+    private boolean descriptionNeedsSpecialHandling(CSVEntry nature) {
+        return "text".equals(nature.getNature()) || nature.getDescription().contains("ideograph");
+    }
+
+    private List<Entity> processDescription(CSVEntry csvEntry) {
+        if (elements.containsKey(csvEntry.getDescription())) {
+            return Collections.emptyList();
+        }
+        List<Entity> entities = new ArrayList<>();
+        Entity parent;
+        if (hasPreposition(csvEntry.getDescription())) {
+            parent = elements.get(getLeftHandSideOfPreposition());
+        } else {
+            String lastWord = getLastWord(csvEntry.getDescription());
+            parent = elements.get(lastWord);
+        }
+        Entity entity = new Entity(parent, csvEntry.getDescription());
+        entities.add(entity);
+        elements.put(csvEntry.getDescription(), entity);
+        return entities;
+
+    }
+
+    private List<Entity> processIndividualWords(String descriptions) {
         List<Entity> lineEntities = new ArrayList<>();
-        String[] descriptions = csvEntry.toString().split("\\s+");
-        for (String description : descriptions) {
-            if(!isPreposition(description)){
-                if (!elements.containsKey(description)) {
-                    final Entity entity = new Entity(description);
+        String lastWord = getLastWord(descriptions);
+        if (!isPreposition(lastWord)) {
+            if (!elements.containsKey(lastWord)) {
+                final Entity entity = new Entity(lastWord);
                     lineEntities.add(entity);
-                    elements.put(description, entity);
-                }
+                elements.put(lastWord, entity);
             }
         }
         return lineEntities;
     }
-//            Map<String, Entity> topLevelClasses = new HashMap<>();
-//        for (CSVEntry csvEntry : itemsToConvert) {
-//            if (wordAppearsInDescriptionAndAnnotation(csvEntry)) {
-//                if (!topLevelClasses.containsKey(getFirstMatchingWord(csvEntry))) {
-//                    System.out.println("wordAppearsInDescription -> " + csvEntry);
-//                    Entity parent = new Entity(getFirstMatchingWord(csvEntry));
-//                    topLevelClasses.put(getFirstMatchingWord(csvEntry), parent);
-//                    entities.add(parent);
-//                }
-//            }
-//
-//            if (hasPreposition(csvEntry.getDescription())) {
-//                Entity parent = getParentIfExists(topLevelClasses, csvEntry);
-//                entities.add(convert(csvEntry, parent));
-//                System.out.println("preposition -> " + csvEntry);
-//            } else {
-//                final Entity possibleParent = getparentForAnnotationIfExists(csvEntry, topLevelClasses);
-//                if (possibleParent != null) {
-//                    entities.add(convert(csvEntry, possibleParent));
-//                } else {
-//                    Entity parent = convert(csvEntry);
-//                    topLevelClasses.put(csvEntry.getDescription(), parent);
-//                    entities.add(convert(csvEntry));
-//                }
-//                System.out.println("non -> " + csvEntry);
-//            }
 
-    private Entity getparentForAnnotationIfExists(CSVEntry csvEntry, Map<String, Entity> topLevelClasses) {
-        String[] splitString = csvEntry.toString().split(" ");
-        for (String string : splitString) {
-            if (topLevelClasses.containsKey(string)) {
-                return topLevelClasses.get(string);
+    private String getLastWord(String descriptions) {
+        return descriptions.replaceAll("^.*?(\\w+)\\W*$", "$1");
+    }
+
+    private List<Entity> processCompoundWords(CSVEntry csvEntry) {
+        String description = csvEntry.getDescription();
+        if (hasPreposition(description)) {
+            return handlePrepositions();
+        } else {
+            return processIndividualWords(description);
+        }
+    }
+
+    private List<Entity> handlePrepositions() {
+        List<Entity> entities = new ArrayList<>();
+        String key1 = getLeftHandSideOfPreposition();
+        entities.addAll(processIndividualWords(key1));
+        entities.addAll(handleElementOfPreposition(key1));
+        return entities;
+    }
+
+    private List<Entity> handleElementOfPreposition(String key) {
+        List<Entity> entities = new ArrayList<>();
+        if (elements.containsKey(key)) {
+            return Collections.emptyList();
+        }
+        Entity possibleParent = getPossibleParent(key);
+        Entity entity = new Entity(possibleParent, key);
+        entities.add(entity);
+        elements.put(key, entity);
+        return entities;
+    }
+
+    private Entity getPossibleParent(String key) {
+        for (String keyPart : key.split(" ")) {
+            if (elements.containsKey(keyPart)) {
+                return elements.get(keyPart);
             }
         }
         return null;
     }
 
-    private boolean wordAppearsInDescriptionAndAnnotation(CSVEntry csvEntry) {
-        List<String> unique = new ArrayList<>();
-        String[] splitString = csvEntry.toString().split(" ");
-        for (String string : splitString) {
-            if (unique.contains(string)) {
-                return true;
-            } else {
-                unique.add(string);
-            }
-        }
-        return false;
+    private String getLeftHandSideOfPreposition() {
+        return matcher.group(1);
     }
 
-    private String getFirstMatchingWord(CSVEntry csvEntry) {
-        List<String> unique = new ArrayList<>();
-        String[] splitString = csvEntry.toString().split(" ");
-        for (String string : splitString) {
-            if (unique.contains(string)) {
-                return string;
-            } else {
-                unique.add(string);
-            }
-        }
-        return null;
-    }
 
     private boolean hasPreposition(String description) {
         matcher = pattern.matcher(description);
         return matcher.find();
     }
 
-    private boolean isPreposition(String description){
+    private boolean isPreposition(String description) {
         return pattern1.matcher(description).matches();
-    }
-
-
-    private Entity getParentIfExists(Map<String, Entity> parentClasses, CSVEntry csvEntry) {
-        final String parent = matcher.group(1);
-        if (parentClasses.containsKey(parent)) {
-            return parentClasses.get(parent);
-        }
-
-        final Entity possibleParent = getparentForAnnotationIfExists(csvEntry, parentClasses);
-        if (possibleParent != null) {
-            return possibleParent;
-        }
-        Entity newParent = new Entity(parent);
-        parentClasses.put(parent, newParent);
-        return newParent;
     }
 }

@@ -11,6 +11,6 @@ class ListEntriesConverter extends ExpectedValuesConverter<CSVEntry> {
     @Override
     public CSVEntry getExpectedValues(final String value) {
         String[] split = value.split(COLUMN_FIELD_REGEX);
-        return new CSVEntry(split[0], Arrays.asList(split[2].split(ENTRY_FIELD_REGEX)));
+        return new CSVEntry(split[0], split[1], Arrays.asList(split[2].split(ENTRY_FIELD_REGEX)));
     }
 }

@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-public class MainClass {
+class MainClass {
     public static void main(String[] args) throws IOException {
         String filename = "filename.owl";
         if (args.length == 1) {

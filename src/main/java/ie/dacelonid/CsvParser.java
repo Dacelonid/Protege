@@ -44,11 +44,11 @@ class CsvParser {
         final String[] splitLine = line.split(COLUMN_FIELD_REGEX);
         String description = splitLine[descriptionColumn];
         List<String> annotations = getAnnotationsFromInputString(splitLine);
-
+        String nature = splitLine[natureColumn];
         populateAnnotations(annotations);
         populateDescriptions(description);
 
-        allLines.add(new CSVEntry(description, annotations));
+        allLines.add(new CSVEntry(description, nature, annotations));
     }
 
     private List<String> getAnnotationsFromInputString(final String[] delimitedString) {
