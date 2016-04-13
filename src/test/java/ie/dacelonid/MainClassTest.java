@@ -1,5 +1,7 @@
 package ie.dacelonid;
 
+import org.custommonkey.xmlunit.DetailedDiff;
+import org.custommonkey.xmlunit.Diff;
 import org.custommonkey.xmlunit.XMLAssert;
 import org.custommonkey.xmlunit.XMLUnit;
 import org.junit.After;
@@ -12,6 +14,9 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 public class MainClassTest {
 
@@ -32,8 +37,23 @@ public class MainClassTest {
     }
 
     @Test
+    public void generateOwlFile_compareWithReferenceTemp() throws Exception {
+        MainClass.main(new String[]{"temp_output.owl", "temp.csv"});
+        String actualContents = readFile("temp_output.owl");
+        String test = readFile("temp-gold.owl");
+        Diff diff = XMLUnit.compareXML(actualContents, test);
+        if(!diff.similar()){
+            DetailedDiff dd = new DetailedDiff(diff);
+            System.out.println(dd.getAllDifferences());
+            fail();
+        }
+
+//        XMLAssert.assertXMLEqual(actualContents, test);
+    }
+
+    @Test
     public void generateOwlFile_supplyingFilename_compareWithReference() throws Exception{
-        MainClass.main(new String[]{"non_default_filename.owl"});
+        MainClass.main(new String[]{"non_default_filename.owl", "Emoji_Unicodes.csv"});
         String actualContents = readFile("non_default_filename.owl");
         XMLAssert.assertXMLEqual(actualContents, expectedContents);
     }

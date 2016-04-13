@@ -16,10 +16,25 @@ class CSVEntryToEntity {
     private final Map<String, Entity> elements = new HashMap<>();
     private Matcher matcher;
 
-    List<Entity> convert(List<CSVEntry> itemsToConvert) {
-        List<Entity> entities = new ArrayList<>();
+    private Entity annotation_Entity = new Entity("annotations");
+    private Entity classes_Entity = new Entity("classes");
+    private List<Entity> entities;
+    private List<Entity> disjointClasses;
+    private List<Entity> properties;
+
+    public void convert(List<CSVEntry> itemsToConvert){
+        entities = new ArrayList<>();
+        disjointClasses = new ArrayList<>();
+        properties = new ArrayList<>();
+
+        entities.add(annotation_Entity);
+        entities.add(classes_Entity);
+        disjointClasses.add(annotation_Entity);
+        disjointClasses.add(classes_Entity);
+        properties.add(new Entity("has_annotation"));
 
         for (CSVEntry csvEntry : itemsToConvert) {
+            entities.addAll(processAnnotations(csvEntry));
             if (descriptionNeedsSpecialHandling(csvEntry)) {
                 entities.addAll(processSpecialCases(csvEntry));
             } else {
@@ -27,8 +42,27 @@ class CSVEntryToEntity {
                 entities.addAll(processDescription(csvEntry));
             }
         }
+    }
 
+    List<Entity> getEntities() {
         return entities;
+    }
+
+    List<Entity> getProperties(){
+        return properties;
+    }
+
+    private List<Entity> processAnnotations(CSVEntry csvEntry) {
+        List<Entity> newEntities = new ArrayList<>();
+        for(String annotation: csvEntry.getAnnotations()){
+            if(elements.containsKey(annotation+"_annotation")){
+                continue;
+            }
+            Entity newEntity = new Entity(annotation_Entity, annotation + "_annotation");
+            newEntities.add(newEntity);
+            elements.put(annotation+"_annotation", newEntity);
+        }
+        return  newEntities;
     }
 
     private List<Entity> processSpecialCases(CSVEntry csvEntry) {
@@ -61,9 +95,9 @@ class CSVEntryToEntity {
             String lastWord = getLastWord(csvEntry.getDescription());
             parent = elements.get(lastWord);
         }
-        Entity entity = new Entity(parent, csvEntry.getDescription());
-        entities.add(entity);
-        elements.put(csvEntry.getDescription(), entity);
+        Entity Entity = new Entity(parent, csvEntry.getDescription());
+        entities.add(Entity);
+        elements.put(csvEntry.getDescription(), Entity);
         return entities;
 
     }
@@ -73,9 +107,9 @@ class CSVEntryToEntity {
         String lastWord = getLastWord(descriptions);
         if (!isPreposition(lastWord)) {
             if (!elements.containsKey(lastWord)) {
-                final Entity entity = new Entity(lastWord);
-                    lineEntities.add(entity);
-                elements.put(lastWord, entity);
+                final Entity Entity = new Entity(classes_Entity, lastWord);
+                    lineEntities.add(Entity);
+                elements.put(lastWord, Entity);
             }
         }
         return lineEntities;
@@ -108,9 +142,9 @@ class CSVEntryToEntity {
             return Collections.emptyList();
         }
         Entity possibleParent = getPossibleParent(key);
-        Entity entity = new Entity(possibleParent, key);
-        entities.add(entity);
-        elements.put(key, entity);
+        Entity Entity = new Entity(possibleParent, key);
+        entities.add(Entity);
+        elements.put(key, Entity);
         return entities;
     }
 
@@ -135,5 +169,9 @@ class CSVEntryToEntity {
 
     private boolean isPreposition(String description) {
         return pattern1.matcher(description).matches();
+    }
+
+    public List<Entity> getDisjointClasses() {
+        return disjointClasses;
     }
 }

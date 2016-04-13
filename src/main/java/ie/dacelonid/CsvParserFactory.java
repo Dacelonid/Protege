@@ -12,8 +12,8 @@ class CsvParserFactory {
     private CsvParserFactory() {
     }
 
-    static CsvParser createCsvParser() throws IOException {
-        Optional<URL> url = Optional.ofNullable(Thread.currentThread().getContextClassLoader().getResource("Emoji_Unicodes.csv"));
+    static CsvParser createCsvParser(String fileName) throws IOException {
+        Optional<URL> url = Optional.ofNullable(Thread.currentThread().getContextClassLoader().getResource(fileName));
         if (url.isPresent()) {
             final File file = new File(url.get().getPath());
 

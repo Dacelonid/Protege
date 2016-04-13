@@ -18,16 +18,16 @@ class Entity {
 
     @Override
     public String toString() {
-        return "<Declaration>\n<Class IRI=\"#" + name + "\"/>" + System.lineSeparator() + "</Declaration>" +
+        return "<Declaration>\n<Class IRI=\"" + getName() + "\"/>" + System.lineSeparator() + "</Declaration>" +
                 System.lineSeparator() + getParent();
     }
 
-    private String getParent() {
+    protected String getParent() {
         if (parent == null) {
             return "";
         }
         return " <SubClassOf>" + System.lineSeparator() + "<Class IRI=\"#" + name + "\"/>" + System.lineSeparator() +
-                "<Class IRI=\"#" + parent.name + "\"/> " + System.lineSeparator() + " </SubClassOf>" + System.lineSeparator();
+                "<Class IRI=\"" + parent.getName()  + "\"/> " + System.lineSeparator() + " </SubClassOf>" + System.lineSeparator();
     }
 
     @Override
@@ -42,5 +42,9 @@ class Entity {
     @Override
     public final int hashCode() {
         return 13 + (name == null ? 0 : name.hashCode()) + (parent == null ? 0 : parent.hashCode());
+    }
+
+    public String getName() {
+        return "#" + name;
     }
 }

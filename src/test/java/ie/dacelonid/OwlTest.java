@@ -78,7 +78,7 @@ public class OwlTest {
 
     @Test
     public void toString_ontologyWithAllEmojisAsTopLevelEntities_shouldBeValidOwlFile() throws Exception{
-        CsvParser parser = CsvParserFactory.createCsvParser();
+        CsvParser parser = CsvParserFactory.createCsvParser("Emoji_Unicodes.csv");
         for(String description : parser.getDescriptions()){
             objUnderTest.addEntity(new Entity(description));
         }

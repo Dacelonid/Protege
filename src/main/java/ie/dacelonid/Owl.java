@@ -19,6 +19,8 @@ class Owl {
     private static final String SCHEMA_PREFIX = "<Prefix name=\"xsd\" IRI=\"http://www.w3.org/2001/XMLSchema#\"/>";
     private static final String RDFS_PREFIX = "<Prefix name=\"rdfs\" IRI=\"http://www.w3.org/2000/01/rdf-schema#\"/>";
     private final List<Entity> entities = new ArrayList<>();
+    private final List<Entity> disjointClasses = new ArrayList<>();
+    private final List<Entity> properties = new ArrayList<>();
 
     public String toString() {
         StringBuilder output = new StringBuilder();
@@ -36,14 +38,39 @@ class Owl {
         output.append(XML_PREFIX).append(System.lineSeparator());
         output.append(SCHEMA_PREFIX).append(System.lineSeparator());
         output.append(RDFS_PREFIX).append(System.lineSeparator());
-        for (Entity entity : entities) {
-            output.append(entity.toString());
+        for (Entity Entity : entities) {
+            output.append(Entity.toString());
+        }
+        if(!disjointClasses.isEmpty()) {
+            output.append("<DisjointClasses>").append(System.lineSeparator());
+            for (Entity disjointClass : disjointClasses) {
+                output.append("<Class IRI=\"" + disjointClass.getName() + "\"/>").append(System.lineSeparator());
+            }
+            output.append("</DisjointClasses>").append(System.lineSeparator());
+
+        }
+
+        if(!properties.isEmpty()){
+            for (Entity property : properties) {
+                output.append("<Declaration>").append(System.lineSeparator());
+                output.append("<ObjectProperty IRI=\"" + property.getName() + "\"/>").append(System.lineSeparator());
+                output.append("</Declaration>").append(System.lineSeparator());
+            }
         }
         output.append("</Ontology>");
+
         return output.toString();
     }
 
     void addEntity(Entity entity) {
         entities.add(entity);
+    }
+
+    void addDisjointClasses(Entity entity) {
+        disjointClasses.add(entity);
+    }
+
+    void addProperty(Entity property){
+        properties.add(property);
     }
 }

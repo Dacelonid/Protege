@@ -49,4 +49,8 @@ class CSVEntry {
     String getNature() {
         return nature;
     }
+
+    public List<String> getAnnotations() {
+        return annotations;
+    }
 }

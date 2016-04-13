@@ -7,16 +7,27 @@ import java.util.List;
 class MainClass {
     public static void main(String[] args) throws IOException {
         String filename = "filename.owl";
-        if (args.length == 1) {
+        String inputFile = "Emoji_Unicodes.csv";
+        if (args.length == 2) {
             filename = args[0];
+            inputFile = args[1];
         }
-        CsvParser csvParser = CsvParserFactory.createCsvParser();
+        CsvParser csvParser = CsvParserFactory.createCsvParser(inputFile);
         Owl owl = new Owl();
 
         List<CSVEntry> allLines = csvParser.getAllLines();
         CSVEntryToEntity converter = new CSVEntryToEntity();
-        List<Entity> convertedEntities = converter.convert(allLines);
+        converter.convert(allLines);
+        List<Entity> convertedEntities = converter.getEntities();
         convertedEntities.forEach(owl::addEntity);
+
+        List<Entity> disjointClasses = converter.getDisjointClasses();
+        disjointClasses.forEach(owl::addDisjointClasses);
+
+        List<Entity> properties = converter.getProperties();
+        properties.forEach(owl::addProperty);
+
+
 
         try (PrintWriter out = new PrintWriter(filename)) {
             out.println(owl);
