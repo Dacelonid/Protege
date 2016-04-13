@@ -19,34 +19,25 @@ class CSVEntryToEntity {
     private Entity annotation_Entity = new Entity("annotations");
     private Entity classes_Entity = new Entity("classes");
     private List<RdfElement> rdfElements;
-    private List<Entity> entities;
-    private List<RdfElement> disjointClasses;
-    private List<Entity> properties;
 
     public void convert(List<CSVEntry> itemsToConvert){
-        entities = new ArrayList<>();
-        disjointClasses = new ArrayList<>();
-        properties = new ArrayList<>();
         rdfElements = new ArrayList<>();
 
-        entities.add(annotation_Entity);
-        entities.add(classes_Entity);
-        disjointClasses.add(new DisjointClasses(annotation_Entity.getName(), classes_Entity.getName()));
-        rdfElements.add(new Property("has_annotation"));
+        rdfElements.add(annotation_Entity);
+        rdfElements.add(classes_Entity);
+        rdfElements.add(new DisjointClasses(annotation_Entity.getName(), classes_Entity.getName()));
+        Property property = new Property.PropertyBuilder().name("has_annotation").functional().domain(classes_Entity).range(annotation_Entity).build();
+        rdfElements.add(property);
 
         for (CSVEntry csvEntry : itemsToConvert) {
-            entities.addAll(processAnnotations(csvEntry));
+            rdfElements.addAll(processAnnotations(csvEntry));
             if (descriptionNeedsSpecialHandling(csvEntry)) {
-                entities.addAll(processSpecialCases(csvEntry));
+                rdfElements.addAll(processSpecialCases(csvEntry));
             } else {
-                entities.addAll(processCompoundWords(csvEntry));
-                entities.addAll(processDescription(csvEntry));
+                rdfElements.addAll(processCompoundWords(csvEntry));
+                rdfElements.addAll(processDescription(csvEntry));
             }
         }
-    }
-
-    List<Entity> getEntities() {
-        return entities;
     }
 
     List<RdfElement> getProperties(){
@@ -170,9 +161,5 @@ class CSVEntryToEntity {
 
     private boolean isPreposition(String description) {
         return pattern1.matcher(description).matches();
-    }
-
-    public List<RdfElement> getDisjointClasses() {
-        return disjointClasses;
     }
 }

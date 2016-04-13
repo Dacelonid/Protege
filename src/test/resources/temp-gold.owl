@@ -18,84 +18,80 @@ xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     <Declaration>
         <Class IRI="#classes"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#face_annotation"/>
-    </Declaration>
-    <SubClassOf>
-        <Class IRI="#face_annotation"/>
-        <Class IRI="#annotations"/>
-    </SubClassOf>
-    <Declaration>
-        <Class IRI="#grin_annotation"/>
-    </Declaration>
-    <SubClassOf>
-        <Class IRI="#grin_annotation"/>
-        <Class IRI="#annotations"/>
-    </SubClassOf>
-    <Declaration>
-        <Class IRI="#person_annotation"/>
-    </Declaration>
-    <SubClassOf>
-        <Class IRI="#person_annotation"/>
-        <Class IRI="#annotations"/>
-    </SubClassOf>
-    <Declaration>
-        <Class IRI="#face"/>
-    </Declaration>
-    <SubClassOf>
-        <Class IRI="#face"/>
-        <Class IRI="#classes"/>
-    </SubClassOf>
-    <Declaration>
-        <Class IRI="#grinning_face"/>
-    </Declaration>
-    <SubClassOf>
-        <Class IRI="#grinning_face"/>
-        <Class IRI="#face"/>
-    </SubClassOf>
-    <Declaration>
-        <Class IRI="#eye_annotation"/>
-    </Declaration>
-    <SubClassOf>
-        <Class IRI="#eye_annotation"/>
-        <Class IRI="#annotations"/>
-    </SubClassOf>
-    <Declaration>
-        <Class IRI="#smile_annotation"/>
-    </Declaration>
-    <SubClassOf>
-        <Class IRI="#smile_annotation"/>
-        <Class IRI="#annotations"/>
-    </SubClassOf>
-    <Declaration>
-        <Class IRI="#grinning_face_with_smiling_eyes"/>
-    </Declaration>
-    <SubClassOf>
-        <Class IRI="#grinning_face_with_smiling_eyes"/>
-        <Class IRI="#grinning_face"/>
-    </SubClassOf>
-    <DisjointClasses>
-        <Class IRI="#annotations"/>
-        <Class IRI="#classes"/>
-    </DisjointClasses>
-    <Declaration>
-        <ObjectProperty IRI="#has_annotation"/>
-    </Declaration>
-
+<DisjointClasses>
+<Class IRI="#annotations"/>
+<Class IRI="#classes"/>
+</DisjointClasses>
+<Declaration>
+<ObjectProperty IRI="#has_annotation"/>
+</Declaration>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#has_annotation"/>
     </FunctionalObjectProperty>
-
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#has_annotation"/>
         <Class IRI="#classes"/>
     </ObjectPropertyDomain>
-
     <ObjectPropertyRange>
         <ObjectProperty IRI="#has_annotation"/>
         <Class IRI="#annotations"/>
     </ObjectPropertyRange>
-
+    <Declaration>
+        <Class IRI="#face_annotation"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#face_annotation"/>
+        <Class IRI="#annotations"/>
+    </SubClassOf>
+    <Declaration>
+        <Class IRI="#grin_annotation"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#grin_annotation"/>
+        <Class IRI="#annotations"/>
+    </SubClassOf>
+    <Declaration>
+        <Class IRI="#person_annotation"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#person_annotation"/>
+        <Class IRI="#annotations"/>
+    </SubClassOf>
+    <Declaration>
+        <Class IRI="#face"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#face"/>
+        <Class IRI="#classes"/>
+    </SubClassOf>
+    <Declaration>
+        <Class IRI="#grinning_face"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#grinning_face"/>
+        <Class IRI="#face"/>
+    </SubClassOf>
+    <Declaration>
+        <Class IRI="#eye_annotation"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#eye_annotation"/>
+        <Class IRI="#annotations"/>
+    </SubClassOf>
+    <Declaration>
+        <Class IRI="#smile_annotation"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#smile_annotation"/>
+        <Class IRI="#annotations"/>
+    </SubClassOf>
+    <Declaration>
+        <Class IRI="#grinning_face_with_smiling_eyes"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#grinning_face_with_smiling_eyes"/>
+        <Class IRI="#grinning_face"/>
+    </SubClassOf>
     <SubClassOf>
         <Class IRI="#classes"/>
         <Class abbreviatedIRI="owl:Thing"/>

@@ -14,7 +14,7 @@ public class CSVEntryToEntityTest {
 
     private Entity annotation;
     private Entity classes;
-    private List<Entity> expectedEntities;
+    private List<RdfElement> expectedEntities;
 
     @Before
     public void setup() {
@@ -23,6 +23,10 @@ public class CSVEntryToEntityTest {
         expectedEntities = new ArrayList<>();
         expectedEntities.add(annotation);
         expectedEntities.add(classes);
+        expectedEntities.add(new DisjointClasses("#annotations", "#classes"));
+        Property property = new Property.PropertyBuilder().name("has_annotation").functional().domain(new Entity("classes")).range
+                (new Entity("annotations")).build();
+        expectedEntities.add(property);
     }
 
     @Test
@@ -34,12 +38,10 @@ public class CSVEntryToEntityTest {
         Entity eyes_annotation = new Entity(annotation, "Eyes_annotation");
         Entity smile_annotation = new Entity(annotation, "Smile_annotation");
         expectedEntities.addAll(Arrays.asList(face_annotation, eyes_annotation, smile_annotation, face, smilingFace, smilingFaceWithEyes));
-
         CSVEntryToEntity objUnderTest = new CSVEntryToEntity();
-        List<CSVEntry> itemsToConvert = Collections.singletonList(
-                new CSVEntry("Smiling Face with Eyes", "emoji", Arrays.asList("Face", "Eyes", "Smile")));
+        List<CSVEntry> itemsToConvert = Collections.singletonList(new CSVEntry("Smiling Face with Eyes", "emoji", Arrays.asList("Face", "Eyes", "Smile")));
         objUnderTest.convert(itemsToConvert);
-        assertEquals(expectedEntities, objUnderTest.getEntities());
+        assertEquals(expectedEntities, objUnderTest.getProperties());
     }
 
     @Test
@@ -56,7 +58,7 @@ public class CSVEntryToEntityTest {
                 new CSVEntry("squared cjk unified ideograph-6708", "emoji", Arrays.asList("japanese", "symbol", "word")));
 
         objUnderTest.convert(itemsToConvert);
-        assertEquals(expectedEntities, objUnderTest.getEntities());
+        assertEquals(expectedEntities, objUnderTest.getProperties());
     }
 
     @Test
@@ -74,7 +76,7 @@ public class CSVEntryToEntityTest {
                 new CSVEntry("negative squared latin capital letter a", "text", Arrays.asList("a", "blood", "symbol", "word")));
 
         objUnderTest.convert(itemsToConvert);
-        assertEquals(expectedEntities, objUnderTest.getEntities());
+        assertEquals(expectedEntities, objUnderTest.getProperties());
     }
 
     @Test
@@ -89,7 +91,7 @@ public class CSVEntryToEntityTest {
         List<CSVEntry> itemsToConvert = Collections.singletonList(new CSVEntry("Smiling Face", "emoji", Arrays.asList("Face", "Smile")));
 
         objUnderTest.convert(itemsToConvert);
-        assertEquals(expectedEntities, objUnderTest.getEntities());
+        assertEquals(expectedEntities, objUnderTest.getProperties());
     }
 
 }

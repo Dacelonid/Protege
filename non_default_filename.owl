@@ -18,6 +18,24 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Declaration>
 <Class IRI="#classes"/>
 </Declaration>
+<DisjointClasses>
+<Class IRI="#annotations"/>
+<Class IRI="#classes"/>
+</DisjointClasses>
+<Declaration>
+<ObjectProperty IRI="#has_annotation"/>
+</Declaration>
+<FunctionalObjectProperty>
+<ObjectProperty IRI="#has_annotation"/>
+</FunctionalObjectProperty>
+<ObjectPropertyDomain>
+<ObjectProperty IRI="#has_annotation"/>
+<Class IRI="#classes"/>
+</ObjectPropertyDomain>
+<ObjectPropertyRange>
+<ObjectProperty IRI="#has_annotation"/>
+<Class IRI="#annotations"/>
+</ObjectPropertyRange>
 <Declaration>
 <Class IRI="#face_annotation"/>
 </Declaration>
@@ -16144,11 +16162,4 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Class IRI="#flag_for_United_States"/>
 <Class IRI="#flag"/> 
  </SubClassOf>
-<DisjointClasses>
-<Class IRI="#annotations"/>
-<Class IRI="#classes"/>
-</DisjointClasses>
-<Declaration>
-<ObjectProperty IRI="#has_annotation"/>
-</Declaration>
 </Ontology>

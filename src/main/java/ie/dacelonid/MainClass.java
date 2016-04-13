@@ -18,12 +18,6 @@ class MainClass {
         List<CSVEntry> allLines = csvParser.getAllLines();
         CSVEntryToEntity converter = new CSVEntryToEntity();
         converter.convert(allLines);
-        List<Entity> convertedEntities = converter.getEntities();
-        convertedEntities.forEach(owl::addEntity);
-
-        List<RdfElement> disjointClasses = converter.getDisjointClasses();
-        disjointClasses.forEach(owl::addDisjointClasses);
-
         List<RdfElement> properties = converter.getProperties();
         properties.forEach(owl::addProperty);
 
