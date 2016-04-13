@@ -21,10 +21,10 @@ class MainClass {
         List<Entity> convertedEntities = converter.getEntities();
         convertedEntities.forEach(owl::addEntity);
 
-        List<Entity> disjointClasses = converter.getDisjointClasses();
+        List<RdfElement> disjointClasses = converter.getDisjointClasses();
         disjointClasses.forEach(owl::addDisjointClasses);
 
-        List<Entity> properties = converter.getProperties();
+        List<RdfElement> properties = converter.getProperties();
         properties.forEach(owl::addProperty);
 
 

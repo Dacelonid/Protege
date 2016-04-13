@@ -18,20 +18,21 @@ class CSVEntryToEntity {
 
     private Entity annotation_Entity = new Entity("annotations");
     private Entity classes_Entity = new Entity("classes");
+    private List<RdfElement> rdfElements;
     private List<Entity> entities;
-    private List<Entity> disjointClasses;
+    private List<RdfElement> disjointClasses;
     private List<Entity> properties;
 
     public void convert(List<CSVEntry> itemsToConvert){
         entities = new ArrayList<>();
         disjointClasses = new ArrayList<>();
         properties = new ArrayList<>();
+        rdfElements = new ArrayList<>();
 
         entities.add(annotation_Entity);
         entities.add(classes_Entity);
-        disjointClasses.add(annotation_Entity);
-        disjointClasses.add(classes_Entity);
-        properties.add(new Entity("has_annotation"));
+        disjointClasses.add(new DisjointClasses(annotation_Entity.getName(), classes_Entity.getName()));
+        rdfElements.add(new Property("has_annotation"));
 
         for (CSVEntry csvEntry : itemsToConvert) {
             entities.addAll(processAnnotations(csvEntry));
@@ -48,8 +49,8 @@ class CSVEntryToEntity {
         return entities;
     }
 
-    List<Entity> getProperties(){
-        return properties;
+    List<RdfElement> getProperties(){
+        return rdfElements;
     }
 
     private List<Entity> processAnnotations(CSVEntry csvEntry) {
@@ -171,7 +172,7 @@ class CSVEntryToEntity {
         return pattern1.matcher(description).matches();
     }
 
-    public List<Entity> getDisjointClasses() {
+    public List<RdfElement> getDisjointClasses() {
         return disjointClasses;
     }
 }

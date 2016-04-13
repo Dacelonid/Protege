@@ -2,7 +2,7 @@ package ie.dacelonid;
 
 import java.util.Objects;
 
-class Entity {
+class Entity implements RdfElement{
     private final Entity parent;
     private final String name;
 
@@ -14,12 +14,6 @@ class Entity {
     Entity(final Entity parent, final String name) {
         this.parent = parent;
         this.name = name.replace(' ', '_');
-    }
-
-    @Override
-    public String toString() {
-        return "<Declaration>\n<Class IRI=\"" + getName() + "\"/>" + System.lineSeparator() + "</Declaration>" +
-                System.lineSeparator() + getParent();
     }
 
     protected String getParent() {
@@ -46,5 +40,11 @@ class Entity {
 
     public String getName() {
         return "#" + name;
+    }
+
+    @Override
+    public String getPrintableElement() {
+        return "<Declaration>\n<Class IRI=\"" + getName() + "\"/>" + System.lineSeparator() + "</Declaration>" +
+                System.lineSeparator() + getParent();
     }
 }
