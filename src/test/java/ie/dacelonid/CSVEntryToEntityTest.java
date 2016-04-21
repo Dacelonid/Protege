@@ -24,22 +24,23 @@ public class CSVEntryToEntityTest {
         expectedEntities.add(annotation);
         expectedEntities.add(classes);
         expectedEntities.add(new DisjointClasses("#annotations", "#classes"));
-        Property property = new Property.PropertyBuilder().name("has_annotation").functional().domain(new Entity("classes")).range
-                (new Entity("annotations")).build();
+        Property property = new Property.PropertyBuilder().name("has_annotation").functional().domain(new Entity("classes")).range(
+                new Entity("annotations")).build();
         expectedEntities.add(property);
     }
 
     @Test
     public void convert_multipleCsvEntries_getEntitiesIncludingSubclasses() {
-        Entity face = new Entity(classes, "Face");
-        Entity smilingFace = new Entity(face, "Smiling Face");
-        Entity smilingFaceWithEyes = new Entity(smilingFace, "Smiling_Face_with_Eyes");
+        Entity face = new Entity(classes, "Face", Collections.singletonList("Face"));
+        Entity smilingFace = new Entity(face, "Smiling Face", Arrays.asList("Face", "Eyes", "Smile"));
+        Entity smilingFaceWithEyes = new Entity(smilingFace, "Smiling_Face_with_Eyes", Arrays.asList("Face", "Eyes", "Smile"));
         Entity face_annotation = new Entity(annotation, "Face_annotation");
         Entity eyes_annotation = new Entity(annotation, "Eyes_annotation");
         Entity smile_annotation = new Entity(annotation, "Smile_annotation");
         expectedEntities.addAll(Arrays.asList(face_annotation, eyes_annotation, smile_annotation, face, smilingFace, smilingFaceWithEyes));
         CSVEntryToEntity objUnderTest = new CSVEntryToEntity();
-        List<CSVEntry> itemsToConvert = Collections.singletonList(new CSVEntry("Smiling Face with Eyes", "emoji", Arrays.asList("Face", "Eyes", "Smile")));
+        List<CSVEntry> itemsToConvert = Collections.singletonList(
+                new CSVEntry("Smiling Face with Eyes", "emoji", Arrays.asList("Face", "Eyes", "Smile")));
         objUnderTest.convert(itemsToConvert);
         assertEquals(expectedEntities, objUnderTest.getProperties());
     }
@@ -47,7 +48,7 @@ public class CSVEntryToEntityTest {
     @Test
     public void convert_wordsThatShouldntBeClasses_ideograph_shouldIgnoreThoseWords() {
         Entity parent = new Entity("ideograph");
-        Entity ideograph6708 = new Entity(parent, "squared cjk unified ideograph-6708");
+        Entity ideograph6708 = new Entity(parent, "squared cjk unified ideograph-6708", Arrays.asList("japanese", "symbol", "word"));
         Entity japanese_annotation = new Entity(annotation, "japanese_annotation");
         Entity symbol_annotation = new Entity(annotation, "symbol_annotation");
         Entity word_annotation = new Entity(annotation, "word_annotation");
@@ -64,7 +65,7 @@ public class CSVEntryToEntityTest {
     @Test
     public void convert_wordsThatShouldntBeClasses_letter_shouldIgnoreThoseWords() {
         Entity parent = new Entity("text");
-        Entity ideograph6708 = new Entity(parent, "negative squared latin capital letter a");
+        Entity ideograph6708 = new Entity(parent, "negative squared latin capital letter a", Arrays.asList("a", "blood", "symbol", "word"));
         Entity a_annotation = new Entity(annotation, "a_annotation");
         Entity blood_annotation = new Entity(annotation, "blood_annotation");
         Entity symbol_annotation = new Entity(annotation, "symbol_annotation");
@@ -81,8 +82,8 @@ public class CSVEntryToEntityTest {
 
     @Test
     public void convert_multipleCSVEntriesWithMultipleClasses_shouldIgnoreAdjectives() {
-        Entity face = new Entity(classes, "Face");
-        Entity smilingFace = new Entity(face, "Smiling Face");
+        Entity face = new Entity(classes, "Face", Collections.singletonList("Face"));
+        Entity smilingFace = new Entity(face, "Smiling Face", Arrays.asList("Face", "Smile"));
         Entity face_annotation = new Entity(annotation, "Face_annotation");
         Entity smile_annotation = new Entity(annotation, "Smile_annotation");
 
@@ -92,6 +93,21 @@ public class CSVEntryToEntityTest {
 
         objUnderTest.convert(itemsToConvert);
         assertEquals(expectedEntities, objUnderTest.getProperties());
+    }
+
+    @Test
+    public void convert_annotationsWithSpaces_shouldConvertToUnderscores() {
+        Entity face = new Entity(classes, "Face", Collections.singletonList("Smiling face"));
+        Entity smilingFace = new Entity(face, "Smiling Face", Collections.singletonList("Smiling face"));
+        Entity smile_annotation = new Entity(annotation, "Smiling_face_annotation");
+
+        expectedEntities.addAll(Arrays.asList(smile_annotation, face, smilingFace));
+        CSVEntryToEntity objUnderTest = new CSVEntryToEntity();
+        List<CSVEntry> itemsToConvert = Collections.singletonList(new CSVEntry("Smiling Face", "emoji", Collections.singletonList("Smiling face")));
+
+        objUnderTest.convert(itemsToConvert);
+        List<RdfElement> properties = objUnderTest.getProperties();
+        assertEquals(expectedEntities, properties);
     }
 
 }

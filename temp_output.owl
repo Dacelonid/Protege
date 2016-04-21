@@ -15,9 +15,11 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Declaration>
 <Class IRI="#annotations"/>
 </Declaration>
+
 <Declaration>
 <Class IRI="#classes"/>
 </Declaration>
+
 <DisjointClasses>
 <Class IRI="#annotations"/>
 <Class IRI="#classes"/>
@@ -43,6 +45,7 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Class IRI="#face_annotation"/>
 <Class IRI="#annotations"/> 
  </SubClassOf>
+
 <Declaration>
 <Class IRI="#grin_annotation"/>
 </Declaration>
@@ -50,6 +53,7 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Class IRI="#grin_annotation"/>
 <Class IRI="#annotations"/> 
  </SubClassOf>
+
 <Declaration>
 <Class IRI="#person_annotation"/>
 </Declaration>
@@ -57,6 +61,7 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Class IRI="#person_annotation"/>
 <Class IRI="#annotations"/> 
  </SubClassOf>
+
 <Declaration>
 <Class IRI="#face"/>
 </Declaration>
@@ -64,6 +69,14 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Class IRI="#face"/>
 <Class IRI="#classes"/> 
  </SubClassOf>
+
+<SubClassOf>
+<Class IRI="#face"/>
+<ObjectAllValuesFrom>
+<ObjectProperty IRI="#has_annotation"/>
+<Class IRI="#face_annotation"/>
+</ObjectAllValuesFrom>
+</SubClassOf>
 <Declaration>
 <Class IRI="#grinning_face"/>
 </Declaration>
@@ -71,6 +84,17 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Class IRI="#grinning_face"/>
 <Class IRI="#face"/> 
  </SubClassOf>
+
+<SubClassOf>
+<Class IRI="#grinning_face"/>
+<ObjectAllValuesFrom>
+<ObjectProperty IRI="#has_annotation"/>
+<ObjectIntersectionOf>
+<Class IRI="#grin_annotation"/>
+<Class IRI="#person_annotation"/>
+</ObjectIntersectionOf>
+</ObjectAllValuesFrom>
+</SubClassOf>
 <Declaration>
 <Class IRI="#eye_annotation"/>
 </Declaration>
@@ -78,6 +102,7 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Class IRI="#eye_annotation"/>
 <Class IRI="#annotations"/> 
  </SubClassOf>
+
 <Declaration>
 <Class IRI="#smile_annotation"/>
 </Declaration>
@@ -85,6 +110,7 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Class IRI="#smile_annotation"/>
 <Class IRI="#annotations"/> 
  </SubClassOf>
+
 <Declaration>
 <Class IRI="#grinning_face_with_smiling_eyes"/>
 </Declaration>
@@ -92,4 +118,15 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Class IRI="#grinning_face_with_smiling_eyes"/>
 <Class IRI="#grinning_face"/> 
  </SubClassOf>
+
+<SubClassOf>
+<Class IRI="#grinning_face_with_smiling_eyes"/>
+<ObjectAllValuesFrom>
+<ObjectProperty IRI="#has_annotation"/>
+<ObjectIntersectionOf>
+<Class IRI="#eye_annotation"/>
+<Class IRI="#smile_annotation"/>
+</ObjectIntersectionOf>
+</ObjectAllValuesFrom>
+</SubClassOf>
 </Ontology>

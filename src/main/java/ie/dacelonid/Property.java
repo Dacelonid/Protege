@@ -4,10 +4,10 @@ import java.util.Objects;
 
 class Property implements RdfElement {
 
-    private String name;
     private final boolean functional;
     private final String domain_entity;
     private final String range_entity;
+    private String name;
 
     private Property(String name, boolean functional, String domain_entity, String range_entity) {
         this.name = name;
@@ -21,10 +21,10 @@ class Property implements RdfElement {
     @Override
     public String getPrintableElement() {
         StringBuilder output = new StringBuilder();
-        output.append("<Declaration>" ).append(System.lineSeparator());
+        output.append("<Declaration>").append(System.lineSeparator());
         output.append("<ObjectProperty IRI=\"").append(getName()).append("\"/>").append(System.lineSeparator());
-        output.append("</Declaration>" ).append(System.lineSeparator());
-        if(functional){
+        output.append("</Declaration>").append(System.lineSeparator());
+        if (functional) {
             output.append("<FunctionalObjectProperty>").append(System.lineSeparator());
             output.append("<ObjectProperty IRI=\"").append(getName()).append("\"/>").append(System.lineSeparator());
             output.append("</FunctionalObjectProperty>").append(System.lineSeparator());
@@ -40,7 +40,7 @@ class Property implements RdfElement {
         return output.toString();
     }
 
-    public String getName() {
+    private String getName() {
         return name;
     }
 
@@ -55,10 +55,11 @@ class Property implements RdfElement {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj instanceof Property){
-            Property other = (Property)obj;
-            return Objects.equals(name, other.name) && Objects.equals(domain_entity, other.domain_entity) && Objects.equals(range_entity, other
-                    .range_entity) && functional == other.functional;
+        if (obj instanceof Property) {
+            Property other = (Property) obj;
+            return Objects.equals(name, other.name) && Objects.equals(domain_entity, other.domain_entity) && Objects.equals(range_entity,
+                                                                                                                            other.range_entity) &&
+                    functional == other.functional;
         }
         return false;
     }

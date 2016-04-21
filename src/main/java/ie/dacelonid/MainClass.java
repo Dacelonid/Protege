@@ -22,7 +22,6 @@ class MainClass {
         properties.forEach(owl::addProperty);
 
 
-
         try (PrintWriter out = new PrintWriter(filename)) {
             out.println(owl);
         }

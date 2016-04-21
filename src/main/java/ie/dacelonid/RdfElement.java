@@ -1,6 +1,6 @@
 package ie.dacelonid;
 
-public interface RdfElement {
+interface RdfElement {
 
     String getPrintableElement();
 }

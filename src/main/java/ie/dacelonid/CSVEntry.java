@@ -40,7 +40,7 @@ class CSVEntry {
         builder.append("\t");
         builder.append(nature);
         builder.append("\t");
-        for(String annotation:annotations){
+        for (String annotation : annotations) {
             builder.append(annotation.trim()).append(" ");
         }
         return builder.toString();

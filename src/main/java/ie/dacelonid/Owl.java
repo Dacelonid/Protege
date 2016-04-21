@@ -57,7 +57,7 @@ class Owl {
         rdfElements.add(disjointClass);
     }
 
-    void addProperty(RdfElement property){
+    void addProperty(RdfElement property) {
         rdfElements.add(property);
     }
 }
