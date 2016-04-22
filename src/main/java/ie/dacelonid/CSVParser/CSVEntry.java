@@ -1,14 +1,14 @@
-package ie.dacelonid;
+package ie.dacelonid.CSVParser;
 
 import java.util.List;
 import java.util.Objects;
 
-class CSVEntry {
+public class CSVEntry {
     private final String description;
     private final String nature;
     private final List<String> annotations;
 
-    CSVEntry(String description, String nature, List<String> annotations) {
+    public CSVEntry(String description, String nature, List<String> annotations) {
         this.description = description;
         this.nature = nature;
         this.annotations = annotations;
@@ -30,7 +30,7 @@ class CSVEntry {
         return false;
     }
 
-    String getDescription() {
+    public String getDescription() {
         return description;
     }
 
@@ -46,7 +46,7 @@ class CSVEntry {
         return builder.toString();
     }
 
-    String getNature() {
+    public String getNature() {
         return nature;
     }
 

@@ -1,4 +1,4 @@
-package ie.dacelonid;
+package ie.dacelonid.CSVParser;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,11 +8,11 @@ import java.nio.file.Files;
 import java.util.List;
 import java.util.Optional;
 
-class CsvParserFactory {
+public class CsvParserFactory {
     private CsvParserFactory() {
     }
 
-    static CsvParser createCsvParser(String fileName) throws IOException {
+    public static CsvParser createCsvParser(String fileName) throws IOException {
         Optional<URL> url = Optional.ofNullable(Thread.currentThread().getContextClassLoader().getResource(fileName));
         if (url.isPresent()) {
             final File file = new File(url.get().getPath());

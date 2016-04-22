@@ -1,5 +1,10 @@
 package ie.dacelonid;
 
+import ie.dacelonid.CSVParser.CsvParser;
+import ie.dacelonid.CSVParser.CsvParserFactory;
+import ie.dacelonid.ontology.Entity;
+import ie.dacelonid.ontology.Ontology;
+import ie.dacelonid.ontology.Thing;
 import org.custommonkey.xmlunit.XMLAssert;
 import org.custommonkey.xmlunit.XMLUnit;
 import org.junit.Before;
@@ -12,11 +17,11 @@ import java.nio.file.Paths;
 
 
 public class OwlTest {
-    private Owl objUnderTest;
+    private Ontology objUnderTest;
 
     @Before
     public void setup() {
-        objUnderTest = new Owl();
+        objUnderTest = new Ontology();
         XMLUnit.setIgnoreWhitespace(true);
     }
 
@@ -53,8 +58,8 @@ public class OwlTest {
 
     @Test
     public void toString_ontologyWithSubclasses_shouldBeValidOwlFile() throws Exception {
-        Entity parent = new Entity("Emoji");
-        Entity child = new Entity(parent, "AnimalEmoji");
+        Thing parent = new Entity("Emoji");
+        Thing child = new Entity(parent, "AnimalEmoji");
         objUnderTest.addEntity(parent);
         objUnderTest.addEntity(child);
         String expectedOwl = readFile("ontologyWithSubclasses.owl");
@@ -65,9 +70,9 @@ public class OwlTest {
 
     @Test
     public void toString_ontologyWithSubclassesOfSubclasses_shouldBeValidOwlFile() throws Exception {
-        Entity parent = new Entity("Emoji");
-        Entity child = new Entity(parent, "AnimalEmoji");
-        Entity subChild = new Entity(child, "DogEmoji");
+        Thing parent = new Entity("Emoji");
+        Thing child = new Entity(parent, "AnimalEmoji");
+        Thing subChild = new Entity(child, "DogEmoji");
         objUnderTest.addEntity(parent);
         objUnderTest.addEntity(child);
         objUnderTest.addEntity(subChild);

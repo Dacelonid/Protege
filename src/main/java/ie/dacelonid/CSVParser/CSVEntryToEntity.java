@@ -1,10 +1,12 @@
-package ie.dacelonid;
+package ie.dacelonid.CSVParser;
+
+import ie.dacelonid.ontology.*;
 
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-class CSVEntryToEntity {
+public class CSVEntryToEntity {
 
     private static final String PREPOSITION_REGEX = "(aboard|about|above|across|after|against|along|amid|among|anti|around|as|at|before|behind" +
             "|below|beneath|beside|besides|between|beyond|but|by|concerning|considering|despite|down|during|except|excepting|excluding|following" +
@@ -13,9 +15,9 @@ class CSVEntryToEntity {
     private static final String PREPOSITION_REGEX_WITH_CAPTURE = "(.*?)\\s+" + PREPOSITION_REGEX + "\\s+(.*)";
     private static final Pattern patternWithCapture = Pattern.compile(PREPOSITION_REGEX_WITH_CAPTURE, Pattern.CASE_INSENSITIVE);
     private static final Pattern pattern = Pattern.compile(PREPOSITION_REGEX, Pattern.CASE_INSENSITIVE);
-    private final Map<String, Entity> elements = new HashMap<>();
-    private final Entity annotation_Entity = new Entity("annotations");
-    private final Entity classes_Entity = new Entity("classes");
+    private final Map<String, Thing> elements = new HashMap<>();
+    private final Thing annotation_Entity = new Annotation("annotations");
+    private final Thing classes_Entity = new Entity("classes");
     private Matcher matcher;
     private List<RdfElement> rdfElements;
 
@@ -40,25 +42,25 @@ class CSVEntryToEntity {
         }
     }
 
-    List<RdfElement> getProperties() {
+    public List<RdfElement> getProperties() {
         return rdfElements;
     }
 
-    private List<Entity> processAnnotations(CSVEntry csvEntry) {
-        List<Entity> newEntities = new ArrayList<>();
+    private List<Thing> processAnnotations(CSVEntry csvEntry) {
+        List<Thing> newEntities = new ArrayList<>();
         for (String annotation : csvEntry.getAnnotations()) {
             if (elements.containsKey(annotation + "_annotation")) {
                 continue;
             }
-            Entity newEntity = new Entity(annotation_Entity, annotation + "_annotation");
+            Thing newEntity = new Annotation(annotation_Entity, annotation + "_annotation");
             newEntities.add(newEntity);
             elements.put(annotation + "_annotation", newEntity);
         }
         return newEntities;
     }
 
-    private List<Entity> processSpecialCases(CSVEntry csvEntry) {
-        Entity parent;
+    private List<Thing> processSpecialCases(CSVEntry csvEntry) {
+        Thing parent;
         if ("text".equals(csvEntry.getNature())) {
             parent = new Entity("text");
             if (!elements.containsKey("text")) elements.put("text", parent);
@@ -75,15 +77,14 @@ class CSVEntryToEntity {
         return "text".equals(nature.getNature()) || nature.getDescription().contains("ideograph");
     }
 
-    private List<Entity> processDescription(CSVEntry csvEntry) {
+    private List<Thing> processDescription(CSVEntry csvEntry) {
         if (elements.containsKey(csvEntry.getDescription())) {
             return Collections.emptyList();
         }
-        List<Entity> entities = new ArrayList<>();
-        Entity parent;
+        List<Thing> entities = new ArrayList<>();
+        Thing parent;
         if (hasPreposition(csvEntry.getDescription())) {
             if (hasMultipleWordParent(getLeftHandSideOfPreposition())) {
-                System.out.println(getMultipleWordParent(getLeftHandSideOfPreposition()));
                 parent = getMultipleWordParent(getLeftHandSideOfPreposition());
             } else {
                 parent = elements.get(getLeftHandSideOfPreposition());
@@ -96,14 +97,14 @@ class CSVEntryToEntity {
                 parent = elements.get(lastWord);
             }
         }
-        Entity Entity = new Entity(parent, csvEntry.getDescription(), csvEntry.getAnnotations());
+        Thing Entity = new Entity(parent, csvEntry.getDescription(), csvEntry.getAnnotations());
         entities.add(Entity);
         elements.put(csvEntry.getDescription(), Entity);
         return entities;
 
     }
 
-    private Entity getMultipleWordParent(String leftHandSideOfPreposition) {
+    private Thing getMultipleWordParent(String leftHandSideOfPreposition) {
         if (elements.containsKey(leftHandSideOfPreposition)) {
             return elements.get(leftHandSideOfPreposition);
         }
@@ -134,14 +135,14 @@ class CSVEntryToEntity {
         return false;
     }
 
-    private List<Entity> processIndividualWords(String descriptions, CSVEntry csvEntry) {
-        List<Entity> lineEntities = new ArrayList<>();
+    private List<Thing> processIndividualWords(String descriptions, CSVEntry csvEntry) {
+        List<Thing> lineEntities = new ArrayList<>();
         String lastWord = getLastWord(descriptions);
         if (!isPreposition(lastWord)) {
             if (!elements.containsKey(lastWord)) {
-                final Entity Entity = new Entity(classes_Entity, lastWord, getMatchingAnnotations(lastWord, csvEntry));
-                lineEntities.add(Entity);
-                elements.put(lastWord, Entity);
+                final Entity thing = new Entity(classes_Entity, lastWord, getMatchingAnnotations(lastWord, csvEntry));
+                lineEntities.add(thing);
+                elements.put(lastWord, thing);
             }
         }
         return lineEntities;
@@ -160,7 +161,7 @@ class CSVEntryToEntity {
         return descriptions.replaceAll("^.*?(\\w+)\\W*$", "$1");
     }
 
-    private List<Entity> processCompoundWords(CSVEntry csvEntry) {
+    private List<Thing> processCompoundWords(CSVEntry csvEntry) {
         String description = csvEntry.getDescription();
         if (hasPreposition(description)) {
             return handlePrepositions(csvEntry);
@@ -169,27 +170,27 @@ class CSVEntryToEntity {
         }
     }
 
-    private List<Entity> handlePrepositions(CSVEntry csvEntry) {
-        List<Entity> entities = new ArrayList<>();
+    private List<Thing> handlePrepositions(CSVEntry csvEntry) {
+        List<Thing> entities = new ArrayList<>();
         String key1 = getLeftHandSideOfPreposition();
         entities.addAll(processIndividualWords(key1, csvEntry));
         entities.addAll(handleElementOfPreposition(key1, csvEntry));
         return entities;
     }
 
-    private List<Entity> handleElementOfPreposition(String key, CSVEntry csvEntry) {
-        List<Entity> entities = new ArrayList<>();
+    private List<Thing> handleElementOfPreposition(String key, CSVEntry csvEntry) {
+        List<Thing> entities = new ArrayList<>();
         if (elements.containsKey(key)) {
             return Collections.emptyList();
         }
-        Entity possibleParent = getPossibleParent(key);
-        Entity Entity = new Entity(possibleParent, key, csvEntry.getAnnotations());
+        Thing possibleParent = getPossibleParent(key);
+        Thing Entity = new Entity(possibleParent, key, csvEntry.getAnnotations());
         entities.add(Entity);
         elements.put(key, Entity);
         return entities;
     }
 
-    private Entity getPossibleParent(String key) {
+    private Thing getPossibleParent(String key) {
         for (String keyPart : key.split(" ")) {
             if (elements.containsKey(keyPart)) {
                 return elements.get(keyPart);

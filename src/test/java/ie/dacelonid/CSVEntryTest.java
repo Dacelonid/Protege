@@ -1,5 +1,6 @@
 package ie.dacelonid;
 
+import ie.dacelonid.CSVParser.CSVEntry;
 import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.Test;
 

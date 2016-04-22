@@ -1,5 +1,7 @@
 package ie.dacelonid;
 
+import ie.dacelonid.CSVParser.CSVEntry;
+import ie.dacelonid.CSVParser.CsvParser;
 import org.junit.Before;
 import org.junit.Test;
 

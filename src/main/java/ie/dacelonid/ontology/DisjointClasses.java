@@ -1,4 +1,4 @@
-package ie.dacelonid;
+package ie.dacelonid.ontology;
 
 import java.util.ArrayList;
 import java.util.Collections;

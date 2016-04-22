@@ -1,20 +1,20 @@
-package ie.dacelonid;
+package ie.dacelonid.CSVParser;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static ie.dacelonid.DelimeterConstants.*;
+import static ie.dacelonid.CSVParser.DelimeterConstants.*;
 
-class CsvParser {
+public class CsvParser {
     private final List<CSVEntry> allLines = new ArrayList<>();
-    private final List<String> annotations = new ArrayList<>(); // @TODO should be a Set but then I need to sort it in the tests
+    private final List<String> annotations = new ArrayList<>();
     private final List<String> descriptions = new ArrayList<>();
     private int annotationColumn;
     private int descriptionColumn;
     private int natureColumn;
 
-    void parseCsv(final List<String> inputData) {
+    public void parseCsv(final List<String> inputData) {
         int lineNumber = 0;
         for (final String line : inputData) {
             if (lineNumber++ == 0) {
@@ -41,10 +41,10 @@ class CsvParser {
     }
 
     private void processLine(final String line) {
-        final String[] splitLine = line.split(COLUMN_FIELD_REGEX);
-        String description = splitLine[descriptionColumn];
-        List<String> annotations = getAnnotationsFromInputString(splitLine);
-        String nature = splitLine[natureColumn];
+        final String[] splitIntoColumns = line.split(COLUMN_FIELD_REGEX);
+        String description = splitIntoColumns[descriptionColumn];
+        List<String> annotations = getAnnotationsFromInputString(splitIntoColumns);
+        String nature = splitIntoColumns[natureColumn];
         populateAnnotations(annotations);
         populateDescriptions(description);
 
@@ -63,15 +63,15 @@ class CsvParser {
         descriptions.add(description);
     }
 
-    List<String> getAnnotations() {
+    public List<String> getAnnotations() {
         return annotations;
     }
 
-    List<CSVEntry> getAllLines() {
+    public List<CSVEntry> getAllLines() {
         return allLines;
     }
 
-    List<String> getDescriptions() {
+    public List<String> getDescriptions() {
         return descriptions;
     }
 }

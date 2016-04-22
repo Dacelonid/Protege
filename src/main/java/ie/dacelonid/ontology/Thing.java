@@ -1,25 +1,25 @@
-package ie.dacelonid;
+package ie.dacelonid.ontology;
 
 import java.util.*;
 
-class Entity implements RdfElement {
-    private final Entity parent;
+public abstract class Thing implements RdfElement {
+    private final Thing parent;
     private final String name;
     private final List<String> annotations;
 
-    Entity(final String name) {
+    public Thing(final String name) {
         this.parent = null;
         this.name = name.replace(' ', '_');
         annotations = Collections.emptyList();
     }
 
-    Entity(final Entity parent, final String name) {
+    public Thing(final Thing parent, final String name) {
         this.parent = parent;
         this.name = name.replace(' ', '_');
         annotations = Collections.emptyList();
     }
 
-    public Entity(final Entity parent, String name, List<String> annotations) {
+    public Thing(final Thing parent, String name, List<String> annotations) {
 
         this.parent = parent;
         this.name = name.replace(' ', '_');
@@ -28,7 +28,7 @@ class Entity implements RdfElement {
 
     @Override
     public String toString() {
-        return "Entity:[ parent = (" + parent + "), Name = " + name + ", Annotations = " + Arrays.toString(annotations.toArray());
+        return "Thing:[ parent = (" + parent + "), Name = " + name + ", Annotations = " + Arrays.toString(annotations.toArray());
     }
 
     private String getParent() {
@@ -41,8 +41,8 @@ class Entity implements RdfElement {
 
     @Override
     public final boolean equals(Object obj) {
-        if (obj instanceof Entity) {
-            Entity other = (Entity) obj;
+        if (obj instanceof Thing) {
+            Thing other = (Thing) obj;
             return Objects.equals(this.name, other.name) && Objects.equals(this.parent, other.parent) && Objects.equals(annotations,
                                                                                                                         other.annotations);
         }

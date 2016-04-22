@@ -1,5 +1,7 @@
 package ie.dacelonid;
 
+import ie.dacelonid.CSVParser.CSVEntry;
+
 import java.util.Arrays;
 
 class ListEntriesConverter extends ExpectedValuesConverter<CSVEntry> {

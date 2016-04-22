@@ -1,6 +1,6 @@
-package ie.dacelonid;
+package ie.dacelonid.CSVParser;
 
-class DelimeterConstants {
+public class DelimeterConstants {
     public static final String ANNOTATION_HEADING = "Annotations";
     public static final String NATURE_HEADING = "Nature";
     public static final String DESCRIPTION_HEADING = "Description";

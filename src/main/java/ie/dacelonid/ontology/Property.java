@@ -1,8 +1,8 @@
-package ie.dacelonid;
+package ie.dacelonid.ontology;
 
 import java.util.Objects;
 
-class Property implements RdfElement {
+public class Property implements RdfElement {
 
     private final boolean functional;
     private final String domain_entity;
@@ -57,14 +57,15 @@ class Property implements RdfElement {
     public boolean equals(Object obj) {
         if (obj instanceof Property) {
             Property other = (Property) obj;
-            return Objects.equals(name, other.name) && Objects.equals(domain_entity, other.domain_entity) && Objects.equals(range_entity,
-                                                                                                                            other.range_entity) &&
+            return Objects.equals(name, other.name) &&
+                    Objects.equals(domain_entity, other.domain_entity) &&
+                    Objects.equals(range_entity, other.range_entity) &&
                     functional == other.functional;
         }
         return false;
     }
 
-    static class PropertyBuilder {
+    public static class PropertyBuilder {
         private String name;
         private boolean functional = false;
         private String domain_entity;
@@ -75,21 +76,21 @@ class Property implements RdfElement {
             return this;
         }
 
-        Property build() {
+        public Property build() {
             return new Property(name, functional, domain_entity, range_entity);
         }
 
-        PropertyBuilder functional() {
+        public PropertyBuilder functional() {
             this.functional = true;
             return this;
         }
 
-        PropertyBuilder domain(Entity domain_entity) {
+        public PropertyBuilder domain(Thing domain_entity) {
             this.domain_entity = domain_entity.getName();
             return this;
         }
 
-        PropertyBuilder range(Entity range_entity) {
+        public PropertyBuilder range(Thing range_entity) {
             this.range_entity = range_entity.getName();
             return this;
         }
