@@ -28,14 +28,14 @@ public class MainClassTest {
     public void generateOwlFile_compareWithReference() throws Exception {
         MainClass.main(new String[]{});
         String actualContents = readFile(DEFAULT_FILENAME);
-        XMLAssert.assertXMLEqual(actualContents, expectedContents);
+        XMLAssert.assertXMLEqual(expectedContents, actualContents);
     }
 
     @Test
     public void generateOwlFile_supplyingFilename_compareWithReference() throws Exception {
         MainClass.main(new String[]{"non_default_filename.owl", "Emoji_Unicodes.csv"});
         String actualContents = readFile("non_default_filename.owl");
-        XMLAssert.assertXMLEqual(actualContents, expectedContents);
+        XMLAssert.assertXMLEqual(expectedContents, actualContents);
     }
 
 
@@ -51,9 +51,10 @@ public class MainClassTest {
     @After
     public void deleteFile() throws Exception {
         Path pathToFile = getPathToFile(DEFAULT_FILENAME);
-        if (pathToFile != null) if (!pathToFile.toFile().delete()) {
-            throw new Exception("Failed to delete " + DEFAULT_FILENAME);
-        }
+        if (pathToFile != null)
+            if (!pathToFile.toFile().delete()) {
+                throw new Exception("Failed to delete " + DEFAULT_FILENAME);
+            }
     }
 
     private Path getPathToFile(String fileName) throws URISyntaxException {

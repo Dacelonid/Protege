@@ -4507,15 +4507,15 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 </ObjectAllValuesFrom>
 </SubClassOf>
 <Declaration>
-<Class IRI="#white"/>
+<Class IRI="#white_up_pointing_backhand_index"/>
 </Declaration>
  <SubClassOf>
-<Class IRI="#white"/>
-<Class IRI="#classes"/> 
+<Class IRI="#white_up_pointing_backhand_index"/>
+<Class IRI="#index"/> 
  </SubClassOf>
 
 <SubClassOf>
-<Class IRI="#white"/>
+<Class IRI="#white_up_pointing_backhand_index"/>
 <ObjectAllValuesFrom>
 <ObjectProperty IRI="#has_annotation"/>
 <ObjectIntersectionOf>
@@ -4523,21 +4523,12 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Class IRI="#body_annotation"/>
 <Class IRI="#finger_annotation"/>
 <Class IRI="#hand_annotation"/>
-<Class IRI="#index_annotation"/>
 <Class IRI="#person_annotation"/>
 <Class IRI="#point_annotation"/>
 <Class IRI="#up_annotation"/>
 </ObjectIntersectionOf>
 </ObjectAllValuesFrom>
 </SubClassOf>
-<Declaration>
-<Class IRI="#white_up_pointing_backhand_index"/>
-</Declaration>
- <SubClassOf>
-<Class IRI="#white_up_pointing_backhand_index"/>
-<Class IRI="#white"/> 
- </SubClassOf>
-
 <Declaration>
 <Class IRI="#down_annotation"/>
 </Declaration>
@@ -4551,14 +4542,22 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 </Declaration>
  <SubClassOf>
 <Class IRI="#white_down_pointing_backhand_index"/>
-<Class IRI="#white"/> 
+<Class IRI="#index"/> 
  </SubClassOf>
 
 <SubClassOf>
 <Class IRI="#white_down_pointing_backhand_index"/>
 <ObjectAllValuesFrom>
 <ObjectProperty IRI="#has_annotation"/>
+<ObjectIntersectionOf>
+<Class IRI="#backhand_annotation"/>
+<Class IRI="#body_annotation"/>
 <Class IRI="#down_annotation"/>
+<Class IRI="#finger_annotation"/>
+<Class IRI="#hand_annotation"/>
+<Class IRI="#person_annotation"/>
+<Class IRI="#point_annotation"/>
+</ObjectIntersectionOf>
 </ObjectAllValuesFrom>
 </SubClassOf>
 <Declaration>
@@ -4750,22 +4749,19 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
  </SubClassOf>
 
 <Declaration>
-<Class IRI="#thumbs"/>
+<Class IRI="#thumbs_up_sign"/>
 </Declaration>
  <SubClassOf>
-<Class IRI="#thumbs"/>
-<Class IRI="#classes"/> 
+<Class IRI="#thumbs_up_sign"/>
+<Class IRI="#sign"/> 
  </SubClassOf>
 
 <SubClassOf>
-<Class IRI="#thumbs"/>
+<Class IRI="#thumbs_up_sign"/>
 <ObjectAllValuesFrom>
 <ObjectProperty IRI="#has_annotation"/>
 <ObjectIntersectionOf>
 <Class IRI="#+1_annotation"/>
-<Class IRI="#body_annotation"/>
-<Class IRI="#hand_annotation"/>
-<Class IRI="#person_annotation"/>
 <Class IRI="#thumb_annotation"/>
 <Class IRI="#thumbs_up_annotation"/>
 <Class IRI="#up_annotation"/>
@@ -4773,14 +4769,6 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 </ObjectAllValuesFrom>
 </SubClassOf>
 <Declaration>
-<Class IRI="#thumbs_up_sign"/>
-</Declaration>
- <SubClassOf>
-<Class IRI="#thumbs_up_sign"/>
-<Class IRI="#thumbs"/> 
- </SubClassOf>
-
-<Declaration>
 <Class IRI="#-1_annotation"/>
 </Declaration>
  <SubClassOf>
@@ -4801,7 +4789,7 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 </Declaration>
  <SubClassOf>
 <Class IRI="#thumbs_down_sign"/>
-<Class IRI="#thumbs"/> 
+<Class IRI="#sign"/> 
  </SubClassOf>
 
 <SubClassOf>
@@ -4811,6 +4799,7 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <ObjectIntersectionOf>
 <Class IRI="#-1_annotation"/>
 <Class IRI="#down_annotation"/>
+<Class IRI="#thumb_annotation"/>
 <Class IRI="#thumbs_down_annotation"/>
 </ObjectIntersectionOf>
 </ObjectAllValuesFrom>
@@ -9752,18 +9741,18 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
  </SubClassOf>
 
 <Declaration>
-<Class IRI="#meat"/>
+<Class IRI="#bone"/>
 </Declaration>
  <SubClassOf>
-<Class IRI="#meat"/>
+<Class IRI="#bone"/>
 <Class IRI="#classes"/> 
  </SubClassOf>
 
 <SubClassOf>
-<Class IRI="#meat"/>
+<Class IRI="#bone"/>
 <ObjectAllValuesFrom>
 <ObjectProperty IRI="#has_annotation"/>
-<Class IRI="#meat_annotation"/>
+<Class IRI="#bone_annotation"/>
 </ObjectAllValuesFrom>
 </SubClassOf>
 <Declaration>
@@ -9771,7 +9760,7 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 </Declaration>
  <SubClassOf>
 <Class IRI="#meat_on_bone"/>
-<Class IRI="#meat"/> 
+<Class IRI="#bone"/> 
  </SubClassOf>
 
 <SubClassOf>
@@ -9779,8 +9768,8 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <ObjectAllValuesFrom>
 <ObjectProperty IRI="#has_annotation"/>
 <ObjectIntersectionOf>
-<Class IRI="#bone_annotation"/>
 <Class IRI="#food_annotation"/>
+<Class IRI="#meat_annotation"/>
 <Class IRI="#nature_annotation"/>
 <Class IRI="#object_annotation"/>
 </ObjectIntersectionOf>
@@ -16774,18 +16763,14 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 </Declaration>
  <SubClassOf>
 <Class IRI="#sun_behind_cloud"/>
-<Class IRI="#sun"/> 
+<Class IRI="#cloud"/> 
  </SubClassOf>
 
 <SubClassOf>
 <Class IRI="#sun_behind_cloud"/>
 <ObjectAllValuesFrom>
 <ObjectProperty IRI="#has_annotation"/>
-<ObjectIntersectionOf>
-<Class IRI="#cloud_annotation"/>
-<Class IRI="#nature_annotation"/>
-<Class IRI="#weather_annotation"/>
-</ObjectIntersectionOf>
+<Class IRI="#sun_annotation"/>
 </ObjectAllValuesFrom>
 </SubClassOf>
 <Declaration>
@@ -20986,11 +20971,15 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 </ObjectAllValuesFrom>
 </SubClassOf>
 <Declaration>
-<Class IRI="#page_facing_up"/>
+<Class IRI="#up"/>
 </Declaration>
+ <SubClassOf>
+<Class IRI="#up"/>
+<Class IRI="#classes"/> 
+ </SubClassOf>
 
 <SubClassOf>
-<Class IRI="#page_facing_up"/>
+<Class IRI="#up"/>
 <ObjectAllValuesFrom>
 <ObjectProperty IRI="#has_annotation"/>
 <ObjectIntersectionOf>
@@ -21001,6 +20990,14 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 </ObjectIntersectionOf>
 </ObjectAllValuesFrom>
 </SubClassOf>
+<Declaration>
+<Class IRI="#page_facing_up"/>
+</Declaration>
+ <SubClassOf>
+<Class IRI="#page_facing_up"/>
+<Class IRI="#up"/> 
+ </SubClassOf>
+
 <Declaration>
 <Class IRI="#news_annotation"/>
 </Declaration>
@@ -22914,23 +22911,18 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 </ObjectAllValuesFrom>
 </SubClassOf>
 <Declaration>
-<Class IRI="#triangular_flag"/>
+<Class IRI="#post"/>
 </Declaration>
  <SubClassOf>
-<Class IRI="#triangular_flag"/>
-<Class IRI="#flag"/> 
+<Class IRI="#post"/>
+<Class IRI="#classes"/> 
  </SubClassOf>
 
 <SubClassOf>
-<Class IRI="#triangular_flag"/>
+<Class IRI="#post"/>
 <ObjectAllValuesFrom>
 <ObjectProperty IRI="#has_annotation"/>
-<ObjectIntersectionOf>
-<Class IRI="#object_annotation"/>
-<Class IRI="#place_annotation"/>
 <Class IRI="#post_annotation"/>
-<Class IRI="#travel_annotation"/>
-</ObjectIntersectionOf>
 </ObjectAllValuesFrom>
 </SubClassOf>
 <Declaration>
@@ -22938,9 +22930,21 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 </Declaration>
  <SubClassOf>
 <Class IRI="#triangular_flag_on_post"/>
-<Class IRI="#triangular_flag"/> 
+<Class IRI="#post"/> 
  </SubClassOf>
 
+<SubClassOf>
+<Class IRI="#triangular_flag_on_post"/>
+<ObjectAllValuesFrom>
+<ObjectProperty IRI="#has_annotation"/>
+<ObjectIntersectionOf>
+<Class IRI="#flag_annotation"/>
+<Class IRI="#object_annotation"/>
+<Class IRI="#place_annotation"/>
+<Class IRI="#travel_annotation"/>
+</ObjectIntersectionOf>
+</ObjectAllValuesFrom>
+</SubClassOf>
 <Declaration>
 <Class IRI="#smoking_annotation"/>
 </Declaration>
@@ -24434,17 +24438,16 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Declaration>
 <Class IRI="#on"/>
 </Declaration>
+ <SubClassOf>
+<Class IRI="#on"/>
+<Class IRI="#classes"/> 
+ </SubClassOf>
 
 <SubClassOf>
 <Class IRI="#on"/>
 <ObjectAllValuesFrom>
 <ObjectProperty IRI="#has_annotation"/>
-<ObjectIntersectionOf>
-<Class IRI="#arrow_annotation"/>
-<Class IRI="#mark_annotation"/>
 <Class IRI="#on_annotation"/>
-<Class IRI="#symbol_annotation"/>
-</ObjectIntersectionOf>
 </ObjectAllValuesFrom>
 </SubClassOf>
 <Declaration>
@@ -24455,6 +24458,17 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Class IRI="#on"/> 
  </SubClassOf>
 
+<SubClassOf>
+<Class IRI="#on_with_exclamation_mark_with_left_right_arrow_above"/>
+<ObjectAllValuesFrom>
+<ObjectProperty IRI="#has_annotation"/>
+<ObjectIntersectionOf>
+<Class IRI="#arrow_annotation"/>
+<Class IRI="#mark_annotation"/>
+<Class IRI="#symbol_annotation"/>
+</ObjectIntersectionOf>
+</ObjectAllValuesFrom>
+</SubClassOf>
 <Declaration>
 <Class IRI="#soon_annotation"/>
 </Declaration>
@@ -24993,15 +25007,15 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
  </SubClassOf>
 
 <Declaration>
-<Class IRI="#heavy"/>
+<Class IRI="#heavy_plus_sign"/>
 </Declaration>
  <SubClassOf>
-<Class IRI="#heavy"/>
-<Class IRI="#classes"/> 
+<Class IRI="#heavy_plus_sign"/>
+<Class IRI="#sign"/> 
  </SubClassOf>
 
 <SubClassOf>
-<Class IRI="#heavy"/>
+<Class IRI="#heavy_plus_sign"/>
 <ObjectAllValuesFrom>
 <ObjectProperty IRI="#has_annotation"/>
 <ObjectIntersectionOf>
@@ -25012,14 +25026,6 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 </ObjectIntersectionOf>
 </ObjectAllValuesFrom>
 </SubClassOf>
-<Declaration>
-<Class IRI="#heavy_plus_sign"/>
-</Declaration>
- <SubClassOf>
-<Class IRI="#heavy_plus_sign"/>
-<Class IRI="#heavy"/> 
- </SubClassOf>
-
 <Declaration>
 <Class IRI="#minus_annotation"/>
 </Declaration>
@@ -25033,14 +25039,19 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 </Declaration>
  <SubClassOf>
 <Class IRI="#heavy_minus_sign"/>
-<Class IRI="#heavy"/> 
+<Class IRI="#sign"/> 
  </SubClassOf>
 
 <SubClassOf>
 <Class IRI="#heavy_minus_sign"/>
 <ObjectAllValuesFrom>
 <ObjectProperty IRI="#has_annotation"/>
+<ObjectIntersectionOf>
+<Class IRI="#math_annotation"/>
 <Class IRI="#minus_annotation"/>
+<Class IRI="#sign_annotation"/>
+<Class IRI="#symbol_annotation"/>
+</ObjectIntersectionOf>
 </ObjectAllValuesFrom>
 </SubClassOf>
 <Declaration>
@@ -26422,8 +26433,27 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
  </SubClassOf>
 
 <Declaration>
+<Class IRI="#off"/>
+</Declaration>
+ <SubClassOf>
+<Class IRI="#off"/>
+<Class IRI="#classes"/> 
+ </SubClassOf>
+
+<SubClassOf>
+<Class IRI="#off"/>
+<ObjectAllValuesFrom>
+<ObjectProperty IRI="#has_annotation"/>
+<Class IRI="#off_annotation"/>
+</ObjectAllValuesFrom>
+</SubClassOf>
+<Declaration>
 <Class IRI="#mobile_phone_off"/>
 </Declaration>
+ <SubClassOf>
+<Class IRI="#mobile_phone_off"/>
+<Class IRI="#off"/> 
+ </SubClassOf>
 
 <SubClassOf>
 <Class IRI="#mobile_phone_off"/>
@@ -26434,7 +26464,6 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Class IRI="#communication_annotation"/>
 <Class IRI="#mobile_annotation"/>
 <Class IRI="#object_annotation"/>
-<Class IRI="#off_annotation"/>
 <Class IRI="#phone_annotation"/>
 <Class IRI="#symbol_annotation"/>
 <Class IRI="#telephone_annotation"/>
@@ -26853,15 +26882,15 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
  </SubClassOf>
 
 <Declaration>
-<Class IRI="#one"/>
+<Class IRI="#no_one_under_eighteen_symbol"/>
 </Declaration>
  <SubClassOf>
-<Class IRI="#one"/>
-<Class IRI="#classes"/> 
+<Class IRI="#no_one_under_eighteen_symbol"/>
+<Class IRI="#symbol"/> 
  </SubClassOf>
 
 <SubClassOf>
-<Class IRI="#one"/>
+<Class IRI="#no_one_under_eighteen_symbol"/>
 <ObjectAllValuesFrom>
 <ObjectProperty IRI="#has_annotation"/>
 <ObjectIntersectionOf>
@@ -26872,28 +26901,11 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Class IRI="#no_annotation"/>
 <Class IRI="#not_annotation"/>
 <Class IRI="#prohibited_annotation"/>
-<Class IRI="#symbol_annotation"/>
 <Class IRI="#underage_annotation"/>
 <Class IRI="#word_annotation"/>
 </ObjectIntersectionOf>
 </ObjectAllValuesFrom>
 </SubClassOf>
-<Declaration>
-<Class IRI="#no_one"/>
-</Declaration>
- <SubClassOf>
-<Class IRI="#no_one"/>
-<Class IRI="#one"/> 
- </SubClassOf>
-
-<Declaration>
-<Class IRI="#no_one_under_eighteen_symbol"/>
-</Declaration>
- <SubClassOf>
-<Class IRI="#no_one_under_eighteen_symbol"/>
-<Class IRI="#no_one"/> 
- </SubClassOf>
-
 <Declaration>
 <Class IRI="#input_annotation"/>
 </Declaration>
@@ -27624,15 +27636,15 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 </ObjectAllValuesFrom>
 </SubClassOf>
 <Declaration>
-<Class IRI="#squared"/>
+<Class IRI="#squared_up"/>
 </Declaration>
  <SubClassOf>
-<Class IRI="#squared"/>
-<Class IRI="#classes"/> 
+<Class IRI="#squared_up"/>
+<Class IRI="#up"/> 
  </SubClassOf>
 
 <SubClassOf>
-<Class IRI="#squared"/>
+<Class IRI="#squared_up"/>
 <ObjectAllValuesFrom>
 <ObjectProperty IRI="#has_annotation"/>
 <ObjectIntersectionOf>
@@ -27648,7 +27660,7 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 </Declaration>
  <SubClassOf>
 <Class IRI="#squared_up_with_exclamation_mark"/>
-<Class IRI="#squared"/> 
+<Class IRI="#squared_up"/> 
  </SubClassOf>
 
 <Declaration>
@@ -27777,6 +27789,10 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Declaration>
 <Class IRI="#ideograph"/>
 </Declaration>
+ <SubClassOf>
+<Class IRI="#ideograph"/>
+<Class IRI="#classes"/> 
+ </SubClassOf>
 
 <Declaration>
 <Class IRI="#squared_cjk_unified_ideograph-6709"/>
@@ -27800,6 +27816,10 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Declaration>
 <Class IRI="#ideograph"/>
 </Declaration>
+ <SubClassOf>
+<Class IRI="#ideograph"/>
+<Class IRI="#classes"/> 
+ </SubClassOf>
 
 <Declaration>
 <Class IRI="#squared_cjk_unified_ideograph-6307"/>
@@ -27823,6 +27843,10 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Declaration>
 <Class IRI="#ideograph"/>
 </Declaration>
+ <SubClassOf>
+<Class IRI="#ideograph"/>
+<Class IRI="#classes"/> 
+ </SubClassOf>
 
 <Declaration>
 <Class IRI="#circled_ideograph_advantage"/>
@@ -27846,6 +27870,10 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Declaration>
 <Class IRI="#ideograph"/>
 </Declaration>
+ <SubClassOf>
+<Class IRI="#ideograph"/>
+<Class IRI="#classes"/> 
+ </SubClassOf>
 
 <Declaration>
 <Class IRI="#squared_cjk_unified_ideograph-5272"/>
@@ -27869,6 +27897,10 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Declaration>
 <Class IRI="#ideograph"/>
 </Declaration>
+ <SubClassOf>
+<Class IRI="#ideograph"/>
+<Class IRI="#classes"/> 
+ </SubClassOf>
 
 <Declaration>
 <Class IRI="#squared_cjk_unified_ideograph-7121"/>
@@ -27892,6 +27924,10 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Declaration>
 <Class IRI="#ideograph"/>
 </Declaration>
+ <SubClassOf>
+<Class IRI="#ideograph"/>
+<Class IRI="#classes"/> 
+ </SubClassOf>
 
 <Declaration>
 <Class IRI="#squared_cjk_unified_ideograph-7981"/>
@@ -27923,6 +27959,10 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Declaration>
 <Class IRI="#ideograph"/>
 </Declaration>
+ <SubClassOf>
+<Class IRI="#ideograph"/>
+<Class IRI="#classes"/> 
+ </SubClassOf>
 
 <Declaration>
 <Class IRI="#circled_ideograph_accept"/>
@@ -27946,6 +27986,10 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Declaration>
 <Class IRI="#ideograph"/>
 </Declaration>
+ <SubClassOf>
+<Class IRI="#ideograph"/>
+<Class IRI="#classes"/> 
+ </SubClassOf>
 
 <Declaration>
 <Class IRI="#squared_cjk_unified_ideograph-7533"/>
@@ -27969,6 +28013,10 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Declaration>
 <Class IRI="#ideograph"/>
 </Declaration>
+ <SubClassOf>
+<Class IRI="#ideograph"/>
+<Class IRI="#classes"/> 
+ </SubClassOf>
 
 <Declaration>
 <Class IRI="#squared_cjk_unified_ideograph-5408"/>
@@ -27992,6 +28040,10 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Declaration>
 <Class IRI="#ideograph"/>
 </Declaration>
+ <SubClassOf>
+<Class IRI="#ideograph"/>
+<Class IRI="#classes"/> 
+ </SubClassOf>
 
 <Declaration>
 <Class IRI="#squared_cjk_unified_ideograph-7a7a"/>
@@ -28098,6 +28150,10 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Declaration>
 <Class IRI="#ideograph"/>
 </Declaration>
+ <SubClassOf>
+<Class IRI="#ideograph"/>
+<Class IRI="#classes"/> 
+ </SubClassOf>
 
 <Declaration>
 <Class IRI="#squared_cjk_unified_ideograph-55b6"/>
@@ -28121,6 +28177,10 @@ ontologyIRI="http://www.semanticweb.org/ken/ontologies/2016/0/untitled-ontology-
 <Declaration>
 <Class IRI="#ideograph"/>
 </Declaration>
+ <SubClassOf>
+<Class IRI="#ideograph"/>
+<Class IRI="#classes"/> 
+ </SubClassOf>
 
 <Declaration>
 <Class IRI="#squared_cjk_unified_ideograph-6e80"/>

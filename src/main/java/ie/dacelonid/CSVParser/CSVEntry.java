@@ -16,16 +16,14 @@ public class CSVEntry {
 
     @Override
     public final int hashCode() {
-        return (description == null ? 0 : description.hashCode()) + (annotations == null ? 0 : annotations.hashCode()) + (nature == null ? 0 :
-                nature.hashCode());
+        return (description == null ? 0 : description.hashCode()) + (annotations == null ? 0 : annotations.hashCode()) + (nature == null ? 0 : nature.hashCode());
     }
 
     @Override
     public final boolean equals(Object obj) {
         if (obj instanceof CSVEntry) {
             CSVEntry other = (CSVEntry) obj;
-            return Objects.equals(this.annotations, other.annotations) && Objects.equals(this.description, other.description) && Objects.equals(
-                    nature, other.nature);
+            return Objects.equals(this.annotations, other.annotations) && Objects.equals(this.description, other.description) && Objects.equals(nature, other.nature);
         }
         return false;
     }

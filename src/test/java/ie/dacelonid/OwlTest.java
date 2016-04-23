@@ -4,7 +4,6 @@ import ie.dacelonid.CSVParser.CsvParser;
 import ie.dacelonid.CSVParser.CsvParserFactory;
 import ie.dacelonid.ontology.Entity;
 import ie.dacelonid.ontology.Ontology;
-import ie.dacelonid.ontology.Thing;
 import org.custommonkey.xmlunit.XMLAssert;
 import org.custommonkey.xmlunit.XMLUnit;
 import org.junit.Before;
@@ -56,31 +55,6 @@ public class OwlTest {
         XMLAssert.assertXMLEqual(resultOwl, expectedOwl);
     }
 
-    @Test
-    public void toString_ontologyWithSubclasses_shouldBeValidOwlFile() throws Exception {
-        Thing parent = new Entity("Emoji");
-        Thing child = new Entity(parent, "AnimalEmoji");
-        objUnderTest.addEntity(parent);
-        objUnderTest.addEntity(child);
-        String expectedOwl = readFile("ontologyWithSubclasses.owl");
-        String resultOwl = objUnderTest.toString();
-
-        XMLAssert.assertXMLEqual(resultOwl, expectedOwl);
-    }
-
-    @Test
-    public void toString_ontologyWithSubclassesOfSubclasses_shouldBeValidOwlFile() throws Exception {
-        Thing parent = new Entity("Emoji");
-        Thing child = new Entity(parent, "AnimalEmoji");
-        Thing subChild = new Entity(child, "DogEmoji");
-        objUnderTest.addEntity(parent);
-        objUnderTest.addEntity(child);
-        objUnderTest.addEntity(subChild);
-        String expectedOwl = readFile("ontologyWithSubclassesOfSubclasses.owl");
-        String resultOwl = objUnderTest.toString();
-
-        XMLAssert.assertXMLEqual(resultOwl, expectedOwl);
-    }
 
     @Test
     public void toString_ontologyWithAllEmojisAsTopLevelEntities_shouldBeValidOwlFile() throws Exception {

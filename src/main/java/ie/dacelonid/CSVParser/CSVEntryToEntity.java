@@ -8,13 +8,11 @@ import java.util.regex.Pattern;
 
 public class CSVEntryToEntity {
 
-    private static final String PREPOSITION_REGEX = "(aboard|about|above|across|after|against|along|amid|among|anti|around|as|at|before|behind" +
-            "|below|beneath|beside|besides|between|beyond|but|by|concerning|considering|despite|down|during|except|excepting|excluding|following" +
-            "|for|from|in|inside|into|like|minus|near|of|off|on|onto|opposite|outside|over|past|per|plus|regarding|round|save|since|than|through|to" +
-            "|toward|towards|under|underneath|unlike|until|up|upon|versus|via|with|with a|within|without)";
+    private static final String PREPOSITION_REGEX = "(above|at|but|for|in|of|over|with||without)";
     private static final String PREPOSITION_REGEX_WITH_CAPTURE = "(.*?)\\s+" + PREPOSITION_REGEX + "\\s+(.*)";
     private static final Pattern patternWithCapture = Pattern.compile(PREPOSITION_REGEX_WITH_CAPTURE, Pattern.CASE_INSENSITIVE);
     private static final Pattern pattern = Pattern.compile(PREPOSITION_REGEX, Pattern.CASE_INSENSITIVE);
+    private static Map<String, Integer> method_count = new HashMap<>();
     private final Map<String, Thing> elements = new HashMap<>();
     private final Thing annotation_Entity = new Annotation("annotations");
     private final Thing classes_Entity = new Entity("classes");
@@ -24,12 +22,7 @@ public class CSVEntryToEntity {
     public void convert(List<CSVEntry> itemsToConvert) {
         rdfElements = new ArrayList<>();
 
-        rdfElements.add(annotation_Entity);
-        rdfElements.add(classes_Entity);
-        rdfElements.add(new DisjointClasses(annotation_Entity.getName(), classes_Entity.getName()));
-        Property property = new Property.PropertyBuilder().name("has_annotation").functional().domain(classes_Entity).range(
-                annotation_Entity).build();
-        rdfElements.add(property);
+        addTopLevelElements();
 
         for (CSVEntry csvEntry : itemsToConvert) {
             rdfElements.addAll(processAnnotations(csvEntry));
@@ -42,8 +35,12 @@ public class CSVEntryToEntity {
         }
     }
 
-    public List<RdfElement> getProperties() {
-        return rdfElements;
+    private void addTopLevelElements() {
+        rdfElements.add(annotation_Entity);
+        rdfElements.add(classes_Entity);
+        rdfElements.add(new DisjointClasses(annotation_Entity.getName(), classes_Entity.getName()));
+        Property property = new Property.PropertyBuilder().name("has_annotation").functional().domain(classes_Entity).range(annotation_Entity).build();
+        rdfElements.add(property);
     }
 
     private List<Thing> processAnnotations(CSVEntry csvEntry) {
@@ -52,7 +49,7 @@ public class CSVEntryToEntity {
             if (elements.containsKey(annotation + "_annotation")) {
                 continue;
             }
-            Thing newEntity = new Annotation(annotation_Entity, annotation + "_annotation");
+            Thing newEntity = new Annotation(annotation_Entity, annotation);
             newEntities.add(newEntity);
             elements.put(annotation + "_annotation", newEntity);
         }
@@ -60,17 +57,19 @@ public class CSVEntryToEntity {
     }
 
     private List<Thing> processSpecialCases(CSVEntry csvEntry) {
-        Thing parent;
-        if ("text".equals(csvEntry.getNature())) {
-            parent = new Entity("text");
-            if (!elements.containsKey("text")) elements.put("text", parent);
-        } else {
-            parent = new Entity("ideograph");
-            if (!elements.containsKey("ideograph")) elements.put("ideograph", parent);
-        }
-        Entity subClasses = new Entity(parent, csvEntry.getDescription(), csvEntry.getAnnotations());
+        Thing parent = getParent(csvEntry);
+        Thing subClasses = new Entity(parent, csvEntry.getDescription(), csvEntry.getAnnotations());
         elements.put(csvEntry.getDescription(), subClasses);
         return Arrays.asList(parent, subClasses);
+    }
+
+    private Thing getParent(CSVEntry csvEntry) {
+        if ("text".equals(csvEntry.getNature())) {
+            return new Entity("text");
+        } else {
+            return new Entity(classes_Entity, "ideograph", Collections.emptyList());
+        }
+
     }
 
     private boolean descriptionNeedsSpecialHandling(CSVEntry nature) {
@@ -84,18 +83,9 @@ public class CSVEntryToEntity {
         List<Thing> entities = new ArrayList<>();
         Thing parent;
         if (hasPreposition(csvEntry.getDescription())) {
-            if (hasMultipleWordParent(getLeftHandSideOfPreposition())) {
-                parent = getMultipleWordParent(getLeftHandSideOfPreposition());
-            } else {
-                parent = elements.get(getLeftHandSideOfPreposition());
-            }
+            parent = getParent(getLeftHandSideOfPreposition());
         } else {
-            if (hasMultipleWordParent(csvEntry.getDescription())) {
-                parent = getMultipleWordParent(csvEntry.getDescription());
-            } else {
-                String lastWord = getLastWord(csvEntry.getDescription());
-                parent = elements.get(lastWord);
-            }
+            parent = getParent1(csvEntry.getDescription());
         }
         Thing Entity = new Entity(parent, csvEntry.getDescription(), csvEntry.getAnnotations());
         entities.add(Entity);
@@ -104,11 +94,34 @@ public class CSVEntryToEntity {
 
     }
 
-    private Thing getMultipleWordParent(String leftHandSideOfPreposition) {
-        if (elements.containsKey(leftHandSideOfPreposition)) {
-            return elements.get(leftHandSideOfPreposition);
+    private Thing getParent1(String description) {
+        if (hasMultipleWordParent(description)) {
+            return getMultipleWordParent(description);
         }
-        String[] splitWords = leftHandSideOfPreposition.split(" ", 2);
+        String lastWord = getLastWord(description);
+        if (elements.containsKey(lastWord)) {
+            return elements.get(lastWord);
+        } else {
+            return new NullEntity();
+        }
+    }
+
+    private Thing getParent(String parent) {
+        if (hasMultipleWordParent(parent)) {
+            return getMultipleWordParent(parent);
+        }
+        return elements.get(parent);
+    }
+
+    private Thing getMultipleWordParent(String parent) {
+        if (elements.containsKey(parent)) {
+            return elements.get(parent);
+        }
+        return getParentAfterRemovingFirstWord(parent);
+    }
+
+    private Thing getParentAfterRemovingFirstWord(String parent) {
+        String[] splitWords = parent.split(" ", 2);
         while (splitWords.length == 2) {
             if (elements.containsKey(splitWords[1])) {
                 return elements.get(splitWords[1]);
@@ -196,13 +209,12 @@ public class CSVEntryToEntity {
                 return elements.get(keyPart);
             }
         }
-        return null;
+        return new NullEntity();
     }
 
     private String getLeftHandSideOfPreposition() {
         return matcher.group(1);
     }
-
 
     private boolean hasPreposition(String description) {
         matcher = patternWithCapture.matcher(description);
@@ -211,5 +223,9 @@ public class CSVEntryToEntity {
 
     private boolean isPreposition(String description) {
         return pattern.matcher(description).matches();
+    }
+
+    public List<RdfElement> getProperties() {
+        return rdfElements;
     }
 }

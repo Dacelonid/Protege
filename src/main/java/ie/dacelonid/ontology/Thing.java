@@ -1,6 +1,9 @@
 package ie.dacelonid.ontology;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
 
 public abstract class Thing implements RdfElement {
     private final Thing parent;
@@ -26,12 +29,24 @@ public abstract class Thing implements RdfElement {
         this.annotations = annotations;
     }
 
+    public Thing getParent() {
+        return parent;
+    }
+
+    public String getName() {
+        return "#" + name;
+    }
+
+    public List<String> getAnnotations() {
+        return annotations;
+    }
+
     @Override
     public String toString() {
         return "Thing:[ parent = (" + parent + "), Name = " + name + ", Annotations = " + Arrays.toString(annotations.toArray());
     }
 
-    private String getParent() {
+    private String getParentString() {
         if (parent == null) {
             return "";
         }
@@ -43,8 +58,7 @@ public abstract class Thing implements RdfElement {
     public final boolean equals(Object obj) {
         if (obj instanceof Thing) {
             Thing other = (Thing) obj;
-            return Objects.equals(this.name, other.name) && Objects.equals(this.parent, other.parent) && Objects.equals(annotations,
-                                                                                                                        other.annotations);
+            return Objects.equals(this.name, other.name) && Objects.equals(this.parent, other.parent) && Objects.equals(annotations, other.annotations);
         }
         return false;
     }
@@ -54,61 +68,5 @@ public abstract class Thing implements RdfElement {
         return 13 + Objects.hashCode(name) + Objects.hashCode(parent) + Objects.hashCode(annotations);
     }
 
-    public String getName() {
-        return "#" + name;
-    }
-
-    @Override
-    public String getPrintableElement() {
-        return "<Declaration>\n<Class IRI=\"" + getName() + "\"/>" + System.lineSeparator() + "</Declaration>" +
-                System.lineSeparator() + getParent() + System.lineSeparator() + getAnnotationString();
-    }
-
-    private String getAnnotationString() {
-        List<String> annotationsNotInherited = getAnnotationsNotInherited();
-        StringBuilder output = new StringBuilder();
-        if (annotationsNotInherited.size() > 0) {
-            output.append("<SubClassOf>").append(System.lineSeparator());
-            output.append("<Class IRI=\"").append(getName()).append("\"/>").append(System.lineSeparator());
-            output.append("<ObjectAllValuesFrom>").append(System.lineSeparator());
-            output.append("<ObjectProperty IRI=\"#has_annotation\"/>").append(System.lineSeparator());
-            if (annotationsNotInherited.size() > 1) {
-                output.append("<ObjectIntersectionOf>").append(System.lineSeparator());
-                for (String annotation : annotationsNotInherited) {
-                    output.append("<Class IRI=\"").append(getAnnotationString(annotation)).append("\"/>").append(System.lineSeparator());
-                }
-            } else {
-                output.append("<Class IRI=\"").append(getAnnotationString(annotationsNotInherited.get(0))).append("\"/>").append(
-                        System.lineSeparator());
-            }
-            if (annotationsNotInherited.size() > 1) {
-                output.append("</ObjectIntersectionOf>").append(System.lineSeparator());
-            }
-            output.append("</ObjectAllValuesFrom>").append(System.lineSeparator());
-            output.append("</SubClassOf>").append(System.lineSeparator());
-        }
-        return output.toString();
-    }
-
-    private String getAnnotationString(final String name) {
-        return "#" + name.replaceAll(" ", "_") + "_annotation";
-    }
-
-    private List<String> getAnnotationsNotInherited() {
-        List<String> annotationsNotInherited = new ArrayList<>();
-        annotationsNotInherited.addAll(annotations);
-        if (parent != null) {
-            annotationsNotInherited.removeAll(getAnnotationsFromHierarchy());
-        }
-        return annotationsNotInherited;
-    }
-
-    private List<String> getAnnotationsFromHierarchy() {
-        List<String> tempList = new ArrayList<>();
-        if (parent != null) {
-            tempList.addAll(parent.annotations);
-            tempList.addAll(parent.getAnnotationsFromHierarchy());
-        }
-        return tempList;
-    }
+    protected abstract List<String> getAnnotationsFromHierarchy();
 }
