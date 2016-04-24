@@ -67,6 +67,11 @@ public class OwlTest {
         XMLAssert.assertXMLEqual(resultOwl, expectedOwl);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void createCsvParser_unknownFile_shouldThrowException() throws Exception {
+        CsvParser parser = CsvParserFactory.createCsvParser("non_existing_file.csv");
+    }
+
     private String readFile(String fileName) throws Exception {
         URL resource = this.getClass().getClassLoader().getResource(fileName);
         if (resource == null) {

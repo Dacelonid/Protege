@@ -43,7 +43,7 @@ public class CSVEntryToEntityTest {
         CSVEntryToEntity objUnderTest = new CSVEntryToEntity();
         List<CSVEntry> itemsToConvert = Collections.singletonList(new CSVEntry("Smiling Face with Eyes", "emoji", Arrays.asList("Face", "Eyes", "Smile")));
         objUnderTest.convert(itemsToConvert);
-        assertEquals(expectedEntities, objUnderTest.getProperties());
+        assertEquals(expectedEntities, objUnderTest.getElements());
     }
 
     @Test
@@ -60,7 +60,7 @@ public class CSVEntryToEntityTest {
         List<CSVEntry> itemsToConvert = Collections.singletonList(new CSVEntry("squared cjk unified ideograph-6708", "emoji", Arrays.asList("japanese", "symbol", "word")));
 
         objUnderTest.convert(itemsToConvert);
-        assertEquals(expectedEntities, objUnderTest.getProperties());
+        assertEquals(expectedEntities, objUnderTest.getElements());
     }
 
     @Test
@@ -77,7 +77,7 @@ public class CSVEntryToEntityTest {
         List<CSVEntry> itemsToConvert = Collections.singletonList(new CSVEntry("negative squared latin capital letter a", "text", Arrays.asList("a", "blood", "symbol", "word")));
 
         objUnderTest.convert(itemsToConvert);
-        assertEquals(expectedEntities, objUnderTest.getProperties());
+        assertEquals(expectedEntities, objUnderTest.getElements());
     }
 
     @Test
@@ -92,7 +92,7 @@ public class CSVEntryToEntityTest {
         List<CSVEntry> itemsToConvert = Collections.singletonList(new CSVEntry("Smiling Face", "emoji", Arrays.asList("Face", "Smile")));
 
         objUnderTest.convert(itemsToConvert);
-        assertEquals(expectedEntities, objUnderTest.getProperties());
+        assertEquals(expectedEntities, objUnderTest.getElements());
     }
 
     @Test
@@ -106,7 +106,7 @@ public class CSVEntryToEntityTest {
         List<CSVEntry> itemsToConvert = Collections.singletonList(new CSVEntry("Smiling Face", "emoji", Collections.singletonList("Smiling face")));
 
         objUnderTest.convert(itemsToConvert);
-        List<RdfElement> properties = objUnderTest.getProperties();
+        List<RdfElement> properties = objUnderTest.getElements();
         assertEquals(expectedEntities, properties);
     }
 
