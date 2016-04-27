@@ -7,11 +7,12 @@ import ie.dacelonid.ontology.Ontology;
 import ie.dacelonid.ontology.RdfElement;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.List;
 
 class EmojiParser {
 
-    Ontology generateOntology(String inputFile) throws IOException {
+    Ontology generateOntology(String inputFile) throws IOException, URISyntaxException {
         List<CSVEntry> allLines = CsvParserFactory.createCsvParser(inputFile).getAllLines();
 
         CSVEntryToEntity converter = new CSVEntryToEntity();

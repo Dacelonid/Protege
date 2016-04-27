@@ -15,7 +15,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 
-public class OwlTest {
+public class OntologyTest {
     private Ontology objUnderTest;
 
     @Before
@@ -65,11 +65,6 @@ public class OwlTest {
         String expectedOwl = readFile("ontologyWithAllEmojisAsTopLevelEntities.owl");
         String resultOwl = objUnderTest.toString();
         XMLAssert.assertXMLEqual(resultOwl, expectedOwl);
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void createCsvParser_unknownFile_shouldThrowException() throws Exception {
-        CsvParser parser = CsvParserFactory.createCsvParser("non_existing_file.csv");
     }
 
     private String readFile(String fileName) throws Exception {

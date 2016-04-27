@@ -13,9 +13,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import static ie.dacelonid.MainClass.DEFAULT_OUTPUT_FILENAME;
+
 public class MainClassTest {
 
-    private static final String DEFAULT_FILENAME = "filename.owl";
     private String expectedContents;
 
     @Before
@@ -27,7 +28,7 @@ public class MainClassTest {
     @Test
     public void generateOwlFile_compareWithReference() throws Exception {
         MainClass.main(new String[]{});
-        String actualContents = readFile(DEFAULT_FILENAME);
+        String actualContents = readFile(DEFAULT_OUTPUT_FILENAME);
         XMLAssert.assertXMLEqual(expectedContents, actualContents);
     }
 
@@ -50,10 +51,10 @@ public class MainClassTest {
     @Before
     @After
     public void deleteFile() throws Exception {
-        Path pathToFile = getPathToFile(DEFAULT_FILENAME);
+        Path pathToFile = getPathToFile(DEFAULT_OUTPUT_FILENAME);
         if (pathToFile != null)
             if (!pathToFile.toFile().delete()) {
-                throw new Exception("Failed to delete " + DEFAULT_FILENAME);
+                throw new Exception("Failed to delete " + DEFAULT_OUTPUT_FILENAME);
             }
     }
 

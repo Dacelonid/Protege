@@ -4,7 +4,7 @@
     <groupId>ie.dacelonid</groupId>
     <artifactId>Protege</artifactId>
     <packaging>jar</packaging>
-    <version>-DinteractiveMode=false</version>
+    <version>1.0.0</version>
     <name>Protege</name>
     <url>http://maven.apache.org</url>
 
@@ -39,6 +39,23 @@
 
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <configuration>
+                        <archive>
+                            <manifest>
+                                <addClasspath>true</addClasspath>
+                                <mainClass>ie.dacelonid.MainClass</mainClass>
+                            </manifest>
+                        </archive>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -50,4 +67,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

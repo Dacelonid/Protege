@@ -1,27 +1,28 @@
 package ie.dacelonid.CSVParser;
 
-import java.io.File;
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.net.URL;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class CsvParserFactory {
     private CsvParserFactory() {
     }
 
     public static CsvParser createCsvParser(String fileName) throws IOException {
-        Optional<URL> url = Optional.ofNullable(Thread.currentThread().getContextClassLoader().getResource(fileName));
-        if (url.isPresent()) {
-            final File file = new File(url.get().getPath());
+        InputStream input = Thread.currentThread().getContextClassLoader().getResourceAsStream(fileName);
 
-            final List<String> list = Files.readAllLines(file.toPath(), Charset.defaultCharset());
-            final CsvParser csvParser = new CsvParser();
-            csvParser.parseCsv(list);
-            return csvParser;
+        final List<String> list = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(input))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                list.add(line);
+            }
         }
-        throw new IllegalArgumentException("Could not find Emoji File");
+        final CsvParser csvParser = new CsvParser();
+        csvParser.parseCsv(list);
+        return csvParser;
     }
 }
